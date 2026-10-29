@@ -41,4 +41,4 @@ pytest
 
 ## Citation
 
-If you use ThemeGraph, please cite the manuscript in [`manuscript/themegraph_chi_2027.tex`](manuscript/themegraph_chi_2027.tex).
+Feyijimi, T., Feyijimi, C., Elesemoyo, I. O., & Brijmohan, Y. (2026). ThemeGraph: Semantic Representation Authorization for Directed Text-Analytic Graphs. Zenodo. [https://doi.org/10.5281/zenodo.23756602](https://doi.org/10.5281/zenodo.23756602)

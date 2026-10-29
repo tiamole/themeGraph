@@ -70,6 +70,11 @@ ThemeGraph is a representation-authorization architecture for human-facing direc
 
 \maketitle
 
+\begingroup
+\renewcommand\thefootnote{}
+\footnotetext{Source code and reproducibility artifacts: \url{https://github.com/tiamole/themeGraph}. Live interactive inspector: \url{https://tiamole.github.io/themeGraph/prototype/}.}
+\endgroup
+
 \section{Introduction}
 
 A directed graph can carry more meaning than its construction warrants. Arrow perception depends on visual design and task \cite{holten2009}; depending on domain and labeling, readers may associate direction with relations such as sequence, dependence, prerequisite, influence, or entailment. Yet many pipelines construct arrows from weaker observations. Terms may simply occur in the same sentence, one conditional proportion may exceed a threshold, and a graph algorithm may then return a mathematically correct partition. The final view can be precise and reproducible while remaining semantically unwarranted.
@@ -381,7 +386,7 @@ Consider one world in which alpha precedes beta and another in which beta preced
 
 \subsection{Pipeline and Provenance}
 
-ThemeGraph separates adapters, stable text units, relation extraction, graph analysis, evaluation, and export. Edges retain statistics, document/unit identifiers, and bounded evidence records. Configuration, seed 2027, aggregate-JSON rebuilding, hashes, and source validation support reproducibility; full pipeline and adapter details are supplementary.
+ThemeGraph separates adapters, stable text units, relation extraction, graph analysis, evaluation, and export. Edges retain statistics, document/unit identifiers, and bounded evidence records. Configuration, seed 2027, aggregate-JSON rebuilding, hashes, and source validation support reproducibility; full pipeline and adapter details are supplementary and available at \url{https://github.com/tiamole/themeGraph}, which also hosts the live interactive inspector at \url{https://tiamole.github.io/themeGraph/prototype/}.
 
 The maintained implementation imposes a complete-mediation requirement over the currently inventoried output boundary. Its eight certificate-guarded output entry points fail closed on missing, duplicate, unknown, malformed, or inconsistent certificate state. Two nonsemantic structural serializers (analysis-result serialization and CLI structural export) require complete certificate-set integrity. Six semantic representation/export entry points (the governed-representation and requested-claim APIs, inspector statement/mark/export rendering, and publication enforcement) consume a selected certificate. Witness and remediation are certificate-derived fields rendered through certificate-bound inspector/API state, not additional independently selectable semantic emitters. The validator derives colocated declarations, checks each guard, and rejects an unlisted synthetic emitter; this bounded discovery is not proof over arbitrary future code.
 
