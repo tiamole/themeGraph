@@ -1,0 +1,8 @@
+contract_distinction,removal_probe,invalid_behavior_enabled,joint_control_consequence,detected
+governed-object type,omit-object-signature,Sentence evidence may license an incompatible event or concept claim.,Object-specific authorization collapses into channel-only admission.,yes
+scope and orientation,pair-scope-nontransfer,Evidence for a->b may license b->a.,Directional authorization transfers to an unevidenced pair.,yes
+evidence polarity,counterevidence-as-support,A negative annotation may be read as positive support or reverse truth.,Construct conflict becomes an admitted semantic relation.,yes
+projection provenance,drop-fallback-projection-provenance,A fallback may lose lineage while remaining emit-able.,The downgraded representation is no longer auditable to its evidence.,yes
+fallback projection,omit-fallback-projection,A refused semantic claim may silently collapse to lexical association.,Refusal no longer controls the representation reached by downgrade.,yes
+export authorization,allow-refused-export,A visibly refused claim may leak into a downstream artifact.,Statement and mark governance can be bypassed through export.,yes
+required adjudication,omit-causal-adjudication,Metadata-complete causal evidence may be promoted without approval.,An authored governance gate disappears while the claim still admits.,yes

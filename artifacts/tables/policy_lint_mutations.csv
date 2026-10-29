@@ -1,0 +1,22 @@
+mutation,intended_check,detected,additional_failure_count,additional_failed_checks,exact_localization
+remove-claim-declaration,all claims declared,yes,1,interpretive adjudication required,no
+unreachable-predicate,requirements reachable,yes,2,"interpretive adjudication required, interpretive metadata consistent",no
+duplicate-predicate,no duplicate predicates,yes,2,"interpretive adjudication required, interpretive metadata consistent",no
+remove-remediation,remediation complete,yes,0,none,yes
+generic-order-substitution,construct specific order,yes,0,none,yes
+generic-reference-substitution,construct specific reference,yes,0,none,yes
+omit-causal-estimand,causal metadata consistent,yes,0,none,yes
+omit-object-signature,object signatures complete,yes,0,none,yes
+omit-theme-adjudication,interpretive adjudication required,yes,0,none,yes
+omit-causal-adjudication,causal adjudication required,yes,0,none,yes
+intervention-as-causal-alternative,causal identification not intervention alternative,yes,0,none,yes
+fallback-cycle,fallback graph acyclic,yes,1,fallback projections complete,no
+undeclared-fallback-target,fallback targets declared,yes,1,all claims declared,no
+unscoped-to-pair-fallback,fallback scope compatible,yes,1,fallback projections complete,no
+omit-fallback-projection,fallback projections complete,yes,0,none,yes
+mistype-fallback-projection,fallback projection target compatible,yes,0,none,yes
+drop-fallback-projection-provenance,fallback projection provenance preserved,yes,0,none,yes
+allow-refused-export,refused exports blocked,yes,0,none,yes
+collapse-statistical-semantic-encoding,encoding semantic separation,yes,0,none,yes
+omit-analyst-comparator,interpretive metadata consistent,yes,0,none,yes
+behaviorally-identical-version,declared semantic change witnessed,yes,0,none,yes

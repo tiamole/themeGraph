@@ -1,0 +1,37 @@
+\begin{table*}[t]
+  \caption{Deterministic construct-boundary Policy 2.7.0 transition map. Rows show evidence condition, requested claim, expected and observed policy consequences, and the exercised failure or authorization path; they are conformance routes, not predictive accuracy estimates. Cross-construct rows compact exact typed requests retained with counts and route IDs in the artifact manifest.}
+  \label{tab:external-validation}
+  \centering
+  \scriptsize
+  \begin{tabular}{@{}p{.07\textwidth}p{.16\textwidth}p{.15\textwidth}p{.08\textwidth}p{.08\textwidth}p{.24\textwidth}@{}}
+    \toprule
+    Dataset & Evidence condition & Requested claim & Expected & Observed & Failure / authorization path \\
+    \midrule
+    MRPC & matched positive annotation & sentential-paraphrase-equivalence & ADMIT & ADMIT & authorized \\
+    MRPC & lexical evidence only & sentential-paraphrase-equivalence & REFUSE & REFUSE & missing construct-matched evidence \\
+    MRPC & negative annotation & sentential-paraphrase-equivalence & REFUSE & REFUSE & construct-matched counterevidence \\
+    MRPC & matched non-paraphrase annotation & sentential-non-paraphrase & ADMIT & ADMIT & authorized \\
+    MRPC & cross-construct request & multiple excluded typed claims; see artifact manifest & REFUSE & REFUSE & construct mismatch \\
+    PAWS & matched positive annotation & sentential-paraphrase-equivalence & ADMIT & ADMIT & authorized \\
+    PAWS & lexical evidence only & sentential-paraphrase-equivalence & REFUSE & REFUSE & missing construct-matched evidence \\
+    PAWS & negative annotation & sentential-paraphrase-equivalence & REFUSE & REFUSE & construct-matched counterevidence \\
+    PAWS & matched non-paraphrase annotation & sentential-non-paraphrase & ADMIT & ADMIT & authorized \\
+    PAWS & cross-construct request & multiple excluded typed claims; see artifact manifest & REFUSE & REFUSE & construct mismatch \\
+    SNLI & matched directional annotation & textual-entailment & ADMIT & ADMIT & authorized \\
+    SNLI & neutral annotation & textual-entailment & REFUSE & REFUSE & insufficient support \\
+    SNLI & contradiction annotation & textual-entailment & REFUSE & REFUSE & construct-matched counterevidence \\
+    SNLI & reversed relation request & textual-entailment & REFUSE & REFUSE & scope mismatch \\
+    SNLI & cross-construct request & multiple excluded typed claims; see artifact manifest & REFUSE & REFUSE & construct mismatch \\
+    AL-CPL & matched prerequisite annotation & concept-prerequisite & ADMIT & ADMIT & authorized \\
+    AL-CPL & lexical evidence only & concept-prerequisite & REFUSE & REFUSE & missing construct-matched evidence \\
+    AL-CPL & mention order only & concept-prerequisite & REFUSE & REFUSE & evidence-channel-absent \\
+    AL-CPL & negative annotation & concept-prerequisite & REFUSE & REFUSE & construct-matched counterevidence \\
+    AL-CPL & reversed relation request & concept-prerequisite & REFUSE & REFUSE & scope mismatch \\
+    AL-CPL & cross-construct request & multiple excluded typed claims; see artifact manifest & REFUSE & REFUSE & construct mismatch \\
+    TORQUE & matched event-order annotation & event-temporal-precedence & ADMIT & ADMIT & authorized \\
+    TORQUE & mention order only & event-temporal-precedence & REFUSE & REFUSE & mention-order-insufficient \\
+    TORQUE & reversed relation request & event-temporal-precedence & REFUSE & REFUSE & scope mismatch \\
+    TORQUE & cross-construct request & multiple excluded typed claims; see artifact manifest & REFUSE & REFUSE & construct mismatch \\
+    \bottomrule
+  \end{tabular}
+\end{table*}

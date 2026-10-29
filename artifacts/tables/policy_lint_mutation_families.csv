@@ -1,0 +1,7 @@
+mutation_family,targeted_mutations,detected,result,artifact_detail
+declaration / schema,4,4,all detected,row-level trigger vectors retained
+evidence typing,3,3,all detected,row-level trigger vectors retained
+causal / interpretive adjudication,5,5,all detected,row-level trigger vectors retained
+fallback / projection,6,6,all detected,row-level trigger vectors retained
+representation / export,2,2,all detected,row-level trigger vectors retained
+semantic versioning,1,1,all detected,row-level trigger vectors retained

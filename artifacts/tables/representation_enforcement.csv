@@ -1,0 +1,6 @@
+state,decision,decision_reason,permitted_statement,mark,requested_claim_export,fallback,witness,remediation,conforms
+admit,ADMIT,none,semantic claim,directed-arrow,allowed,none,present,none,yes
+prevalence-qualify,QUALIFY,prevalence-qualification,qualified statistic,conditional-asymmetry-glyph,allowed,none,present,present,yes
+conflict-qualify,QUALIFY,conflict-present,contested claim,contested-relation,blocked,none,present,present,yes
+refuse-with-fallback,REFUSE,evidence-channel-absent,fallback statement,undirected-link,blocked,lexical-association,present,present,yes
+refuse-without-fallback,REFUSE,evidence-channel-absent,refusal explanation,no-relation,blocked,none,present,present,yes

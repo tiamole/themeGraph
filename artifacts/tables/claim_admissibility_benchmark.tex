@@ -1,0 +1,23 @@
+\begin{table*}[t]
+  \caption{Policy decisions, complete typed reasons, and representation consequences in the controlled benchmark; all observed decisions equal their authored expectations.}
+  \label{tab:claim-benchmark}
+  \centering
+  \scriptsize
+  \setlength{\tabcolsep}{1.2pt}
+  \begin{tabular}{@{}p{.10\textwidth}p{.10\textwidth}p{.055\textwidth}p{.10\textwidth}p{.10\textwidth}p{.13\textwidth}p{.09\textwidth}p{.055\textwidth}p{.20\textwidth}@{}}
+    \toprule
+    Controlled case & Requested claim & Decision & Observed evidence & Controlling reason & All triggered reasons & Representation & Export & Exact witness \\
+    \midrule
+    unordered-association & lexical-association & ADMIT & co-occurrence & none & none & undirected-link & allowed & All gates passed \\
+    prevalence-asymmetry & asymmetric-conditional & QUALIFY & co-occurrence & prevalence-qualification & prevalence-qualification & conditional-asymmetry-glyph & allowed & Prevalence-derived orientation \\
+    unsupported-temporal-order & event-temporal-precedence & REFUSE & co-occurrence & evidence-channel-absent & evidence-channel-absent & undirected-link & blocked & Missing event-order evidence \\
+    observed-temporal-order & event-temporal-precedence & ADMIT & co-occurrence, event-order & none & none & directed-arrow & allowed & All gates passed \\
+    explicit-prerequisite & concept-prerequisite & ADMIT & co-occurrence, prerequisite-reference & none & none & directed-arrow & allowed & All gates passed \\
+    unsupported-causality & causal-influence & REFUSE & co-occurrence, mention-order, syntax & evidence-channel-absent & evidence-channel-absent & undirected-link & blocked & Missing causal-identification evidence \\
+    low-specification-persistence & meets-specification-persistence-gate & REFUSE & co-occurrence, specification-surface & persistence-gate-failed & persistence-gate-failed & no-relation & blocked & S=0.650 < gate=0.800 \\
+    duplicated-evidence & statistical-stability & REFUSE & cluster-bootstrap & uncertainty-inadequate & uncertainty-inadequate, dependence-inadequate & no-relation & blocked & Uncertainty inadequate; dependence resampling absent \\
+    conflicting-annotations & event-temporal-precedence & QUALIFY & annotation-temporal-precedence & conflict-present & conflict-present & contested-relation & blocked & Opposing matched temporal annotations \\
+    missing-lineage & lexical-association & REFUSE & co-occurrence & provenance-incomplete & provenance-incomplete & no-relation & blocked & Required provenance incomplete \\
+    \bottomrule
+  \end{tabular}
+\end{table*}

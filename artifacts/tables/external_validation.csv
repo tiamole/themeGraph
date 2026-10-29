@@ -1,0 +1,26 @@
+dataset,evidence_condition,requested_claim,expected_consequence,observed_consequence,failure_or_authorization_path,requested_claim_types,deterministic_request_count,route_ids
+MRPC,matched positive annotation,sentential-paraphrase-equivalence,ADMIT,ADMIT,authorized,sentential-paraphrase-equivalence,1,24d23db88704fc15
+MRPC,lexical evidence only,sentential-paraphrase-equivalence,REFUSE,REFUSE,missing construct-matched evidence,sentential-paraphrase-equivalence,1,7a0e617d10b90678
+MRPC,negative annotation,sentential-paraphrase-equivalence,REFUSE,REFUSE,construct-matched counterevidence,sentential-paraphrase-equivalence,1,7038de15d1c86742
+MRPC,matched non-paraphrase annotation,sentential-non-paraphrase,ADMIT,ADMIT,authorized,sentential-non-paraphrase,1,53570ebdc5597d09
+MRPC,cross-construct request,multiple excluded typed claims; see artifact manifest,REFUSE,REFUSE,construct mismatch,"analyst-benefit, causal-influence, concept-prerequisite, event-temporal-precedence, textual-entailment, theme",6,"1c642d7b4dee9e51, fe6008287cb104d3, 5a6ba0130d7b906e, 3451e8f5358a39e8, ff31aad44a81f794, 68e7638a3cfb90ac"
+PAWS,matched positive annotation,sentential-paraphrase-equivalence,ADMIT,ADMIT,authorized,sentential-paraphrase-equivalence,1,6f4503b970533a16
+PAWS,lexical evidence only,sentential-paraphrase-equivalence,REFUSE,REFUSE,missing construct-matched evidence,sentential-paraphrase-equivalence,1,675434df5d750575
+PAWS,negative annotation,sentential-paraphrase-equivalence,REFUSE,REFUSE,construct-matched counterevidence,sentential-paraphrase-equivalence,1,46cc0fd231d1b870
+PAWS,matched non-paraphrase annotation,sentential-non-paraphrase,ADMIT,ADMIT,authorized,sentential-non-paraphrase,1,a07d8b8e5a335b69
+PAWS,cross-construct request,multiple excluded typed claims; see artifact manifest,REFUSE,REFUSE,construct mismatch,"analyst-benefit, causal-influence, concept-prerequisite, event-temporal-precedence, textual-entailment, theme",6,"51ec5bf516bce28f, 66b8bfd285309863, 92583e4bb9068ade, 2c1de3255a907096, 0866f0a5dfea60aa, e43ae03ab951ba76"
+SNLI,matched directional annotation,textual-entailment,ADMIT,ADMIT,authorized,textual-entailment,1,bddcbe3fd185968f
+SNLI,neutral annotation,textual-entailment,REFUSE,REFUSE,insufficient support,textual-entailment,1,908e05fec681e79b
+SNLI,contradiction annotation,textual-entailment,REFUSE,REFUSE,construct-matched counterevidence,textual-entailment,1,02e340e33cf22558
+SNLI,reversed relation request,textual-entailment,REFUSE,REFUSE,scope mismatch,textual-entailment,1,9796aab542bd2444
+SNLI,cross-construct request,multiple excluded typed claims; see artifact manifest,REFUSE,REFUSE,construct mismatch,"analyst-benefit, causal-influence, concept-prerequisite, event-temporal-precedence, theme",5,"edb9887c9c14c698, cd6b2200ddf1ff40, 53deed2a34856f96, 5c1884c740719a33, 2d8946799603bf17"
+AL-CPL,matched prerequisite annotation,concept-prerequisite,ADMIT,ADMIT,authorized,concept-prerequisite,1,d46595c50923fe67
+AL-CPL,lexical evidence only,concept-prerequisite,REFUSE,REFUSE,missing construct-matched evidence,concept-prerequisite,1,456fff4721d3f12c
+AL-CPL,mention order only,concept-prerequisite,REFUSE,REFUSE,evidence-channel-absent,concept-prerequisite,1,4795b7f658a2323a
+AL-CPL,negative annotation,concept-prerequisite,REFUSE,REFUSE,construct-matched counterevidence,concept-prerequisite,1,6c574633e9c7bb0b
+AL-CPL,reversed relation request,concept-prerequisite,REFUSE,REFUSE,scope mismatch,concept-prerequisite,1,07ab4bcf9d163991
+AL-CPL,cross-construct request,multiple excluded typed claims; see artifact manifest,REFUSE,REFUSE,construct mismatch,event-temporal-precedence,2002,2823ef0e32a4a657
+TORQUE,matched event-order annotation,event-temporal-precedence,ADMIT,ADMIT,authorized,event-temporal-precedence,1,eb737f04ca74edcd
+TORQUE,mention order only,event-temporal-precedence,REFUSE,REFUSE,mention-order-insufficient,event-temporal-precedence,1,e3f8793850f49d40
+TORQUE,reversed relation request,event-temporal-precedence,REFUSE,REFUSE,scope mismatch,event-temporal-precedence,1,730be55bee1c373c
+TORQUE,cross-construct request,multiple excluded typed claims; see artifact manifest,REFUSE,REFUSE,construct mismatch,concept-prerequisite,1928,ca5534677b8110e7

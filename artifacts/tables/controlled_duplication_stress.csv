@@ -1,0 +1,2 @@
+benchmark_type,license,base_source_count,row_count,unique_record_count,duplicate_rows_beyond_first,duplicate_rate,naive_support_inflation_factor,interpretation
+generated controlled duplication/dependence stress case,CC0-equivalent generated fixture; no third-party text,12,48,12,36,0.75,4.0,Exact copies increase row-level support fourfold without increasing the number of independently generated source records.

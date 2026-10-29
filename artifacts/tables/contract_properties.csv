@@ -1,0 +1,8 @@
+property,perturbation,failure_condition,passed
+construct matching,Use semantic-equivalence evidence for temporal precedence,Temporal precedence is admitted,yes
+no validity laundering,Set specification persistence and uncertainty adequacy without causal evidence,Causal influence is admitted or qualified,yes
+conditional support channel monotonicity,Add irrelevant mention-order evidence to supported association,Lexical admission is withdrawn,yes
+export soundness,Evaluate every refused claim for export,Any refused requested claim is exportable,yes
+fallback soundness,Remove evidence required by each preferred fallback,An unidentified fallback is emitted,yes
+fallback preference conformance,Provide multiple declared fallback candidates,The first supported preference is not selected,yes
+pair scope nontransfer,Reverse the requested entity pair without reversing the evidence record,Forward directional evidence licenses the reversed claim,yes

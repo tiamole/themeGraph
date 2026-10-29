@@ -1,0 +1,1335 @@
+{
+  "schema_version": "1.1",
+  "generated_at_utc": "2026-09-11T08:41:08.361880+00:00",
+  "generator": "themegraph.publication.build_publication_artifacts",
+  "environment": {
+    "python": "3.14.0",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "packages": {
+      "themegraph": "0.1.0",
+      "networkx": "3.6.1",
+      "scikit-learn": "1.9.0",
+      "numpy": "2.5.2"
+    }
+  },
+  "data_boundary": {
+    "job_ads_provenance": "author_attested_file_supported_in_part",
+    "job_ads_redistribution": "planned_not_yet_verified_by_public_deposit",
+    "intended_release_license": "CC BY 4.0",
+    "public_release_status": "planned",
+    "platform_permission_documented": false,
+    "sampling_frame_status": "not_documented",
+    "per_row_platform_available": false,
+    "raw_job_ad_text_included": false,
+    "raw_external_sentence_text_included": false,
+    "labor_market_inference_supported": false
+  },
+  "inputs": [
+    {
+      "path": "results/research_evaluation_summary.json",
+      "sha256": "fbc30805be9ef34ab548bbc0807d0bf51ae21e687eb560e490d69b47fd03185a",
+      "bytes": 688710
+    },
+    {
+      "path": "results/glassdoor_simplyhired_jobs_audit.json",
+      "sha256": "ba1bf040d74e00495a557defb129797282077a579c278115ca1e5c7b5a867ac6",
+      "bytes": 3688
+    },
+    {
+      "path": "results/claim_admissibility_benchmark.json",
+      "sha256": "66fb98ecc30f5090126731d0928da81eb824b83b2a089678dd67215371c6952c",
+      "bytes": 127510
+    },
+    {
+      "path": "results/specification_surface.json",
+      "sha256": "73b1a5116f58801d26562ebbb5a530d255a3917cc2282fca7c2e904f3671ee3e",
+      "bytes": 978894
+    },
+    {
+      "path": "results/external_validation.json",
+      "sha256": "3ee181b91f1981511e248a03d93ed0172750418b0c26e0c20cd73307781eabda",
+      "bytes": 41305
+    },
+    {
+      "path": "results/evaluation_corpora/synthetic.json",
+      "sha256": "280185e5cc041de183b96d8aae517dcc5258e1a2c838d1ad3a82f6eb47f444e8",
+      "bytes": 63953
+    },
+    {
+      "path": "results/evaluation_corpora/glassdoor_simplyhired_jobs.json",
+      "sha256": "31a710bc17dc1dcbf66b31d683e0aeeccff5211af321dad6fbd16d299fb4d201",
+      "bytes": 574736
+    },
+    {
+      "path": "results/evaluation_corpora/glassdoor_simplyhired_jobs_unique_descriptions.json",
+      "sha256": "39f6133d1d96d105d54379481ee5518a3abd4cd5d5d244bf8279bd2a1c0e7841",
+      "bytes": 545642
+    },
+    {
+      "path": "results/evaluation_corpora/onet_500.json",
+      "sha256": "6010eff4edb5be83a5181b1af4c570a5a4b211300da6c62d2c10cc46d71f9804",
+      "bytes": 332315
+    },
+    {
+      "path": "results/evaluation_corpora/acmart.json",
+      "sha256": "38afdddac6bcb9b2ab436241766ebfd56f5102ba025ea8b1e925de1f12cadb77",
+      "bytes": 817800
+    },
+    {
+      "path": "results/evaluation_corpora/python_stdlib_100.json",
+      "sha256": "727d456c96afe79dc7967f626744cd0c3f34d603c58795f4b10d36b79953e13a",
+      "bytes": 287470
+    },
+    {
+      "path": "glassdoor_simplyhired_jobs_data.xlsx",
+      "sha256": "5c0592b9ed993a7969fbc5e87852ed4da160eaaabf69c7bd10f93567bcca65cb",
+      "bytes": 9309574
+    },
+    {
+      "path": "glassdoor_simplyhired_jobs_data.metadata.json",
+      "sha256": "c0a87ba514560f8811fcbe1111b4b87d360aa470a12d015a8b20cf35008d9afd",
+      "bytes": 1988
+    },
+    {
+      "path": "data/external/db_30_3_text.zip",
+      "sha256": "7758ec966fd91895b3d290b83c9f1f1d46730d37fdda4faac67104d1c0d2a780",
+      "bytes": 13222549
+    },
+    {
+      "path": "scripts/run_research_evaluation.py",
+      "sha256": "84e2e3401634b6956be85ad2fad0273e57a2e3841648931644b03f98a5c569e3",
+      "bytes": 12321
+    },
+    {
+      "path": "scripts/build_publication_artifacts.py",
+      "sha256": "3d0bd6c7b66fdee39c353491586416107ea90e430839399b026b4356a6075e9a",
+      "bytes": 265
+    },
+    {
+      "path": "scripts/validate_publication_artifacts.py",
+      "sha256": "33392ed1ff5e42883c1e752bab01cffdf76a81111f560a952c805c4178ab0666",
+      "bytes": 25311
+    },
+    {
+      "path": "scripts/run_external_validation.py",
+      "sha256": "d2bf4fe810a4f81e63568aad73b399c0a63c12736f709e9e1e87cea1e85c13dc",
+      "bytes": 600
+    },
+    {
+      "path": "src/themegraph/publication.py",
+      "sha256": "9c46f2fd1e2765aaf176e93c9bd56f29668422fc79b16c3702fc9673b7081622",
+      "bytes": 146340
+    },
+    {
+      "path": "src/themegraph/external_validation.py",
+      "sha256": "1f758f1e3f7cdf9eed33575d5246bbf94d4f78494534832bdca09f1e0d1f4640",
+      "bytes": 38881
+    }
+  ],
+  "artifacts": [
+    {
+      "id": "data-evaluation-summary",
+      "kind": "data",
+      "files": [
+        "artifacts/data/research_evaluation_summary.json"
+      ],
+      "source_inputs": [
+        "results/research_evaluation_summary.json"
+      ],
+      "status": "observed",
+      "caption": "Validated multi-corpus evaluation summary.",
+      "alt_text": ""
+    },
+    {
+      "id": "data-job-ads-audit",
+      "kind": "data",
+      "files": [
+        "artifacts/data/glassdoor_simplyhired_jobs_audit.json"
+      ],
+      "source_inputs": [
+        "results/glassdoor_simplyhired_jobs_audit.json"
+      ],
+      "status": "observed",
+      "caption": "Full workbook quality audit without source text.",
+      "alt_text": ""
+    },
+    {
+      "id": "data-claim-admissibility-benchmark",
+      "kind": "data",
+      "files": [
+        "artifacts/data/claim_admissibility_benchmark.json"
+      ],
+      "source_inputs": [
+        "results/claim_admissibility_benchmark.json"
+      ],
+      "status": "observed",
+      "caption": "Controlled claim-policy benchmark and evidence-transition results.",
+      "alt_text": ""
+    },
+    {
+      "id": "data-specification-surface",
+      "kind": "data",
+      "files": [
+        "artifacts/data/specification_surface.json"
+      ],
+      "source_inputs": [
+        "results/specification_surface.json"
+      ],
+      "status": "observed",
+      "caption": "Multi-axis specification-surface results.",
+      "alt_text": ""
+    },
+    {
+      "id": "data-external-validation",
+      "kind": "data",
+      "files": [
+        "artifacts/data/external_validation.json"
+      ],
+      "source_inputs": [
+        "results/external_validation.json"
+      ],
+      "status": "observed",
+      "caption": "Aggregate-only MRPC, PAWS, SNLI, AL-CPL, and TORQUE policy stress-test results.",
+      "alt_text": ""
+    },
+    {
+      "id": "data-policy-2-7",
+      "kind": "data",
+      "files": [
+        "artifacts/data/themegraph_policy_2_7.json"
+      ],
+      "source_inputs": [
+        "results/claim_admissibility_benchmark.json"
+      ],
+      "status": "derived",
+      "caption": "Declarative Policy 2.7.0 claim, governed-object signature, predicate, adjudication requirement, pair scope, encoding, fallback, and remediation schema.",
+      "alt_text": ""
+    },
+    {
+      "id": "table-corpus-overview",
+      "kind": "table",
+      "files": [
+        "artifacts/tables/corpus_overview.csv",
+        "artifacts/tables/corpus_overview.tex"
+      ],
+      "source_inputs": [
+        "results/research_evaluation_summary.json"
+      ],
+      "status": "observed",
+      "caption": "Corpus and default graph structure.",
+      "alt_text": ""
+    },
+    {
+      "id": "table-job-ads-quality",
+      "kind": "table",
+      "files": [
+        "artifacts/tables/job_ads_quality.csv",
+        "artifacts/tables/job_ads_quality.tex"
+      ],
+      "source_inputs": [
+        "results/glassdoor_simplyhired_jobs_audit.json"
+      ],
+      "status": "observed",
+      "caption": "Measured workbook quality indicators.",
+      "alt_text": ""
+    },
+    {
+      "id": "table-threshold-sensitivity",
+      "kind": "table",
+      "files": [
+        "artifacts/tables/threshold_sensitivity.csv",
+        "artifacts/tables/threshold_sensitivity.tex"
+      ],
+      "source_inputs": [
+        "results/research_evaluation_summary.json"
+      ],
+      "status": "observed",
+      "caption": "Full prespecified confidence and lift threshold grid.",
+      "alt_text": ""
+    },
+    {
+      "id": "table-claim-admissibility-benchmark",
+      "kind": "table",
+      "files": [
+        "artifacts/tables/claim_admissibility_benchmark.csv",
+        "artifacts/tables/claim_admissibility_benchmark.tex"
+      ],
+      "source_inputs": [
+        "results/claim_admissibility_benchmark.json"
+      ],
+      "status": "observed",
+      "caption": "Case-level expected and observed claim-policy decisions.",
+      "alt_text": ""
+    },
+    {
+      "id": "table-contract-properties",
+      "kind": "table",
+      "files": [
+        "artifacts/tables/contract_properties.csv",
+        "artifacts/tables/contract_properties.tex"
+      ],
+      "source_inputs": [
+        "results/claim_admissibility_benchmark.json"
+      ],
+      "status": "observed",
+      "caption": "Executable contract-property conformance results.",
+      "alt_text": ""
+    },
+    {
+      "id": "table-policy-lint",
+      "kind": "table",
+      "files": [
+        "artifacts/tables/policy_lint.csv",
+        "artifacts/tables/policy_lint.tex"
+      ],
+      "source_inputs": [
+        "results/claim_admissibility_benchmark.json"
+      ],
+      "status": "observed",
+      "caption": "Structural and behavioral Policy 2.7.0 lint results.",
+      "alt_text": ""
+    },
+    {
+      "id": "table-controlled-duplication",
+      "kind": "table",
+      "files": [
+        "artifacts/tables/controlled_duplication_stress.csv",
+        "artifacts/tables/controlled_duplication_stress.tex"
+      ],
+      "source_inputs": [
+        "results/claim_admissibility_benchmark.json"
+      ],
+      "status": "observed",
+      "caption": "Generated duplication/dependence stress case without third-party text.",
+      "alt_text": ""
+    },
+    {
+      "id": "table-external-validation",
+      "kind": "table",
+      "files": [
+        "artifacts/tables/external_validation.csv",
+        "artifacts/tables/external_validation.tex"
+      ],
+      "source_inputs": [
+        "results/external_validation.json"
+      ],
+      "status": "observed",
+      "caption": "Construct-matched aggregate policy stress testing across five datasets and four epistemic functions.",
+      "alt_text": ""
+    },
+    {
+      "id": "table-specification-surface",
+      "kind": "table",
+      "files": [
+        "artifacts/tables/specification_surface.csv",
+        "artifacts/tables/specification_surface.tex"
+      ],
+      "source_inputs": [
+        "results/specification_surface.json"
+      ],
+      "status": "observed",
+      "caption": "Union-edge geometry, one-to-one component overlap, and certificate consequences across 24 configurations.",
+      "alt_text": ""
+    },
+    {
+      "id": "manuscript-statistics",
+      "kind": "manuscript-source",
+      "files": [
+        "artifacts/tables/manuscript_statistics.tex"
+      ],
+      "source_inputs": [
+        "results/specification_surface.json"
+      ],
+      "status": "derived",
+      "caption": "Authoritative ACM specification-surface values exposed as LaTeX macros.",
+      "alt_text": ""
+    },
+    {
+      "id": "figure-job-ads-quality",
+      "kind": "figure",
+      "files": [
+        "artifacts/figures/job_ads_quality.pdf",
+        "artifacts/figures/job_ads_quality.svg",
+        "artifacts/figures/job_ads_quality.png"
+      ],
+      "source_inputs": [
+        "results/glassdoor_simplyhired_jobs_audit.json"
+      ],
+      "status": "observed",
+      "caption": "Quality indicators from all 18,870 author-collected Glassdoor and SimplyHired workbook rows.",
+      "alt_text": "Horizontal bars show the missing-description rate, duplicate complete-row rate, and duplicate-description rate."
+    },
+    {
+      "id": "figure-cross-corpus-structure",
+      "kind": "figure",
+      "files": [
+        "artifacts/figures/cross_corpus_structure.pdf",
+        "artifacts/figures/cross_corpus_structure.svg",
+        "artifacts/figures/cross_corpus_structure.png"
+      ],
+      "source_inputs": [
+        "results/research_evaluation_summary.json"
+      ],
+      "status": "observed",
+      "caption": "Default graph size, largest SCC, and retained-edge asymmetry across evaluated corpora.",
+      "alt_text": "Three aligned panels compare node and edge counts, largest SCC size, and asymmetric-edge share across the raw jobs, unique-description jobs, synthetic, O*NET, ACM text, and Python standard-library corpora."
+    },
+    {
+      "id": "figure-threshold-sensitivity",
+      "kind": "figure",
+      "files": [
+        "artifacts/figures/threshold_sensitivity.pdf",
+        "artifacts/figures/threshold_sensitivity.svg",
+        "artifacts/figures/threshold_sensitivity.png"
+      ],
+      "source_inputs": [
+        "results/research_evaluation_summary.json"
+      ],
+      "status": "observed",
+      "caption": "Largest SCC size across the prespecified confidence and lift grid for five nonsynthetic corpora.",
+      "alt_text": "Five heatmaps show largest SCC size at nine threshold combinations for all job rows, unique job descriptions, O*NET, ACM text, and Python standard-library text."
+    },
+    {
+      "id": "figure-measured-performance",
+      "kind": "figure",
+      "files": [
+        "artifacts/figures/measured_performance.pdf",
+        "artifacts/figures/measured_performance.svg",
+        "artifacts/figures/measured_performance.png"
+      ],
+      "source_inputs": [
+        "results/research_evaluation_summary.json"
+      ],
+      "status": "observed",
+      "caption": "Measured core wall time and traced Python allocation in the recorded environment.",
+      "alt_text": "Two logarithmic scatter plots relate extracted text-unit count to wall time and peak traced Python allocation."
+    },
+    {
+      "id": "figure-claim-admissibility-benchmark",
+      "kind": "figure",
+      "files": [
+        "artifacts/figures/claim_admissibility_benchmark.pdf",
+        "artifacts/figures/claim_admissibility_benchmark.svg",
+        "artifacts/figures/claim_admissibility_benchmark.png"
+      ],
+      "source_inputs": [
+        "results/claim_admissibility_benchmark.json"
+      ],
+      "status": "observed",
+      "caption": "Controlled claim-admissibility decisions and representation consequences.",
+      "alt_text": "Nine horizontal decision bars show admitted, qualified, and refused claims, including fallback encodings where available."
+    },
+    {
+      "id": "mapping-evidence-transition",
+      "kind": "mapping",
+      "files": [
+        "artifacts/mappings/evidence_transition.pdf",
+        "artifacts/mappings/evidence_transition.svg",
+        "artifacts/mappings/evidence_transition.png"
+      ],
+      "source_inputs": [
+        "results/claim_admissibility_benchmark.json"
+      ],
+      "status": "observed",
+      "caption": "Evidence augmentation changes an explicit prerequisite claim from refusal with undirected fallback to admission with a directed encoding.",
+      "alt_text": "A five-stage flow shows co-occurrence, a prerequisite request, refusal, addition of an explicit cross-reference, and admission."
+    },
+    {
+      "id": "figure-specification-survival",
+      "kind": "figure",
+      "files": [
+        "artifacts/figures/specification_survival.pdf",
+        "artifacts/figures/specification_survival.svg",
+        "artifacts/figures/specification_survival.png"
+      ],
+      "source_inputs": [
+        "results/specification_surface.json"
+      ],
+      "status": "observed",
+      "caption": "Union-edge persistence and persistence-gate frontier across the 24-configuration specification surface.",
+      "alt_text": "The left panel compares union-edge persistence across four corpora; the right panel shows the share passing the authored persistence gate as it moves from 0.50 to 1.00."
+    },
+    {
+      "id": "figure-external-validation",
+      "kind": "figure",
+      "files": [
+        "artifacts/figures/external_validation.pdf",
+        "artifacts/figures/external_validation.svg",
+        "artifacts/figures/external_validation.png"
+      ],
+      "source_inputs": [
+        "results/external_validation.json"
+      ],
+      "status": "observed",
+      "caption": "Categorical construct-boundary route coverage and Policy 2.7.0 consequences across MRPC, PAWS, SNLI, AL-CPL, and TORQUE.",
+      "alt_text": "A five-dataset matrix uses outlined cells, checks with route counts, and N/A labels for inapplicable matched-support, counterevidence, reversal, mention-only, and cross-construct route families; a second panel preserves seventeen deterministic authorization and refusal paths. Table 8 additionally reports separately requested non-paraphrase admission and the remaining cross-construct controls."
+    },
+    {
+      "id": "mapping-claim-admissibility",
+      "kind": "mapping",
+      "files": [
+        "artifacts/mappings/claim_admissibility_observation_map.pdf",
+        "artifacts/mappings/claim_admissibility_observation_map.svg",
+        "artifacts/mappings/claim_admissibility_observation_map.png"
+      ],
+      "source_inputs": [
+        "results/research_evaluation_summary.json"
+      ],
+      "status": "derived",
+      "caption": "Observation-to-claim mapping for unordered co-occurrence evidence.",
+      "alt_text": "A flow map admits lexical association, qualifies asymmetric conditional association, and refuses semantic direction when no directional channel is observed."
+    },
+    {
+      "id": "mapping-empirical-pipeline",
+      "kind": "mapping",
+      "files": [
+        "artifacts/mappings/empirical_artifact_pipeline.pdf",
+        "artifacts/mappings/empirical_artifact_pipeline.svg",
+        "artifacts/mappings/empirical_artifact_pipeline.png"
+      ],
+      "source_inputs": [
+        "results/research_evaluation_summary.json",
+        "results/glassdoor_simplyhired_jobs_audit.json"
+      ],
+      "status": "derived",
+      "caption": "Source-to-manuscript empirical artifact and provenance flow.",
+      "alt_text": "A two-row flow diagram links source data through adapters, analysis, validated JSON, generated assets, manifest, and anonymous ACM manuscript."
+    },
+    {
+      "id": "mapping-themegraph-overview-architecture",
+      "kind": "mapping",
+      "files": [
+        "artifacts/mappings/themegraph_overview_architecture.pdf",
+        "artifacts/mappings/themegraph_overview_architecture.svg",
+        "artifacts/mappings/themegraph_overview_architecture.png"
+      ],
+      "source_inputs": [
+        "results/research_evaluation_summary.json",
+        "results/claim_admissibility_benchmark.json",
+        "results/external_validation.json",
+        "results/specification_surface.json"
+      ],
+      "status": "derived",
+      "caption": "Overarching ThemeGraph architecture separating graph computation from certificate-mediated semantic governance across eight certificate-guarded output entry points.",
+      "alt_text": "Two coupled rails show a computational path from corpus provenance to graph structure and an epistemic path from requested semantics and typed evidence through a certificate-required representation monitor. A blocked bypass depicts the maintained boundary across two nonsemantic structural serializers and six semantic representation or export entry points. Admit, qualify, and refuse certificates jointly govern statement, mark, and requested-claim export."
+    },
+    {
+      "id": "mapping-epistemic-dependency-ladder",
+      "kind": "mapping",
+      "files": [
+        "artifacts/mappings/epistemic_dependency_ladder.pdf",
+        "artifacts/mappings/epistemic_dependency_ladder.svg",
+        "artifacts/mappings/epistemic_dependency_ladder.png"
+      ],
+      "source_inputs": [
+        "results/claim_admissibility_benchmark.json"
+      ],
+      "status": "derived",
+      "caption": "A dependency sequence of design-specific epistemic gates separating correctness, construct/evidence match, persistence, interpretive validity, and human benefit.",
+      "alt_text": "Five distinct gates form a horizontal dependency sequence showing that computational correctness does not imply construct/evidence match, specification persistence, interpretive validity, or human benefit."
+    },
+    {
+      "id": "mapping-contract-architecture",
+      "kind": "mapping",
+      "files": [
+        "artifacts/mappings/contract_architecture.pdf",
+        "artifacts/mappings/contract_architecture.svg",
+        "artifacts/mappings/contract_architecture.png"
+      ],
+      "source_inputs": [
+        "results/claim_admissibility_benchmark.json"
+      ],
+      "status": "derived",
+      "caption": "Claim, evidence, and representation architecture of the Epistemic Representation Contract.",
+      "alt_text": "Typed claims and typed evidence enter a versioned policy whose decision governs statement, encoding, export, fallback, witness, and remediation."
+    },
+    {
+      "id": "figure-contract-properties",
+      "kind": "figure",
+      "files": [
+        "artifacts/figures/contract_properties.pdf",
+        "artifacts/figures/contract_properties.svg",
+        "artifacts/figures/contract_properties.png"
+      ],
+      "source_inputs": [
+        "results/claim_admissibility_benchmark.json"
+      ],
+      "status": "observed",
+      "caption": "Adversarial contract-property matrix for seven executable properties.",
+      "alt_text": "Seven rows pair each property with an adversarial perturbation, explicit failure condition, joint-control consequence, and observed result, including directional pair-scope non-transfer."
+    },
+    {
+      "id": "figure-governance-state-grammars",
+      "kind": "figure",
+      "files": [
+        "artifacts/figures/governance_state_triptych.pdf",
+        "artifacts/figures/governance_state_triptych.svg",
+        "artifacts/figures/governance_state_triptych.png"
+      ],
+      "source_inputs": [
+        "results/claim_admissibility_benchmark.json"
+      ],
+      "status": "derived",
+      "caption": "Policy 2.7.0 design assignments for refusal, reason-specific qualification, and admission; no perceptual effectiveness is inferred.",
+      "alt_text": "Four side-by-side certificate states distinguish refused causality with lexical fallback, prevalence-qualified conditional asymmetry, conflict-qualified interrupted relation with blocked ordinary export, and admitted temporal direction with a solid semantic arrow. These marks are design assignments, not demonstrated perceptual effects."
+    },
+    {
+      "id": "mapping-governed-inspector-walkthrough",
+      "kind": "mapping",
+      "files": [
+        "artifacts/mappings/governed_inspector_walkthrough.pdf",
+        "artifacts/mappings/governed_inspector_walkthrough.svg",
+        "artifacts/mappings/governed_inspector_walkthrough.png"
+      ],
+      "source_inputs": [
+        "results/claim_admissibility_benchmark.json",
+        "results/external_validation.json"
+      ],
+      "status": "derived",
+      "caption": "Governed inspector states for admission, qualification, refusal, fallback, blocked export, counterevidence, and remediation.",
+      "alt_text": "Four rows show lexical-only semantic refusal with fallback, construct-matched admission, negative-counterevidence refusal, and statistical-stability refusal when bootstrap evidence is missing."
+    },
+    {
+      "id": "table-policy-lint-mutations",
+      "kind": "table",
+      "files": [
+        "artifacts/tables/policy_lint_mutations.csv",
+        "artifacts/tables/policy_lint_mutation_families.csv",
+        "artifacts/tables/policy_lint_mutations.tex"
+      ],
+      "source_inputs": [
+        "results/claim_admissibility_benchmark.json"
+      ],
+      "status": "observed",
+      "caption": "Family-level manuscript summary and row-level artifact detail for 21 targeted Policy 2.7.0 lint mutations.",
+      "alt_text": ""
+    },
+    {
+      "id": "figure-policy-lint-mutations",
+      "kind": "figure",
+      "files": [
+        "artifacts/figures/policy_lint_mutations.pdf",
+        "artifacts/figures/policy_lint_mutations.svg",
+        "artifacts/figures/policy_lint_mutations.png"
+      ],
+      "source_inputs": [
+        "results/claim_admissibility_benchmark.json"
+      ],
+      "status": "observed",
+      "caption": "Mutation-by-invariant linter localization matrix with intended targets outlined.",
+      "alt_text": "A 21-by-21 matrix shows every triggered lint check for each invalid policy mutation, distinguishing intended detection from co-triggered diagnostics."
+    },
+    {
+      "id": "table-representation-enforcement",
+      "kind": "table",
+      "files": [
+        "artifacts/tables/representation_enforcement.csv",
+        "artifacts/tables/representation_enforcement.tex"
+      ],
+      "source_inputs": [
+        "results/claim_admissibility_benchmark.json"
+      ],
+      "status": "observed",
+      "caption": "Five-state certificate-to-representation enforcement under Policy 2.7.0.",
+      "alt_text": ""
+    },
+    {
+      "id": "table-architecture-enforcement-ablation",
+      "kind": "table",
+      "files": [
+        "artifacts/tables/architecture_enforcement_ablation.csv",
+        "artifacts/tables/architecture_enforcement_ablation.tex"
+      ],
+      "source_inputs": [
+        "results/claim_admissibility_benchmark.json"
+      ],
+      "status": "observed",
+      "caption": "Output-Control Reachability Ablation across four generated output-control conditions; unauthorized means not authorized under Policy 2.7.0 for the supplied fixture.",
+      "alt_text": ""
+    },
+    {
+      "id": "table-contract-field-necessity",
+      "kind": "table",
+      "files": [
+        "artifacts/tables/contract_field_necessity.csv",
+        "artifacts/tables/contract_field_necessity.tex"
+      ],
+      "source_inputs": [
+        "results/claim_admissibility_benchmark.json"
+      ],
+      "status": "observed",
+      "caption": "One-at-a-time contract-field failure probes and their joint-control consequences.",
+      "alt_text": ""
+    },
+    {
+      "id": "table-policy-claim-types",
+      "kind": "table",
+      "files": [
+        "artifacts/tables/policy_claim_types.csv",
+        "artifacts/tables/policy_claim_types.tex",
+        "artifacts/tables/policy_claim_consequences.tex"
+      ],
+      "source_inputs": [
+        "results/claim_admissibility_benchmark.json"
+      ],
+      "status": "derived",
+      "caption": "Policy 2.7.0 claim typing and separately rendered representation consequences from one source table.",
+      "alt_text": ""
+    },
+    {
+      "id": "figure-inspector-policy-2-7",
+      "kind": "figure",
+      "files": [
+        "artifacts/figures/inspector_policy27_screenshot.png"
+      ],
+      "source_inputs": [
+        "prototype/index.html",
+        "prototype/styles.css",
+        "prototype/app.js",
+        "results/claim_admissibility_benchmark.json"
+      ],
+      "status": "observed-interface-state",
+      "caption": "ThemeGraph Inspector showing a Policy 2.7.0 certificate governing the visible graph, statement, typed fallback projection, representation authorization, export status, complete reasons, witness, and remediation.",
+      "alt_text": "A browser capture of the ThemeGraph Inspector with analysis controls, a governed graph, and a Policy 2.7.0 certificate panel exposing the controlling reason, complete triggered reasons, governed object types, fallback projection provenance, encoding, export status, witness, and remediation."
+    },
+    {
+      "id": "figure-inspector-policy-2-7-composite",
+      "kind": "figure",
+      "files": [
+        "artifacts/figures/inspector_policy27_composite.pdf",
+        "artifacts/figures/inspector_policy27_composite.svg",
+        "artifacts/figures/inspector_policy27_composite.png",
+        "artifacts/figures/inspector_policy27_decision_crop.png",
+        "artifacts/figures/inspector_policy27_evidence_crop.png",
+        "artifacts/figures/inspector_policy27_encoding_crop.png"
+      ],
+      "source_inputs": [
+        "prototype/index.html",
+        "prototype/styles.css",
+        "prototype/app.js",
+        "results/claim_admissibility_benchmark.json"
+      ],
+      "status": "observed-interface-state",
+      "caption": "Readable four-panel Policy 2.7.0 inspector composite with source crops.",
+      "alt_text": "Panels show the requested claim and decision, typed evidence, fallback projection provenance with witness and remediation, and the certificate-governed graph encoding; the full interface remains a supplementary artifact."
+    },
+    {
+      "id": "table-edge-distributions",
+      "kind": "table",
+      "files": [
+        "artifacts/tables/edge_distributions.csv",
+        "artifacts/tables/edge_distributions.tex"
+      ],
+      "source_inputs": [
+        "results/evaluation_corpora/synthetic.json",
+        "results/evaluation_corpora/glassdoor_simplyhired_jobs.json",
+        "results/evaluation_corpora/glassdoor_simplyhired_jobs_unique_descriptions.json",
+        "results/evaluation_corpora/onet_500.json",
+        "results/evaluation_corpora/acmart.json",
+        "results/evaluation_corpora/python_stdlib_100.json"
+      ],
+      "status": "observed",
+      "caption": "Retained-edge distribution summaries from per-corpus outputs.",
+      "alt_text": ""
+    },
+    {
+      "id": "figure-edge-distributions",
+      "kind": "figure",
+      "files": [
+        "artifacts/figures/edge_distributions.pdf",
+        "artifacts/figures/edge_distributions.svg",
+        "artifacts/figures/edge_distributions.png"
+      ],
+      "source_inputs": [
+        "results/evaluation_corpora/synthetic.json",
+        "results/evaluation_corpora/glassdoor_simplyhired_jobs.json",
+        "results/evaluation_corpora/glassdoor_simplyhired_jobs_unique_descriptions.json",
+        "results/evaluation_corpora/onet_500.json",
+        "results/evaluation_corpora/acmart.json",
+        "results/evaluation_corpora/python_stdlib_100.json"
+      ],
+      "status": "observed",
+      "caption": "Median and interquartile range of confidence, support, and lift among retained edges.",
+      "alt_text": "Three interval plots compare retained-edge confidence, support, and lift distributions across five corpora."
+    },
+    {
+      "id": "report-empirical-results",
+      "kind": "report",
+      "files": [
+        "artifacts/EMPIRICAL_RESULTS.md"
+      ],
+      "source_inputs": [
+        "results/research_evaluation_summary.json",
+        "results/glassdoor_simplyhired_jobs_audit.json",
+        "results/external_validation.json",
+        "results/specification_surface.json"
+      ],
+      "status": "observed",
+      "caption": "Measured results and explicit claim boundaries for manuscript development.",
+      "alt_text": ""
+    },
+    {
+      "id": "report-artifact-inventory",
+      "kind": "report",
+      "files": [
+        "artifacts/ARTIFACT_INVENTORY.md"
+      ],
+      "source_inputs": [
+        "results/research_evaluation_summary.json",
+        "results/glassdoor_simplyhired_jobs_audit.json"
+      ],
+      "status": "derived",
+      "caption": "Inventory, captions, and alt text for generated publication artifacts.",
+      "alt_text": ""
+    },
+    {
+      "id": "readme-publication-artifacts",
+      "kind": "documentation",
+      "files": [
+        "artifacts/README.md"
+      ],
+      "source_inputs": [
+        "results/research_evaluation_summary.json",
+        "results/glassdoor_simplyhired_jobs_audit.json"
+      ],
+      "status": "derived",
+      "caption": "Rebuild command and data-use boundary.",
+      "alt_text": ""
+    },
+    {
+      "id": "report-artifact-validation",
+      "kind": "validation",
+      "files": [
+        "artifacts/VALIDATION_REPORT.json"
+      ],
+      "source_inputs": [
+        "artifacts/manifest.json"
+      ],
+      "status": "observed",
+      "caption": "Executable publication artifact validation results.",
+      "alt_text": ""
+    }
+  ],
+  "outputs": [
+    {
+      "path": "artifacts/data/research_evaluation_summary.json",
+      "sha256": "fbc30805be9ef34ab548bbc0807d0bf51ae21e687eb560e490d69b47fd03185a",
+      "bytes": 688710
+    },
+    {
+      "path": "artifacts/data/glassdoor_simplyhired_jobs_audit.json",
+      "sha256": "ba1bf040d74e00495a557defb129797282077a579c278115ca1e5c7b5a867ac6",
+      "bytes": 3688
+    },
+    {
+      "path": "artifacts/data/claim_admissibility_benchmark.json",
+      "sha256": "66fb98ecc30f5090126731d0928da81eb824b83b2a089678dd67215371c6952c",
+      "bytes": 127510
+    },
+    {
+      "path": "artifacts/data/specification_surface.json",
+      "sha256": "73b1a5116f58801d26562ebbb5a530d255a3917cc2282fca7c2e904f3671ee3e",
+      "bytes": 978894
+    },
+    {
+      "path": "artifacts/data/external_validation.json",
+      "sha256": "3ee181b91f1981511e248a03d93ed0172750418b0c26e0c20cd73307781eabda",
+      "bytes": 41305
+    },
+    {
+      "path": "artifacts/data/themegraph_policy_2_7.json",
+      "sha256": "c80b34a097203f02f6e6a9ab2317bc20827d68dbbe1283f226f54a8b0e282f72",
+      "bytes": 22817
+    },
+    {
+      "path": "artifacts/tables/corpus_overview.csv",
+      "sha256": "8aa3c9f2fcbc9cca4206ec477fc589cf60ba584006b1800336b7540be6375f37",
+      "bytes": 833
+    },
+    {
+      "path": "artifacts/tables/corpus_overview.tex",
+      "sha256": "42bb52d5806890aea8048d39f7e9caad134bab1b25c2a6cad400af1822cc8119",
+      "bytes": 776
+    },
+    {
+      "path": "artifacts/tables/job_ads_quality.csv",
+      "sha256": "b97ea78ca550025783cf3e3530cd107cf1858e8635d80ecbef83e2e98407f856",
+      "bytes": 199
+    },
+    {
+      "path": "artifacts/tables/job_ads_quality.tex",
+      "sha256": "e3347db422af76276d811a33d61c4ee2d81edee2913b925e8672d5f215efe431",
+      "bytes": 477
+    },
+    {
+      "path": "artifacts/tables/threshold_sensitivity.csv",
+      "sha256": "94e55ae4a32205260c3d5a0bdd6405443bfc6f573be920e48f7d382260167ae4",
+      "bytes": 4281
+    },
+    {
+      "path": "artifacts/tables/threshold_sensitivity.tex",
+      "sha256": "6f35534680cdb30bcb0c3d6b855a4a201685e77528f1fcc50d588ab760f5bcaa",
+      "bytes": 1793
+    },
+    {
+      "path": "artifacts/tables/claim_admissibility_benchmark.csv",
+      "sha256": "2387a8a80ceadc48ffca2868505303cae63ce85d791da4e00c1c90aceff7914b",
+      "bytes": 2555
+    },
+    {
+      "path": "artifacts/tables/claim_admissibility_benchmark.tex",
+      "sha256": "e9f35974fb0271ecd5e62f3ea0dffd38454131d5fad0df6c028ae76edbdf74fd",
+      "bytes": 2619
+    },
+    {
+      "path": "artifacts/tables/contract_properties.csv",
+      "sha256": "020ed1186a5efe116f3788a7ea5375d2ecc235909ad84e71dc0d98ff6c1a7f5f",
+      "bytes": 954
+    },
+    {
+      "path": "artifacts/tables/contract_properties.tex",
+      "sha256": "ad315a7733d25378b19a9163b9a09ce2088ac920dfae1a4a1dedce347221845a",
+      "bytes": 565
+    },
+    {
+      "path": "artifacts/tables/policy_lint.csv",
+      "sha256": "33ef68ffbc5962fac7e2683e492bc09b1f2a5fbfdbd4c773a1f47f81e374ce97",
+      "bytes": 735
+    },
+    {
+      "path": "artifacts/tables/policy_lint.tex",
+      "sha256": "de9b555fb07e4b0596701d513b8deebbce53fa3f55c1e248c9143ac81afa989d",
+      "bytes": 1191
+    },
+    {
+      "path": "artifacts/tables/controlled_duplication_stress.csv",
+      "sha256": "db64941c22e5d7f313f886730456e70f1c231b61f3b1f85c183d84cdfc9e73ce",
+      "bytes": 415
+    },
+    {
+      "path": "artifacts/tables/controlled_duplication_stress.tex",
+      "sha256": "5a1fb870c86dbede15ac0e09778b33878984bab1868af59e72c15fef861edcb3",
+      "bytes": 371
+    },
+    {
+      "path": "artifacts/tables/external_validation.csv",
+      "sha256": "700cea2523f0c5b99a2761cb80588fec5410c2a06997278432a6cd2abbba38b1",
+      "bytes": 4238
+    },
+    {
+      "path": "artifacts/tables/external_validation.tex",
+      "sha256": "e90e0d94822cf28a50811649095ed3eb5dec520d7aeee9c52e2f46ee5bdc667a",
+      "bytes": 3649
+    },
+    {
+      "path": "artifacts/tables/specification_surface.csv",
+      "sha256": "424ce0504dd58a7aa9c785c9aae19924b1b6736640a71d4cc6791553b174fe89",
+      "bytes": 735
+    },
+    {
+      "path": "artifacts/tables/specification_surface.tex",
+      "sha256": "2d175d9c2ebbe3bcf3c3871da2fcdb1c6f3fb9413c962ff933a6159d07112c68",
+      "bytes": 944
+    },
+    {
+      "path": "artifacts/tables/manuscript_statistics.tex",
+      "sha256": "b613497c96c67591ac87564ec519a69b681098ee739e01eeb4e9b58024e43852",
+      "bytes": 263
+    },
+    {
+      "path": "artifacts/figures/job_ads_quality.pdf",
+      "sha256": "43c26ae16f6d87b9f6e6c87b54b6fff8d8c290d79f892b64c893c2b4a54bcbee",
+      "bytes": 26550
+    },
+    {
+      "path": "artifacts/figures/job_ads_quality.svg",
+      "sha256": "bd2cf680c0f88e08867a79662a8a08d65cda6067983fa296cb565104b0ce8890",
+      "bytes": 61275
+    },
+    {
+      "path": "artifacts/figures/job_ads_quality.png",
+      "sha256": "c85a61883cc7be9fb75e9153b1f23d705526eebf25400d28d543b7a12c8ee795",
+      "bytes": 172479
+    },
+    {
+      "path": "artifacts/figures/cross_corpus_structure.pdf",
+      "sha256": "570c7ffa45d9e1fcb04f00709493ea69414c3c4884961009738bc9b3ae18a3e5",
+      "bytes": 25098
+    },
+    {
+      "path": "artifacts/figures/cross_corpus_structure.svg",
+      "sha256": "b9644035c3b812e20c443cdc842254307cf5f78895a0fa2751cc4953eac8a790",
+      "bytes": 73054
+    },
+    {
+      "path": "artifacts/figures/cross_corpus_structure.png",
+      "sha256": "be10f50ddd76c316cf7ce450b21cdc585769ba4df09be78313fe6865330cc84d",
+      "bytes": 203796
+    },
+    {
+      "path": "artifacts/figures/threshold_sensitivity.pdf",
+      "sha256": "3d579aaa821d4d49177882eadf680e0f8229550dd5b9f2dc711d45e146b75e75",
+      "bytes": 31047
+    },
+    {
+      "path": "artifacts/figures/threshold_sensitivity.svg",
+      "sha256": "719825a93602b32d3e5473b260d4bc2d85b92cd02b35bca480139560214c1f72",
+      "bytes": 88662
+    },
+    {
+      "path": "artifacts/figures/threshold_sensitivity.png",
+      "sha256": "e86ad250b1e16bb612adeeef92ec28b3f7ca6d8fe17bd0fd65a94ecdf0a9b7e8",
+      "bytes": 243415
+    },
+    {
+      "path": "artifacts/figures/measured_performance.pdf",
+      "sha256": "ef33049b516d5493cdcaac5a177eef9b5f200d18eac49c66db925c37946d2dfd",
+      "bytes": 26895
+    },
+    {
+      "path": "artifacts/figures/measured_performance.svg",
+      "sha256": "fa02e7c35e1c555a64c2f76ebb954ce46b5702d76987b1359288d582dbf35172",
+      "bytes": 111023
+    },
+    {
+      "path": "artifacts/figures/measured_performance.png",
+      "sha256": "844c0a45afc4d30991d74410a0a71c99e5bbbcb7c6deb62edf6a8216e7f0e8e9",
+      "bytes": 214463
+    },
+    {
+      "path": "artifacts/figures/claim_admissibility_benchmark.pdf",
+      "sha256": "78ab95c57a9f6e61103b4b741f76c30de779a30fdccf9cc9e67c4f46bfbb0f51",
+      "bytes": 28163
+    },
+    {
+      "path": "artifacts/figures/claim_admissibility_benchmark.svg",
+      "sha256": "b856de860c7c1a450ff48723275a6bb5450b4623c0c7a6ac30f70ea8e09e5e60",
+      "bytes": 91230
+    },
+    {
+      "path": "artifacts/figures/claim_admissibility_benchmark.png",
+      "sha256": "687b7a703903905384dd60ebdd56d8ae34d5165bc97a3af47e681aa12ef3df01",
+      "bytes": 364736
+    },
+    {
+      "path": "artifacts/mappings/evidence_transition.pdf",
+      "sha256": "8d1fad0faea5eea5f2d3d0b92b46c0bf6944d6e1ae213c469e139f9650ed39ee",
+      "bytes": 24183
+    },
+    {
+      "path": "artifacts/mappings/evidence_transition.svg",
+      "sha256": "88705bc6fea6d1d53e4d93750f0e79d7f179d91b0075efb6fc5e165e8abd86e7",
+      "bytes": 68247
+    },
+    {
+      "path": "artifacts/mappings/evidence_transition.png",
+      "sha256": "dc62197ded298f19426c9e50e1b8cd65543690b39b5cb8659b155bda878ab652",
+      "bytes": 207408
+    },
+    {
+      "path": "artifacts/figures/specification_survival.pdf",
+      "sha256": "098a3bf3f5b04732dbe61ff3bfecaf289d47c21301fe764849b938f5958a346e",
+      "bytes": 29010
+    },
+    {
+      "path": "artifacts/figures/specification_survival.svg",
+      "sha256": "139721832f170e521230c3f697d53397dcbb3d53724c9a0a7808ce03a1d8a1b2",
+      "bytes": 82071
+    },
+    {
+      "path": "artifacts/figures/specification_survival.png",
+      "sha256": "7484dd33f8d25a712ac026e5109433cacdcefe4aff85e8adece951f7695cd916",
+      "bytes": 257526
+    },
+    {
+      "path": "artifacts/figures/external_validation.pdf",
+      "sha256": "134545d0edd0d84dac9c5cdee292d6c8e3620b02abb4ee9bae2df58785d2e610",
+      "bytes": 31575
+    },
+    {
+      "path": "artifacts/figures/external_validation.svg",
+      "sha256": "36a59f16ac37ff73e665afc41059d99af37fd200b3ff9629de7f2d5346e014e2",
+      "bytes": 104105
+    },
+    {
+      "path": "artifacts/figures/external_validation.png",
+      "sha256": "e192da313b2a9f63752c823ebb30f62f2eac36a406b7167df663fafed0da04b4",
+      "bytes": 330077
+    },
+    {
+      "path": "artifacts/mappings/claim_admissibility_observation_map.pdf",
+      "sha256": "348519c3eeb48da36051704574fe2cf8f229354c8a02a54af7e5f5bb1b40d931",
+      "bytes": 18450
+    },
+    {
+      "path": "artifacts/mappings/claim_admissibility_observation_map.svg",
+      "sha256": "8f79f08e8985d4e6b06486ca1025a0484c6ce3ef75015032b873bcd5b578f0d9",
+      "bytes": 45961
+    },
+    {
+      "path": "artifacts/mappings/claim_admissibility_observation_map.png",
+      "sha256": "3ec8145ca446db6f9d7c0619819341cd6507849db9ad17c9ef501cf91568da11",
+      "bytes": 179300
+    },
+    {
+      "path": "artifacts/mappings/empirical_artifact_pipeline.pdf",
+      "sha256": "cc32ba4754bab0f333a53ecc4c23d8b7136eedbb7df87e6bdf64d418b0ae0467",
+      "bytes": 25563
+    },
+    {
+      "path": "artifacts/mappings/empirical_artifact_pipeline.svg",
+      "sha256": "e9fd356768b37cc77ea406801c6a50c7226d5353f8ee3cfd0ee7f9f6810ce913",
+      "bytes": 80867
+    },
+    {
+      "path": "artifacts/mappings/empirical_artifact_pipeline.png",
+      "sha256": "8c8bf78ced1e28ba99dfaff16cbc2771d1896c68771886925e0d69c341fa1176",
+      "bytes": 238484
+    },
+    {
+      "path": "artifacts/mappings/themegraph_overview_architecture.pdf",
+      "sha256": "ee92624f26c715a769c005934d0797195053940b99ec88339d219d33191511d1",
+      "bytes": 40749
+    },
+    {
+      "path": "artifacts/mappings/themegraph_overview_architecture.svg",
+      "sha256": "82ca7d2a2f6390bbea07ea2ed0a493233514fd2d49ea889d03aa803638878c61",
+      "bytes": 145790
+    },
+    {
+      "path": "artifacts/mappings/themegraph_overview_architecture.png",
+      "sha256": "2f83f11d1b959f0cd7476ecf5c072c4eb402d1c09fc4578bf826d19032126f32",
+      "bytes": 508194
+    },
+    {
+      "path": "artifacts/mappings/epistemic_dependency_ladder.pdf",
+      "sha256": "01f450406254518a11f2f0bd1acde897b087f46eeb2b1b1efa196984eeff776d",
+      "bytes": 30843
+    },
+    {
+      "path": "artifacts/mappings/epistemic_dependency_ladder.svg",
+      "sha256": "6a7ee2d1a4a09d7800f7305598b624fb22cdee325c9a8a6b08ffa5214320896d",
+      "bytes": 75572
+    },
+    {
+      "path": "artifacts/mappings/epistemic_dependency_ladder.png",
+      "sha256": "90f044c1020194921ac4d3b80eb6069e63a6fa1246ffd51b661f146fa7f78d80",
+      "bytes": 201417
+    },
+    {
+      "path": "artifacts/mappings/contract_architecture.pdf",
+      "sha256": "d95a6272b653290858c2fda0c8551718d4b2ad01baf029dde5c39560e07a7e5c",
+      "bytes": 31102
+    },
+    {
+      "path": "artifacts/mappings/contract_architecture.svg",
+      "sha256": "47eca02fd06cfe6a6d1125b2ba52677e146574665f3f48b040c1669248e68aef",
+      "bytes": 83993
+    },
+    {
+      "path": "artifacts/mappings/contract_architecture.png",
+      "sha256": "f6442fd21b844ee1ce3f41da7731ae0b6d1276396a76ba5cd592346cfd15c1fe",
+      "bytes": 283714
+    },
+    {
+      "path": "artifacts/figures/contract_properties.pdf",
+      "sha256": "2e2c6a60ae0ee53d8e1b3461aed82378e5ce8918c967d58bae2cb6855f7cd5ec",
+      "bytes": 29401
+    },
+    {
+      "path": "artifacts/figures/contract_properties.svg",
+      "sha256": "72bd2ea4f6ecde6fc8048e34d8b42c1b3f40f826e7b42c1006e816c93e58591c",
+      "bytes": 139426
+    },
+    {
+      "path": "artifacts/figures/contract_properties.png",
+      "sha256": "78e7e04b40ececd664e6ce95a65e5b9a57e5b7f7bca0447a80e412d8ade31d3f",
+      "bytes": 521397
+    },
+    {
+      "path": "artifacts/figures/governance_state_triptych.pdf",
+      "sha256": "a06bea8066133c63ae71c66b066398dab30732909819d2190d89030e557ab209",
+      "bytes": 34756
+    },
+    {
+      "path": "artifacts/figures/governance_state_triptych.svg",
+      "sha256": "e1a360ee8c12e10882ff017d5e49bd9bf984ed1d07cb0958eaf35f956de66b33",
+      "bytes": 89274
+    },
+    {
+      "path": "artifacts/figures/governance_state_triptych.png",
+      "sha256": "500b14ee7e199ffa2945db2425fa2b67698cce756794d137715b0789b9ad7734",
+      "bytes": 289153
+    },
+    {
+      "path": "artifacts/mappings/governed_inspector_walkthrough.pdf",
+      "sha256": "bdfd0b72e98e46ace511410821039adedebc891fad7ef718203e0c5639024122",
+      "bytes": 25822
+    },
+    {
+      "path": "artifacts/mappings/governed_inspector_walkthrough.svg",
+      "sha256": "442b21cd128fa22476904317be5106678ac5b94834f49ce1a7af54135919dbe4",
+      "bytes": 86090
+    },
+    {
+      "path": "artifacts/mappings/governed_inspector_walkthrough.png",
+      "sha256": "95e46fd7b27dd25738b35b792e90129c4bd07696dd87d5fd911e49e1a091d1ef",
+      "bytes": 284219
+    },
+    {
+      "path": "artifacts/tables/policy_lint_mutations.csv",
+      "sha256": "115dcbae00d2298a62aebec610a79536e2e884c8a073240819946a08c11d2719",
+      "bytes": 1819
+    },
+    {
+      "path": "artifacts/tables/policy_lint_mutation_families.csv",
+      "sha256": "3917ad03bcf2ad7a53cca470fce8d83a34cb886fe3ff14d07b2c43148e865ff8",
+      "bytes": 524
+    },
+    {
+      "path": "artifacts/tables/policy_lint_mutations.tex",
+      "sha256": "ef7674fe44488feec54cb22664d099f9b79d8232f8df9b716e4f679c35591f06",
+      "bytes": 1009
+    },
+    {
+      "path": "artifacts/figures/policy_lint_mutations.pdf",
+      "sha256": "32ae8b1a178c9c336ba3398016a6904346bcc3cbb91fa1015d68444eb21a96cd",
+      "bytes": 28862
+    },
+    {
+      "path": "artifacts/figures/policy_lint_mutations.svg",
+      "sha256": "e7a9d1bf54d0dc4988200a14ee2ac8137b96d8173862030d9312b86adbefd0a2",
+      "bytes": 149642
+    },
+    {
+      "path": "artifacts/figures/policy_lint_mutations.png",
+      "sha256": "1d09e18a1c4eb45f16d6f6ee21c81d622f7290145f3a0780e4bc42c99f3ca7f7",
+      "bytes": 749454
+    },
+    {
+      "path": "artifacts/tables/representation_enforcement.csv",
+      "sha256": "1b92d2dc03c5b016595e0f05e13327ef7ae1b70cf5296bad8da1c4b9ed5e8c9f",
+      "bytes": 698
+    },
+    {
+      "path": "artifacts/tables/representation_enforcement.tex",
+      "sha256": "dec251ed4b4d6d033d8c960f438cff30a38910c495d58b9e53fd84799bb40951",
+      "bytes": 1308
+    },
+    {
+      "path": "artifacts/tables/architecture_enforcement_ablation.csv",
+      "sha256": "131047e6642728c5f727fba057ca38a712a5871138b1afcc861ccecd9fda525c",
+      "bytes": 283
+    },
+    {
+      "path": "artifacts/tables/architecture_enforcement_ablation.tex",
+      "sha256": "381ce35031ce39a2ef73bd0ca98990ac80887363b06e153250bd7242b9847f72",
+      "bytes": 1149
+    },
+    {
+      "path": "artifacts/tables/contract_field_necessity.csv",
+      "sha256": "767288eeccc10dc955420bf29c97d483242fe59e0c013e3cfca525b7e278058f",
+      "bytes": 1345
+    },
+    {
+      "path": "artifacts/tables/contract_field_necessity.tex",
+      "sha256": "3932fee6450ae9f09494355e81634745c89c97dba0afdf7d7689850abca4ad9e",
+      "bytes": 1693
+    },
+    {
+      "path": "artifacts/tables/policy_claim_types.csv",
+      "sha256": "fd8c50210e6b649787ab1121fcbcd0d9e9153ab09342c8fca01c40b377ffe475",
+      "bytes": 3171
+    },
+    {
+      "path": "artifacts/tables/policy_claim_types.tex",
+      "sha256": "d689fb4e8077d697b5130532295a39676146d4ee5fcce30dfe98d84f6184390a",
+      "bytes": 2602
+    },
+    {
+      "path": "artifacts/tables/policy_claim_consequences.tex",
+      "sha256": "a503c6d0417672f9447a7741b06d7561f5995c9d790ae11df11441398fa7cce0",
+      "bytes": 2267
+    },
+    {
+      "path": "artifacts/figures/inspector_policy27_screenshot.png",
+      "sha256": "267bf0e7ae181a0b440f238bbcc329b3abc37dc716ee71d9572bd497e5f173cf",
+      "bytes": 89199
+    },
+    {
+      "path": "artifacts/figures/inspector_policy27_composite.pdf",
+      "sha256": "d41ded06e8a4cabebb422f1106a9d3e1ecb27678c2bc55428f4275df7e8efef1",
+      "bytes": 82281
+    },
+    {
+      "path": "artifacts/figures/inspector_policy27_composite.svg",
+      "sha256": "d8af7c5091918ff19159ece13f6c8ccb6960fe42c996a2004268a86e9ce71310",
+      "bytes": 143189
+    },
+    {
+      "path": "artifacts/figures/inspector_policy27_composite.png",
+      "sha256": "d38bc23e40851af8277c0bdb34c8ee179469042f1d926f5639f948358b325c6d",
+      "bytes": 331686
+    },
+    {
+      "path": "artifacts/figures/inspector_policy27_decision_crop.png",
+      "sha256": "2932e523206ab00c958118fb50c0bd2d3f6cdde49edfccfbdd3e00a2ca136ad8",
+      "bytes": 19683
+    },
+    {
+      "path": "artifacts/figures/inspector_policy27_evidence_crop.png",
+      "sha256": "51a6b92e0d2cb707776af24cdb3e07c640718d9410d030b109ca9f4d1831e6df",
+      "bytes": 36629
+    },
+    {
+      "path": "artifacts/figures/inspector_policy27_encoding_crop.png",
+      "sha256": "172155e84d336999c811029b6e79c0016c12bfdd2171750d9a087ac2d3591eba",
+      "bytes": 26263
+    },
+    {
+      "path": "artifacts/tables/edge_distributions.csv",
+      "sha256": "08a78a51dc56631278d6d4a609a3c894ffb9939c80773945b91372d0db050514",
+      "bytes": 941
+    },
+    {
+      "path": "artifacts/tables/edge_distributions.tex",
+      "sha256": "ca5bcdcb116a67083581ade9bcd733f26c9a04d18adcb79c0dd9d72b6d0d2776",
+      "bytes": 729
+    },
+    {
+      "path": "artifacts/figures/edge_distributions.pdf",
+      "sha256": "1fe64660e8f8f2db9c1dcc291a35bc23ae7b73f2679ebeef641ba3f1c1492675",
+      "bytes": 29544
+    },
+    {
+      "path": "artifacts/figures/edge_distributions.svg",
+      "sha256": "7b7044211c34de50d57b029d51b8c6a922acfbbe5ab5771ff21b875a25158d9a",
+      "bytes": 77777
+    },
+    {
+      "path": "artifacts/figures/edge_distributions.png",
+      "sha256": "2ea6d0df13218dae19146ea0217b45204c09d261b9c5ba708f395ecdfc60455c",
+      "bytes": 179589
+    },
+    {
+      "path": "artifacts/EMPIRICAL_RESULTS.md",
+      "sha256": "ec72b5c4b23947186a9e56f65f169b2525765d27975a8630f7b1acaa9a34ab96",
+      "bytes": 5000
+    },
+    {
+      "path": "artifacts/ARTIFACT_INVENTORY.md",
+      "sha256": "042a4e4b0dd9bf3e93b54c0d8899a6c6d492a42eff106bf0236777303f374156",
+      "bytes": 18605
+    },
+    {
+      "path": "artifacts/README.md",
+      "sha256": "e0f19bbcee114be6dcf503f39487d194379293c17206e625edc07705edb71669",
+      "bytes": 439
+    },
+    {
+      "path": "artifacts/VALIDATION_REPORT.json",
+      "sha256": "83c4f78be6888c96b8f3cffe66e7d1d20a10296c8438804ab18cc6cd3e1b4417",
+      "bytes": 793
+    }
+  ]
+}

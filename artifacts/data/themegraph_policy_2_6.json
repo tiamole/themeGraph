@@ -1,0 +1,500 @@
+{
+  "schema_version": "1.0",
+  "policy_version": "2.6.0",
+  "decision_order": [
+    "evidence-and-policy-admissibility",
+    "provenance",
+    "qualification-and-conflict-gates"
+  ],
+  "decisions": [
+    "ADMIT",
+    "QUALIFY",
+    "REFUSE"
+  ],
+  "claims": [
+    {
+      "claim": "lexical-association",
+      "claim_family": "observational",
+      "scope_semantics": "symmetric",
+      "object_signatures": [
+        [
+          "term",
+          "term"
+        ]
+      ],
+      "evidence_predicates": [
+        {
+          "predicate_id": "construct-matched-support",
+          "channels": [
+            "co-occurrence"
+          ],
+          "target": "lexical-association",
+          "required_metadata": [],
+          "requires_approved_adjudication": false,
+          "description": "co-occurrence"
+        }
+      ],
+      "encoding": "undirected-link",
+      "statement": "The terms have a thresholded lexical association under this configuration.",
+      "remediation": "Supply within-unit co-occurrence evidence with complete lineage.",
+      "on_counterevidence": "qualify-conflict-when-support-matches",
+      "fallback_preferences": [],
+      "requires_uncertainty": false,
+      "requires_independence": false,
+      "refused_export_blocked": true
+    },
+    {
+      "claim": "asymmetric-conditional",
+      "claim_family": "observational",
+      "scope_semantics": "ordered",
+      "object_signatures": [
+        [
+          "term",
+          "term"
+        ]
+      ],
+      "evidence_predicates": [
+        {
+          "predicate_id": "construct-matched-support",
+          "channels": [
+            "co-occurrence"
+          ],
+          "target": "asymmetric-conditional",
+          "required_metadata": [],
+          "requires_approved_adjudication": false,
+          "description": "co-occurrence"
+        }
+      ],
+      "encoding": "conditional-asymmetry-glyph",
+      "statement": "The conditional confidence differs by orientation under this configuration.",
+      "remediation": "Supply a directional evidence channel to request semantic direction.",
+      "on_counterevidence": "qualify-conflict-when-support-matches",
+      "fallback_preferences": [
+        "lexical-association"
+      ],
+      "requires_uncertainty": false,
+      "requires_independence": false,
+      "refused_export_blocked": true
+    },
+    {
+      "claim": "sentential-paraphrase-equivalence",
+      "claim_family": "semantic-relational",
+      "scope_semantics": "symmetric",
+      "object_signatures": [
+        [
+          "sentence",
+          "sentence"
+        ]
+      ],
+      "evidence_predicates": [
+        {
+          "predicate_id": "construct-matched-support",
+          "channels": [
+            "annotation-semantic-equivalence"
+          ],
+          "target": "sentential-paraphrase-equivalence",
+          "required_metadata": [],
+          "requires_approved_adjudication": false,
+          "description": "annotation-semantic-equivalence"
+        }
+      ],
+      "encoding": "undirected-link",
+      "statement": "The sentence pair is paraphrase-equivalent under the declared annotation protocol.",
+      "remediation": "Supply a construct-matched sentential paraphrase annotation.",
+      "on_counterevidence": "qualify-conflict-when-support-matches",
+      "fallback_preferences": [
+        "lexical-association"
+      ],
+      "requires_uncertainty": false,
+      "requires_independence": false,
+      "refused_export_blocked": true
+    },
+    {
+      "claim": "sentential-non-paraphrase",
+      "claim_family": "semantic-relational",
+      "scope_semantics": "symmetric",
+      "object_signatures": [
+        [
+          "sentence",
+          "sentence"
+        ]
+      ],
+      "evidence_predicates": [
+        {
+          "predicate_id": "construct-matched-support",
+          "channels": [
+            "annotation-semantic-equivalence"
+          ],
+          "target": "sentential-non-paraphrase",
+          "required_metadata": [],
+          "requires_approved_adjudication": false,
+          "description": "annotation-semantic-equivalence"
+        }
+      ],
+      "encoding": "no-relation",
+      "statement": "The sentence pair was not judged a paraphrase under the declared annotation protocol.",
+      "remediation": "Supply a construct-matched negative sentential paraphrase annotation.",
+      "on_counterevidence": "qualify-conflict-when-support-matches",
+      "fallback_preferences": [],
+      "requires_uncertainty": false,
+      "requires_independence": false,
+      "refused_export_blocked": true
+    },
+    {
+      "claim": "textual-entailment",
+      "claim_family": "semantic-relational",
+      "scope_semantics": "ordered",
+      "object_signatures": [
+        [
+          "sentence",
+          "sentence"
+        ]
+      ],
+      "evidence_predicates": [
+        {
+          "predicate_id": "construct-matched-support",
+          "channels": [
+            "annotation-entailment"
+          ],
+          "target": "textual-entailment",
+          "required_metadata": [],
+          "requires_approved_adjudication": false,
+          "description": "annotation-entailment"
+        }
+      ],
+      "encoding": "directed-arrow",
+      "statement": "The premise entails the hypothesis under the declared annotation protocol.",
+      "remediation": "Supply a construct-matched directional entailment annotation.",
+      "on_counterevidence": "qualify-conflict-when-support-matches",
+      "fallback_preferences": [
+        "lexical-association"
+      ],
+      "requires_uncertainty": false,
+      "requires_independence": false,
+      "refused_export_blocked": true
+    },
+    {
+      "claim": "event-temporal-precedence",
+      "claim_family": "semantic-relational",
+      "scope_semantics": "ordered",
+      "object_signatures": [
+        [
+          "event",
+          "event"
+        ]
+      ],
+      "evidence_predicates": [
+        {
+          "predicate_id": "construct-matched-support",
+          "channels": [
+            "event-order"
+          ],
+          "target": "event-temporal-precedence",
+          "required_metadata": [],
+          "requires_approved_adjudication": false,
+          "description": "event-order"
+        },
+        {
+          "predicate_id": "construct-matched-support",
+          "channels": [
+            "annotation-temporal-precedence"
+          ],
+          "target": "event-temporal-precedence",
+          "required_metadata": [],
+          "requires_approved_adjudication": false,
+          "description": "annotation-temporal-precedence"
+        }
+      ],
+      "encoding": "directed-arrow",
+      "statement": "The source precedes the target in the declared temporal observation.",
+      "remediation": "Supply observed event order or a construct-matched temporal annotation.",
+      "on_counterevidence": "qualify-conflict-when-support-matches",
+      "fallback_preferences": [
+        "lexical-association"
+      ],
+      "requires_uncertainty": false,
+      "requires_independence": false,
+      "refused_export_blocked": true
+    },
+    {
+      "claim": "concept-prerequisite",
+      "claim_family": "semantic-relational",
+      "scope_semantics": "ordered",
+      "object_signatures": [
+        [
+          "concept",
+          "concept"
+        ]
+      ],
+      "evidence_predicates": [
+        {
+          "predicate_id": "construct-matched-support",
+          "channels": [
+            "prerequisite-reference"
+          ],
+          "target": "concept-prerequisite",
+          "required_metadata": [],
+          "requires_approved_adjudication": false,
+          "description": "prerequisite-reference"
+        },
+        {
+          "predicate_id": "construct-matched-support",
+          "channels": [
+            "annotation-prerequisite"
+          ],
+          "target": "concept-prerequisite",
+          "required_metadata": [],
+          "requires_approved_adjudication": false,
+          "description": "annotation-prerequisite"
+        }
+      ],
+      "encoding": "directed-arrow",
+      "statement": "The source concept is an explicit prerequisite for the target concept.",
+      "remediation": "Supply a concept-prerequisite reference or construct-matched annotation.",
+      "on_counterevidence": "qualify-conflict-when-support-matches",
+      "fallback_preferences": [
+        "lexical-association"
+      ],
+      "requires_uncertainty": false,
+      "requires_independence": false,
+      "refused_export_blocked": true
+    },
+    {
+      "claim": "causal-influence",
+      "claim_family": "causal",
+      "scope_semantics": "ordered",
+      "object_signatures": [
+        [
+          "intervention",
+          "outcome"
+        ]
+      ],
+      "evidence_predicates": [
+        {
+          "predicate_id": "causal-identification-record",
+          "channels": [
+            "causal-identification"
+          ],
+          "target": "causal-influence",
+          "required_metadata": [
+            "method",
+            "assumptions",
+            "estimand",
+            "study_design",
+            "diagnostics"
+          ],
+          "requires_approved_adjudication": true,
+          "description": "causal identification with named design, method, assumptions, target estimand, and diagnostics"
+        }
+      ],
+      "encoding": "directed-arrow",
+      "statement": "The declared identifying design and assumptions support a causal influence claim.",
+      "remediation": "Supply a causal-identification design with a named method, assumptions, estimand, and diagnostics; intervention may be the design subtype.",
+      "on_counterevidence": "qualify-conflict-when-support-matches",
+      "fallback_preferences": [
+        "lexical-association"
+      ],
+      "requires_uncertainty": false,
+      "requires_independence": false,
+      "refused_export_blocked": true
+    },
+    {
+      "claim": "theme",
+      "claim_family": "interpretive",
+      "scope_semantics": "unscoped",
+      "object_signatures": [
+        [
+          "analysis",
+          "theme-candidate"
+        ]
+      ],
+      "evidence_predicates": [
+        {
+          "predicate_id": "traceable-qualitative-interpretation",
+          "channels": [
+            "qualitative-interpretation"
+          ],
+          "target": "theme",
+          "required_metadata": [
+            "method",
+            "analytic_traceability",
+            "reflexive_documentation",
+            "theory_alignment"
+          ],
+          "requires_approved_adjudication": true,
+          "description": "qualitative interpretation with method, analytic traceability, reflexive documentation, and theory alignment"
+        }
+      ],
+      "encoding": "no-relation",
+      "statement": "A researcher interpreted the candidate as a theme under the declared qualitative method.",
+      "remediation": "Supply reflexive interpretation, theoretical coherence, and analytic traceability.",
+      "on_counterevidence": "qualify-conflict-when-support-matches",
+      "fallback_preferences": [],
+      "requires_uncertainty": false,
+      "requires_independence": false,
+      "refused_export_blocked": true
+    },
+    {
+      "claim": "analyst-benefit",
+      "claim_family": "human-outcome",
+      "scope_semantics": "unscoped",
+      "object_signatures": [
+        [
+          "interface",
+          "analyst-population"
+        ]
+      ],
+      "evidence_predicates": [
+        {
+          "predicate_id": "identified-analyst-benefit-evaluation",
+          "channels": [
+            "human-evaluation"
+          ],
+          "target": "analyst-benefit",
+          "required_metadata": [
+            "outcome",
+            "measure",
+            "study_design",
+            "comparator",
+            "population",
+            "estimand"
+          ],
+          "requires_approved_adjudication": true,
+          "description": "human evaluation with outcome, measure, study design, comparator, population, and estimand"
+        }
+      ],
+      "encoding": "no-relation",
+      "statement": "The evaluated interface supports the named analyst outcome.",
+      "remediation": "Supply a human evaluation with a prespecified outcome, valid measure, study design, comparator, target population, and estimand.",
+      "on_counterevidence": "qualify-conflict-when-support-matches",
+      "fallback_preferences": [],
+      "requires_uncertainty": false,
+      "requires_independence": false,
+      "refused_export_blocked": true
+    },
+    {
+      "claim": "specification-persistence",
+      "claim_family": "statistical",
+      "scope_semantics": "unscoped",
+      "object_signatures": [
+        [
+          "result",
+          "specification-surface"
+        ]
+      ],
+      "evidence_predicates": [
+        {
+          "predicate_id": "construct-matched-support",
+          "channels": [
+            "specification-surface"
+          ],
+          "target": "specification-persistence",
+          "required_metadata": [],
+          "requires_approved_adjudication": false,
+          "description": "specification-surface"
+        }
+      ],
+      "encoding": "no-relation",
+      "statement": "The result has the reported descriptive frequency across the declared specification surface.",
+      "remediation": "Evaluate the result across a declared specification surface.",
+      "on_counterevidence": "qualify-conflict-when-support-matches",
+      "fallback_preferences": [],
+      "requires_uncertainty": false,
+      "requires_independence": false,
+      "refused_export_blocked": true
+    },
+    {
+      "claim": "meets-specification-persistence-gate",
+      "claim_family": "statistical",
+      "scope_semantics": "unscoped",
+      "object_signatures": [
+        [
+          "result",
+          "specification-surface"
+        ]
+      ],
+      "evidence_predicates": [
+        {
+          "predicate_id": "construct-matched-support",
+          "channels": [
+            "specification-surface"
+          ],
+          "target": "meets-specification-persistence-gate",
+          "required_metadata": [],
+          "requires_approved_adjudication": false,
+          "description": "specification-surface"
+        }
+      ],
+      "encoding": "no-relation",
+      "statement": "The result meets the declared specification-persistence gate.",
+      "remediation": "Measure persistence across the declared surface and meet the declared gate.",
+      "on_counterevidence": "qualify-conflict-when-support-matches",
+      "fallback_preferences": [],
+      "requires_uncertainty": false,
+      "requires_independence": false,
+      "refused_export_blocked": true
+    },
+    {
+      "claim": "bootstrap-persistence-under-declared-scheme",
+      "claim_family": "statistical",
+      "scope_semantics": "unscoped",
+      "object_signatures": [
+        [
+          "result",
+          "resampling-scheme"
+        ]
+      ],
+      "evidence_predicates": [
+        {
+          "predicate_id": "construct-matched-support",
+          "channels": [
+            "cluster-bootstrap"
+          ],
+          "target": "bootstrap-persistence-under-declared-scheme",
+          "required_metadata": [],
+          "requires_approved_adjudication": false,
+          "description": "cluster-bootstrap"
+        }
+      ],
+      "encoding": "no-relation",
+      "statement": "The result has the reported persistence under the declared resampling scheme.",
+      "remediation": "Supply a declared resampling scheme that repeats the extraction pipeline.",
+      "on_counterevidence": "qualify-conflict-when-support-matches",
+      "fallback_preferences": [],
+      "requires_uncertainty": false,
+      "requires_independence": false,
+      "refused_export_blocked": true
+    },
+    {
+      "claim": "statistical-stability",
+      "claim_family": "statistical",
+      "scope_semantics": "unscoped",
+      "object_signatures": [
+        [
+          "result",
+          "resampling-scheme"
+        ]
+      ],
+      "evidence_predicates": [
+        {
+          "predicate_id": "construct-matched-support",
+          "channels": [
+            "cluster-bootstrap"
+          ],
+          "target": "statistical-stability",
+          "required_metadata": [],
+          "requires_approved_adjudication": false,
+          "description": "cluster-bootstrap"
+        }
+      ],
+      "encoding": "no-relation",
+      "statement": "The result meets the declared cluster-bootstrap stability criterion.",
+      "remediation": "Supply a dependence-aware cluster bootstrap that repeats the extraction pipeline.",
+      "on_counterevidence": "qualify-conflict-when-support-matches",
+      "fallback_preferences": [],
+      "requires_uncertainty": true,
+      "requires_independence": true,
+      "refused_export_blocked": true
+    }
+  ]
+}

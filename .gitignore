@@ -1,0 +1,25 @@
+.venv/
+.venv-1/
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+*.pyc
+*.egg-info/
+
+# LaTeX build artifacts (regenerated from .tex sources)
+*.aux
+*.bbl
+*.blg
+*.log
+*.out
+*.synctex.gz
+*.fdb_latexmk
+*.fls
+
+# Iterative LLM revision prompts used to refine the codebase/manuscript
+# (not part of the reproducible research artifact; kept out of the public repo)
+*_PROMPT.md
+*_Prompt.md
+
+# Future-studies research design drafts (not yet a public manuscript)
+THEMEGRAPH_HUMAN_CONSEQUENCE_EVALUATION_RESEARCH_DESIGNS.*

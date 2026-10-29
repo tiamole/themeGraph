@@ -1,0 +1,103 @@
+{
+  "source": "C:\\Users\\17067\\OneDrive - USU\\Documents\\001 Active Project Files\\Graph of Thoughts in Themes\\glassdoor_simplyhired_jobs_data.xlsx",
+  "row_count": 18870,
+  "columns": [
+    "Job Title",
+    "Company Name",
+    "Location",
+    "Description"
+  ],
+  "expected_columns": [
+    "Job Title",
+    "Company Name",
+    "Location",
+    "Description",
+    "Skills"
+  ],
+  "missing_expected_columns": [
+    "Skills"
+  ],
+  "null_counts": {
+    "Job Title": 0,
+    "Company Name": 10,
+    "Location": 4,
+    "Description": 1
+  },
+  "null_rates": {
+    "Job Title": 0.0,
+    "Company Name": 0.0005299417064122947,
+    "Location": 0.00021197668256491787,
+    "Description": 5.299417064122947e-05
+  },
+  "whitespace_changed_counts": {
+    "Job Title": 0,
+    "Company Name": 2905,
+    "Location": 2905,
+    "Description": 73
+  },
+  "unique_counts": {
+    "Job Title": 3334,
+    "Company Name": 3656,
+    "Location": 1529,
+    "Description": 5320
+  },
+  "exact_duplicate_row_instances": 12349,
+  "exact_duplicate_description_instances": 13550,
+  "description_skills_comparable": false,
+  "description_skills_equal_count": null,
+  "description_skills_equal_rate": null,
+  "source_platform_column_present": false,
+  "source_platform_columns": [],
+  "text_length_summary": {
+    "Description": {
+      "minimum": 0,
+      "median": 4088.0,
+      "p95": 7884,
+      "maximum": 32767
+    }
+  },
+  "provenance_status": "author_attested_file_supported_in_part",
+  "redistribution_status": "planned_not_yet_verified_by_public_deposit",
+  "dataset_metadata": {
+    "schema_version": "1.0",
+    "dataset_title": "Glassdoor and SimplyHired Jobs Data",
+    "data_file": "glassdoor_simplyhired_jobs_data.xlsx",
+    "data_file_sha256": "5c0592b9ed993a7969fbc5e87852ed4da160eaaabf69c7bd10f93567bcca65cb",
+    "provenance_basis": "author_attestation_and_embedded_workbook_metadata",
+    "collector": "Taiwo Raphael Feyijimi",
+    "collector_role": "first author",
+    "source_platforms": [
+      "Glassdoor",
+      "SimplyHired"
+    ],
+    "collection_method": "web scraping",
+    "temporal_coverage": "June 2023",
+    "temporal_design": "single cross-sectional collection",
+    "exact_collection_date_available": false,
+    "platform_permission_documented": false,
+    "platform_terms_at_collection_archived": false,
+    "author_statement": "The first author reports collecting the combined dataset from Glassdoor and SimplyHired during one cross-sectional scrape in June 2023 without platform permission.",
+    "embedded_workbook_metadata": {
+      "creator": "Taiwo Raphael Feyijimi",
+      "last_modified_by": "Taiwo Raphael Feyijimi",
+      "created": "2023-10-31T14:53:01Z",
+      "modified": "2023-10-31T16:21:42Z"
+    },
+    "provenance_status": "author_attested_file_supported_in_part",
+    "public_release_status": "planned",
+    "intended_public_release_license": "CC BY 4.0",
+    "public_release_url": null,
+    "redistribution_status": "planned_not_yet_verified_by_public_deposit",
+    "rights_scope_note": "The intended CC BY 4.0 release covers rights the dataset creator is able to license. Rights in third-party job-listing text and historical platform terms have not been independently evaluated here.",
+    "sampling_frame_status": "not_documented",
+    "source_platform_label_per_row": false,
+    "analysis_scope": "descriptive corpus structure and method stress testing",
+    "prohibited_inferences_without_additional_evidence": [
+      "labor-market prevalence",
+      "hiring trends",
+      "platform comparisons",
+      "employer rankings",
+      "causal claims"
+    ]
+  }
+}

@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Inspectable directed evidence graph research prototype">
+  <title>ThemeGraph Inspector</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&amp;family=IBM+Plex+Sans:wght@400;500;600&amp;family=Source+Serif+4:opsz,wght@8..60,650&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="masthead">
+    <div>
+      <p class="eyebrow">Directed evidence graph workbench</p>
+      <h1>ThemeGraph Inspector</h1>
+    </div>
+    <p class="claim-warning">Structural candidates, not validated themes or evidence of human benefit.</p>
+  </header>
+
+  <main>
+    <section class="control-band" aria-labelledby="controls-heading">
+      <h2 id="controls-heading" class="sr-only">Analysis controls</h2>
+      <label class="corpus-control">Corpus
+        <select id="corpus-select"></select>
+      </label>
+      <label>Minimum confidence <output id="confidence-output" for="confidence">0.65</output>
+        <input id="confidence" type="range" min="0" max="1" value="0.65" step="0.01">
+      </label>
+      <label>Minimum lift <output id="lift-output" for="lift">1.05</output>
+        <input id="lift" type="range" min="0.5" max="3" value="1.05" step="0.05">
+      </label>
+      <label>Relation
+        <select id="relation-select"><option value="all">All relation types</option></select>
+      </label>
+      <label>Requested claim
+        <select id="claim-select"></select>
+      </label>
+      <label>Search
+        <input id="search" type="search" placeholder="Term or evidence text">
+      </label>
+      <button id="export-button" type="button" title="The active certificate governs this export">Export governed graph</button>
+      <button id="manifest-button" type="button">Export manifest</button>
+    </section>
+
+    <div id="status" class="status" role="status" aria-live="polite">Loading analysis...</div>
+
+    <section class="validation-workbench" aria-labelledby="validation-heading">
+      <div class="validation-heading">
+        <div>
+          <p class="eyebrow">External construct-matched policy stress test</p>
+          <h2 id="validation-heading">Evidence-to-claim walkthrough</h2>
+        </div>
+        <strong id="validation-count">Loading aggregate evidence...</strong>
+      </div>
+      <div class="walkthrough-tabs" role="tablist" aria-label="Evidence contract states">
+        <button type="button" role="tab" aria-selected="true" data-walkthrough="lexical">1 Lexical only</button>
+        <button type="button" role="tab" aria-selected="false" data-walkthrough="semantic">2 Semantic annotation</button>
+        <button type="button" role="tab" aria-selected="false" data-walkthrough="entailment">3 Directional entailment</button>
+        <button type="button" role="tab" aria-selected="false" data-walkthrough="prerequisite">4 Prerequisite</button>
+        <button type="button" role="tab" aria-selected="false" data-walkthrough="temporal">5 Temporal order</button>
+        <button type="button" role="tab" aria-selected="false" data-walkthrough="boundary">6 Construct boundary</button>
+      </div>
+      <div id="walkthrough-content" class="walkthrough-content" role="tabpanel"></div>
+    </section>
+
+    <section id="certificate-panel" class="certificate-panel" aria-label="Executable claim-admissibility contract"></section>
+
+    <section class="metric-band" aria-label="Current structural metrics">
+      <div><span>Documents</span><strong id="metric-documents">0</strong></div>
+      <div><span>Visible edges</span><strong id="metric-edges">0</strong></div>
+      <div><span id="metric-sccs-label">SCCs</span><strong id="metric-sccs">0</strong></div>
+      <div><span id="metric-nontrivial-label">Nontrivial SCCs</span><strong id="metric-nontrivial">0</strong></div>
+      <div><span id="metric-largest-label">Largest SCC</span><strong id="metric-largest">0</strong></div>
+      <div><span>Weak components</span><strong id="metric-weak">0</strong></div>
+      <div><span>No-SCC baseline</span><strong id="metric-singletons">0</strong></div>
+    </section>
+
+    <section class="workspace" aria-label="Graph analysis workspace">
+      <aside class="component-panel" aria-labelledby="components-heading">
+        <div class="panel-heading">
+          <div>
+            <p class="eyebrow">Overview</p>
+            <h2 id="components-heading">SCC cores</h2>
+          </div>
+          <span id="component-count" class="count-label">0 shown</span>
+        </div>
+        <ol id="component-list" class="component-list"></ol>
+      </aside>
+
+      <section class="graph-panel" aria-labelledby="graph-heading">
+        <div class="panel-heading">
+          <div>
+            <p id="graph-eyebrow" class="eyebrow">Governed representation</p>
+            <h2 id="graph-heading">Admissible overview</h2>
+          </div>
+          <div class="legend" aria-label="Graph legend">
+            <span><i class="legend-core"></i><span id="legend-core-label">Nontrivial SCC</span></span>
+            <span><i class="legend-single"></i>Singleton</span>
+            <span><i id="legend-relation-mark" class="legend-relation"></i><span id="legend-relation-label">Relation</span></span>
+          </div>
+        </div>
+        <svg id="graph-view" viewBox="0 0 900 520" role="img" aria-labelledby="graph-title graph-description">
+          <title id="graph-title">Condensation graph of filtered strongly connected components</title>
+          <desc id="graph-description">Components are labeled C1 onward. The selected claim certificate governs whether direction may be shown. Shape and text distinguish component types without relying on color.</desc>
+        </svg>
+        <p id="graph-note" class="graph-note">The view shows up to 32 largest components under the selected claim contract.</p>
+      </section>
+
+      <aside class="detail-panel" aria-labelledby="detail-heading">
+        <div class="panel-heading">
+          <div>
+            <p class="eyebrow">Details on demand</p>
+            <h2 id="detail-heading">Evidence</h2>
+          </div>
+        </div>
+        <div id="detail-content" class="detail-content">
+          <p>Select a component or relation to inspect its traceable source excerpts.</p>
+        </div>
+      </aside>
+    </section>
+
+    <section class="comparison-band" aria-labelledby="comparison-heading">
+      <div>
+        <p class="eyebrow">Adversarial comparison</p>
+        <h2 id="comparison-heading">Baseline comparison</h2>
+      </div>
+      <div id="comparison-content" class="comparison-grid"></div>
+    </section>
+
+    <section class="edge-section" aria-labelledby="edges-heading">
+      <div class="panel-heading">
+        <div>
+          <p class="eyebrow">Traceability ledger</p>
+          <h2 id="edges-heading">Directed relations</h2>
+        </div>
+        <span id="edge-count" class="count-label"></span>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th id="edge-source-heading">Term A</th><th id="edge-target-heading">Term B</th><th>Confidence</th><th>Lift</th><th>Support</th><th>Evidence</th></tr></thead>
+          <tbody id="edge-table"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span>Research prototype</span>
+    <span id="configuration-note">Configuration unavailable</span>
+  </footer>
+  <script src="app.js"></script>
+</body>
+</html>

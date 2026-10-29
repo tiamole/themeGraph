@@ -1,0 +1,59 @@
+{
+  "source": "electrical_engineering_job_ads_data.xlsx",
+  "row_count": 23377,
+  "columns": [
+    "Job Title",
+    "Company Name",
+    "Location",
+    "Description",
+    "Skills"
+  ],
+  "null_counts": {
+    "Job Title": 0,
+    "Company Name": 229,
+    "Location": 3,
+    "Description": 1,
+    "Skills": 1574
+  },
+  "null_rates": {
+    "Job Title": 0.0,
+    "Company Name": 0.009795953287419258,
+    "Location": 0.00012833126577405142,
+    "Description": 4.277708859135047e-05,
+    "Skills": 0.06733113744278564
+  },
+  "whitespace_changed_counts": {
+    "Job Title": 39,
+    "Company Name": 6682,
+    "Location": 6682,
+    "Description": 6512,
+    "Skills": 6506
+  },
+  "unique_counts": {
+    "Job Title": 13086,
+    "Company Name": 9549,
+    "Location": 7452,
+    "Description": 20567,
+    "Skills": 19833
+  },
+  "exact_duplicate_row_instances": 2,
+  "exact_duplicate_description_instances": 2810,
+  "description_skills_equal_count": 21131,
+  "description_skills_equal_rate": 0.9039226590238268,
+  "text_length_summary": {
+    "Description": {
+      "minimum": 0,
+      "median": 3920,
+      "p95": 7986,
+      "maximum": 32493
+    },
+    "Skills": {
+      "minimum": 0,
+      "median": 3662,
+      "p95": 7752,
+      "maximum": 32493
+    }
+  },
+  "provenance_status": "unverified",
+  "redistribution_status": "unverified"
+}

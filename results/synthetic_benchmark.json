@@ -1,0 +1,869 @@
+{
+  "structural": {
+    "documents": 90,
+    "units": 90,
+    "nodes": 13,
+    "edges": 27,
+    "scc_count": 7,
+    "weak_component_count": 4,
+    "nontrivial_scc_count": 3,
+    "largest_scc": 3,
+    "singleton_rate": 0.5714285714285714,
+    "asymmetric_edge_rate": 0.3333333333333333,
+    "scc_partition_equals_weak_partition": false,
+    "condensation_edge_count": 3,
+    "bridge_node_count": 3
+  },
+  "pairwise": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0,
+    "evaluated_nodes": 9
+  },
+  "adjusted_rand_index": 1.0,
+  "symmetrized_baseline": {
+    "component_count": 4,
+    "largest_component": 4,
+    "partition": [
+      [
+        "automation",
+        "calibration",
+        "control",
+        "sensor"
+      ],
+      [
+        "communication",
+        "coordination",
+        "presentation",
+        "teamwork"
+      ],
+      [
+        "compliance",
+        "hazard",
+        "inspection",
+        "safety"
+      ],
+      [
+        "system"
+      ]
+    ]
+  },
+  "analysis": {
+    "schema_version": "1.0",
+    "corpus_name": "synthetic-planted-cycles",
+    "document_count": 90,
+    "unit_count": 90,
+    "node_count": 13,
+    "edge_count": 27,
+    "nodes": [
+      "automation",
+      "calibration",
+      "communication",
+      "compliance",
+      "control",
+      "coordination",
+      "hazard",
+      "inspection",
+      "presentation",
+      "safety",
+      "sensor",
+      "system",
+      "teamwork"
+    ],
+    "edges": [
+      {
+        "source": "calibration",
+        "target": "automation",
+        "relation_type": "conditional-association",
+        "confidence": 1.0,
+        "support": 10,
+        "lift": 3.0,
+        "evidence": [
+          {
+            "unit_id": "synthetic-control-0:u1",
+            "document_id": "synthetic-control-0",
+            "excerpt": "sensor control automation system calibration."
+          },
+          {
+            "unit_id": "synthetic-control-3:u1",
+            "document_id": "synthetic-control-3",
+            "excerpt": "sensor automation control system calibration."
+          },
+          {
+            "unit_id": "synthetic-control-6:u1",
+            "document_id": "synthetic-control-6",
+            "excerpt": "automation sensor control system calibration."
+          }
+        ]
+      },
+      {
+        "source": "automation",
+        "target": "control",
+        "relation_type": "conditional-association",
+        "confidence": 1.0,
+        "support": 30,
+        "lift": 3.0,
+        "evidence": [
+          {
+            "unit_id": "synthetic-control-0:u1",
+            "document_id": "synthetic-control-0",
+            "excerpt": "sensor control automation system calibration."
+          },
+          {
+            "unit_id": "synthetic-control-1:u1",
+            "document_id": "synthetic-control-1",
+            "excerpt": "control sensor automation system."
+          },
+          {
+            "unit_id": "synthetic-control-2:u1",
+            "document_id": "synthetic-control-2",
+            "excerpt": "automation control sensor system."
+          }
+        ]
+      },
+      {
+        "source": "control",
+        "target": "automation",
+        "relation_type": "conditional-association",
+        "confidence": 1.0,
+        "support": 30,
+        "lift": 3.0,
+        "evidence": [
+          {
+            "unit_id": "synthetic-control-0:u1",
+            "document_id": "synthetic-control-0",
+            "excerpt": "sensor control automation system calibration."
+          },
+          {
+            "unit_id": "synthetic-control-1:u1",
+            "document_id": "synthetic-control-1",
+            "excerpt": "control sensor automation system."
+          },
+          {
+            "unit_id": "synthetic-control-2:u1",
+            "document_id": "synthetic-control-2",
+            "excerpt": "automation control sensor system."
+          }
+        ]
+      },
+      {
+        "source": "automation",
+        "target": "sensor",
+        "relation_type": "conditional-association",
+        "confidence": 1.0,
+        "support": 30,
+        "lift": 3.0,
+        "evidence": [
+          {
+            "unit_id": "synthetic-control-0:u1",
+            "document_id": "synthetic-control-0",
+            "excerpt": "sensor control automation system calibration."
+          },
+          {
+            "unit_id": "synthetic-control-1:u1",
+            "document_id": "synthetic-control-1",
+            "excerpt": "control sensor automation system."
+          },
+          {
+            "unit_id": "synthetic-control-2:u1",
+            "document_id": "synthetic-control-2",
+            "excerpt": "automation control sensor system."
+          }
+        ]
+      },
+      {
+        "source": "sensor",
+        "target": "automation",
+        "relation_type": "conditional-association",
+        "confidence": 1.0,
+        "support": 30,
+        "lift": 3.0,
+        "evidence": [
+          {
+            "unit_id": "synthetic-control-0:u1",
+            "document_id": "synthetic-control-0",
+            "excerpt": "sensor control automation system calibration."
+          },
+          {
+            "unit_id": "synthetic-control-1:u1",
+            "document_id": "synthetic-control-1",
+            "excerpt": "control sensor automation system."
+          },
+          {
+            "unit_id": "synthetic-control-2:u1",
+            "document_id": "synthetic-control-2",
+            "excerpt": "automation control sensor system."
+          }
+        ]
+      },
+      {
+        "source": "calibration",
+        "target": "control",
+        "relation_type": "conditional-association",
+        "confidence": 1.0,
+        "support": 10,
+        "lift": 3.0,
+        "evidence": [
+          {
+            "unit_id": "synthetic-control-0:u1",
+            "document_id": "synthetic-control-0",
+            "excerpt": "sensor control automation system calibration."
+          },
+          {
+            "unit_id": "synthetic-control-3:u1",
+            "document_id": "synthetic-control-3",
+            "excerpt": "sensor automation control system calibration."
+          },
+          {
+            "unit_id": "synthetic-control-6:u1",
+            "document_id": "synthetic-control-6",
+            "excerpt": "automation sensor control system calibration."
+          }
+        ]
+      },
+      {
+        "source": "calibration",
+        "target": "sensor",
+        "relation_type": "conditional-association",
+        "confidence": 1.0,
+        "support": 10,
+        "lift": 3.0,
+        "evidence": [
+          {
+            "unit_id": "synthetic-control-0:u1",
+            "document_id": "synthetic-control-0",
+            "excerpt": "sensor control automation system calibration."
+          },
+          {
+            "unit_id": "synthetic-control-3:u1",
+            "document_id": "synthetic-control-3",
+            "excerpt": "sensor automation control system calibration."
+          },
+          {
+            "unit_id": "synthetic-control-6:u1",
+            "document_id": "synthetic-control-6",
+            "excerpt": "automation sensor control system calibration."
+          }
+        ]
+      },
+      {
+        "source": "communication",
+        "target": "coordination",
+        "relation_type": "conditional-association",
+        "confidence": 1.0,
+        "support": 30,
+        "lift": 3.0,
+        "evidence": [
+          {
+            "unit_id": "synthetic-collaboration-0:u1",
+            "document_id": "synthetic-collaboration-0",
+            "excerpt": "teamwork communication coordination system presentation."
+          },
+          {
+            "unit_id": "synthetic-collaboration-1:u1",
+            "document_id": "synthetic-collaboration-1",
+            "excerpt": "communication coordination teamwork system."
+          },
+          {
+            "unit_id": "synthetic-collaboration-2:u1",
+            "document_id": "synthetic-collaboration-2",
+            "excerpt": "coordination teamwork communication system."
+          }
+        ]
+      },
+      {
+        "source": "coordination",
+        "target": "communication",
+        "relation_type": "conditional-association",
+        "confidence": 1.0,
+        "support": 30,
+        "lift": 3.0,
+        "evidence": [
+          {
+            "unit_id": "synthetic-collaboration-0:u1",
+            "document_id": "synthetic-collaboration-0",
+            "excerpt": "teamwork communication coordination system presentation."
+          },
+          {
+            "unit_id": "synthetic-collaboration-1:u1",
+            "document_id": "synthetic-collaboration-1",
+            "excerpt": "communication coordination teamwork system."
+          },
+          {
+            "unit_id": "synthetic-collaboration-2:u1",
+            "document_id": "synthetic-collaboration-2",
+            "excerpt": "coordination teamwork communication system."
+          }
+        ]
+      },
+      {
+        "source": "presentation",
+        "target": "communication",
+        "relation_type": "conditional-association",
+        "confidence": 1.0,
+        "support": 10,
+        "lift": 3.0,
+        "evidence": [
+          {
+            "unit_id": "synthetic-collaboration-0:u1",
+            "document_id": "synthetic-collaboration-0",
+            "excerpt": "teamwork communication coordination system presentation."
+          },
+          {
+            "unit_id": "synthetic-collaboration-3:u1",
+            "document_id": "synthetic-collaboration-3",
+            "excerpt": "communication teamwork coordination system presentation."
+          },
+          {
+            "unit_id": "synthetic-collaboration-6:u1",
+            "document_id": "synthetic-collaboration-6",
+            "excerpt": "communication coordination teamwork system presentation."
+          }
+        ]
+      },
+      {
+        "source": "communication",
+        "target": "teamwork",
+        "relation_type": "conditional-association",
+        "confidence": 1.0,
+        "support": 30,
+        "lift": 3.0,
+        "evidence": [
+          {
+            "unit_id": "synthetic-collaboration-0:u1",
+            "document_id": "synthetic-collaboration-0",
+            "excerpt": "teamwork communication coordination system presentation."
+          },
+          {
+            "unit_id": "synthetic-collaboration-1:u1",
+            "document_id": "synthetic-collaboration-1",
+            "excerpt": "communication coordination teamwork system."
+          },
+          {
+            "unit_id": "synthetic-collaboration-2:u1",
+            "document_id": "synthetic-collaboration-2",
+            "excerpt": "coordination teamwork communication system."
+          }
+        ]
+      },
+      {
+        "source": "teamwork",
+        "target": "communication",
+        "relation_type": "conditional-association",
+        "confidence": 1.0,
+        "support": 30,
+        "lift": 3.0,
+        "evidence": [
+          {
+            "unit_id": "synthetic-collaboration-0:u1",
+            "document_id": "synthetic-collaboration-0",
+            "excerpt": "teamwork communication coordination system presentation."
+          },
+          {
+            "unit_id": "synthetic-collaboration-1:u1",
+            "document_id": "synthetic-collaboration-1",
+            "excerpt": "communication coordination teamwork system."
+          },
+          {
+            "unit_id": "synthetic-collaboration-2:u1",
+            "document_id": "synthetic-collaboration-2",
+            "excerpt": "coordination teamwork communication system."
+          }
+        ]
+      },
+      {
+        "source": "compliance",
+        "target": "hazard",
+        "relation_type": "conditional-association",
+        "confidence": 1.0,
+        "support": 10,
+        "lift": 3.0,
+        "evidence": [
+          {
+            "unit_id": "synthetic-safety-0:u1",
+            "document_id": "synthetic-safety-0",
+            "excerpt": "safety hazard inspection system compliance."
+          },
+          {
+            "unit_id": "synthetic-safety-3:u1",
+            "document_id": "synthetic-safety-3",
+            "excerpt": "inspection hazard safety system compliance."
+          },
+          {
+            "unit_id": "synthetic-safety-6:u1",
+            "document_id": "synthetic-safety-6",
+            "excerpt": "inspection safety hazard system compliance."
+          }
+        ]
+      },
+      {
+        "source": "compliance",
+        "target": "inspection",
+        "relation_type": "conditional-association",
+        "confidence": 1.0,
+        "support": 10,
+        "lift": 3.0,
+        "evidence": [
+          {
+            "unit_id": "synthetic-safety-0:u1",
+            "document_id": "synthetic-safety-0",
+            "excerpt": "safety hazard inspection system compliance."
+          },
+          {
+            "unit_id": "synthetic-safety-3:u1",
+            "document_id": "synthetic-safety-3",
+            "excerpt": "inspection hazard safety system compliance."
+          },
+          {
+            "unit_id": "synthetic-safety-6:u1",
+            "document_id": "synthetic-safety-6",
+            "excerpt": "inspection safety hazard system compliance."
+          }
+        ]
+      },
+      {
+        "source": "compliance",
+        "target": "safety",
+        "relation_type": "conditional-association",
+        "confidence": 1.0,
+        "support": 10,
+        "lift": 3.0,
+        "evidence": [
+          {
+            "unit_id": "synthetic-safety-0:u1",
+            "document_id": "synthetic-safety-0",
+            "excerpt": "safety hazard inspection system compliance."
+          },
+          {
+            "unit_id": "synthetic-safety-3:u1",
+            "document_id": "synthetic-safety-3",
+            "excerpt": "inspection hazard safety system compliance."
+          },
+          {
+            "unit_id": "synthetic-safety-6:u1",
+            "document_id": "synthetic-safety-6",
+            "excerpt": "inspection safety hazard system compliance."
+          }
+        ]
+      },
+      {
+        "source": "control",
+        "target": "sensor",
+        "relation_type": "conditional-association",
+        "confidence": 1.0,
+        "support": 30,
+        "lift": 3.0,
+        "evidence": [
+          {
+            "unit_id": "synthetic-control-0:u1",
+            "document_id": "synthetic-control-0",
+            "excerpt": "sensor control automation system calibration."
+          },
+          {
+            "unit_id": "synthetic-control-1:u1",
+            "document_id": "synthetic-control-1",
+            "excerpt": "control sensor automation system."
+          },
+          {
+            "unit_id": "synthetic-control-2:u1",
+            "document_id": "synthetic-control-2",
+            "excerpt": "automation control sensor system."
+          }
+        ]
+      },
+      {
+        "source": "sensor",
+        "target": "control",
+        "relation_type": "conditional-association",
+        "confidence": 1.0,
+        "support": 30,
+        "lift": 3.0,
+        "evidence": [
+          {
+            "unit_id": "synthetic-control-0:u1",
+            "document_id": "synthetic-control-0",
+            "excerpt": "sensor control automation system calibration."
+          },
+          {
+            "unit_id": "synthetic-control-1:u1",
+            "document_id": "synthetic-control-1",
+            "excerpt": "control sensor automation system."
+          },
+          {
+            "unit_id": "synthetic-control-2:u1",
+            "document_id": "synthetic-control-2",
+            "excerpt": "automation control sensor system."
+          }
+        ]
+      },
+      {
+        "source": "presentation",
+        "target": "coordination",
+        "relation_type": "conditional-association",
+        "confidence": 1.0,
+        "support": 10,
+        "lift": 3.0,
+        "evidence": [
+          {
+            "unit_id": "synthetic-collaboration-0:u1",
+            "document_id": "synthetic-collaboration-0",
+            "excerpt": "teamwork communication coordination system presentation."
+          },
+          {
+            "unit_id": "synthetic-collaboration-3:u1",
+            "document_id": "synthetic-collaboration-3",
+            "excerpt": "communication teamwork coordination system presentation."
+          },
+          {
+            "unit_id": "synthetic-collaboration-6:u1",
+            "document_id": "synthetic-collaboration-6",
+            "excerpt": "communication coordination teamwork system presentation."
+          }
+        ]
+      },
+      {
+        "source": "coordination",
+        "target": "teamwork",
+        "relation_type": "conditional-association",
+        "confidence": 1.0,
+        "support": 30,
+        "lift": 3.0,
+        "evidence": [
+          {
+            "unit_id": "synthetic-collaboration-0:u1",
+            "document_id": "synthetic-collaboration-0",
+            "excerpt": "teamwork communication coordination system presentation."
+          },
+          {
+            "unit_id": "synthetic-collaboration-1:u1",
+            "document_id": "synthetic-collaboration-1",
+            "excerpt": "communication coordination teamwork system."
+          },
+          {
+            "unit_id": "synthetic-collaboration-2:u1",
+            "document_id": "synthetic-collaboration-2",
+            "excerpt": "coordination teamwork communication system."
+          }
+        ]
+      },
+      {
+        "source": "teamwork",
+        "target": "coordination",
+        "relation_type": "conditional-association",
+        "confidence": 1.0,
+        "support": 30,
+        "lift": 3.0,
+        "evidence": [
+          {
+            "unit_id": "synthetic-collaboration-0:u1",
+            "document_id": "synthetic-collaboration-0",
+            "excerpt": "teamwork communication coordination system presentation."
+          },
+          {
+            "unit_id": "synthetic-collaboration-1:u1",
+            "document_id": "synthetic-collaboration-1",
+            "excerpt": "communication coordination teamwork system."
+          },
+          {
+            "unit_id": "synthetic-collaboration-2:u1",
+            "document_id": "synthetic-collaboration-2",
+            "excerpt": "coordination teamwork communication system."
+          }
+        ]
+      },
+      {
+        "source": "hazard",
+        "target": "inspection",
+        "relation_type": "conditional-association",
+        "confidence": 1.0,
+        "support": 30,
+        "lift": 3.0,
+        "evidence": [
+          {
+            "unit_id": "synthetic-safety-0:u1",
+            "document_id": "synthetic-safety-0",
+            "excerpt": "safety hazard inspection system compliance."
+          },
+          {
+            "unit_id": "synthetic-safety-1:u1",
+            "document_id": "synthetic-safety-1",
+            "excerpt": "inspection hazard safety system."
+          },
+          {
+            "unit_id": "synthetic-safety-2:u1",
+            "document_id": "synthetic-safety-2",
+            "excerpt": "inspection hazard safety system."
+          }
+        ]
+      },
+      {
+        "source": "inspection",
+        "target": "hazard",
+        "relation_type": "conditional-association",
+        "confidence": 1.0,
+        "support": 30,
+        "lift": 3.0,
+        "evidence": [
+          {
+            "unit_id": "synthetic-safety-0:u1",
+            "document_id": "synthetic-safety-0",
+            "excerpt": "safety hazard inspection system compliance."
+          },
+          {
+            "unit_id": "synthetic-safety-1:u1",
+            "document_id": "synthetic-safety-1",
+            "excerpt": "inspection hazard safety system."
+          },
+          {
+            "unit_id": "synthetic-safety-2:u1",
+            "document_id": "synthetic-safety-2",
+            "excerpt": "inspection hazard safety system."
+          }
+        ]
+      },
+      {
+        "source": "hazard",
+        "target": "safety",
+        "relation_type": "conditional-association",
+        "confidence": 1.0,
+        "support": 30,
+        "lift": 3.0,
+        "evidence": [
+          {
+            "unit_id": "synthetic-safety-0:u1",
+            "document_id": "synthetic-safety-0",
+            "excerpt": "safety hazard inspection system compliance."
+          },
+          {
+            "unit_id": "synthetic-safety-1:u1",
+            "document_id": "synthetic-safety-1",
+            "excerpt": "inspection hazard safety system."
+          },
+          {
+            "unit_id": "synthetic-safety-2:u1",
+            "document_id": "synthetic-safety-2",
+            "excerpt": "inspection hazard safety system."
+          }
+        ]
+      },
+      {
+        "source": "safety",
+        "target": "hazard",
+        "relation_type": "conditional-association",
+        "confidence": 1.0,
+        "support": 30,
+        "lift": 3.0,
+        "evidence": [
+          {
+            "unit_id": "synthetic-safety-0:u1",
+            "document_id": "synthetic-safety-0",
+            "excerpt": "safety hazard inspection system compliance."
+          },
+          {
+            "unit_id": "synthetic-safety-1:u1",
+            "document_id": "synthetic-safety-1",
+            "excerpt": "inspection hazard safety system."
+          },
+          {
+            "unit_id": "synthetic-safety-2:u1",
+            "document_id": "synthetic-safety-2",
+            "excerpt": "inspection hazard safety system."
+          }
+        ]
+      },
+      {
+        "source": "inspection",
+        "target": "safety",
+        "relation_type": "conditional-association",
+        "confidence": 1.0,
+        "support": 30,
+        "lift": 3.0,
+        "evidence": [
+          {
+            "unit_id": "synthetic-safety-0:u1",
+            "document_id": "synthetic-safety-0",
+            "excerpt": "safety hazard inspection system compliance."
+          },
+          {
+            "unit_id": "synthetic-safety-1:u1",
+            "document_id": "synthetic-safety-1",
+            "excerpt": "inspection hazard safety system."
+          },
+          {
+            "unit_id": "synthetic-safety-2:u1",
+            "document_id": "synthetic-safety-2",
+            "excerpt": "inspection hazard safety system."
+          }
+        ]
+      },
+      {
+        "source": "safety",
+        "target": "inspection",
+        "relation_type": "conditional-association",
+        "confidence": 1.0,
+        "support": 30,
+        "lift": 3.0,
+        "evidence": [
+          {
+            "unit_id": "synthetic-safety-0:u1",
+            "document_id": "synthetic-safety-0",
+            "excerpt": "safety hazard inspection system compliance."
+          },
+          {
+            "unit_id": "synthetic-safety-1:u1",
+            "document_id": "synthetic-safety-1",
+            "excerpt": "inspection hazard safety system."
+          },
+          {
+            "unit_id": "synthetic-safety-2:u1",
+            "document_id": "synthetic-safety-2",
+            "excerpt": "inspection hazard safety system."
+          }
+        ]
+      },
+      {
+        "source": "presentation",
+        "target": "teamwork",
+        "relation_type": "conditional-association",
+        "confidence": 1.0,
+        "support": 10,
+        "lift": 3.0,
+        "evidence": [
+          {
+            "unit_id": "synthetic-collaboration-0:u1",
+            "document_id": "synthetic-collaboration-0",
+            "excerpt": "teamwork communication coordination system presentation."
+          },
+          {
+            "unit_id": "synthetic-collaboration-3:u1",
+            "document_id": "synthetic-collaboration-3",
+            "excerpt": "communication teamwork coordination system presentation."
+          },
+          {
+            "unit_id": "synthetic-collaboration-6:u1",
+            "document_id": "synthetic-collaboration-6",
+            "excerpt": "communication coordination teamwork system presentation."
+          }
+        ]
+      }
+    ],
+    "components": [
+      [
+        "communication",
+        "coordination",
+        "teamwork"
+      ],
+      [
+        "presentation"
+      ],
+      [
+        "automation",
+        "control",
+        "sensor"
+      ],
+      [
+        "calibration"
+      ],
+      [
+        "hazard",
+        "inspection",
+        "safety"
+      ],
+      [
+        "system"
+      ],
+      [
+        "compliance"
+      ]
+    ],
+    "weak_components": [
+      [
+        "communication",
+        "coordination",
+        "presentation",
+        "teamwork"
+      ],
+      [
+        "automation",
+        "calibration",
+        "control",
+        "sensor"
+      ],
+      [
+        "compliance",
+        "hazard",
+        "inspection",
+        "safety"
+      ],
+      [
+        "system"
+      ]
+    ],
+    "condensation_edges": [
+      [
+        1,
+        0
+      ],
+      [
+        3,
+        2
+      ],
+      [
+        6,
+        4
+      ]
+    ],
+    "bridge_scores": {
+      "presentation": 1,
+      "calibration": 1,
+      "compliance": 1
+    },
+    "configuration": {
+      "unit_extractor": {
+        "min_token_length": 3,
+        "include_bigrams": false,
+        "max_terms_per_unit": 30,
+        "stopwords": [
+          "a",
+          "an",
+          "and",
+          "are",
+          "as",
+          "at",
+          "be",
+          "by",
+          "for",
+          "from",
+          "has",
+          "have",
+          "in",
+          "is",
+          "it",
+          "of",
+          "on",
+          "or",
+          "our",
+          "that",
+          "the",
+          "their",
+          "this",
+          "to",
+          "we",
+          "will",
+          "with",
+          "you",
+          "your"
+        ]
+      },
+      "relation_extractor": {
+        "min_term_units": 3,
+        "min_pair_units": 3,
+        "min_confidence": 0.65,
+        "min_lift": 1.05,
+        "max_vocabulary": 100,
+        "evidence_limit": 3
+      },
+      "edge_semantics": "A -> B means B occurs in a configured fraction of units containing A, with minimum lift over B prevalence."
+    }
+  }
+}

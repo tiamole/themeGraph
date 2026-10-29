@@ -1,0 +1,28 @@
+{
+  "schema_version": "1.0",
+  "status": "passed",
+  "checks": {
+    "deterministic_rebuild": true,
+    "manifest_hashes": true,
+    "png_600_dpi": true,
+    "pdf_parseable_and_fonts_embedded": true,
+    "svg_parseable": true,
+    "tables_equal_source_json": true,
+    "reason_and_route_taxonomy": true,
+    "displayed_requested_claims_equal_source_routes": true,
+    "permitted_statement_categories": true,
+    "manuscript_claim_identifiers": true,
+    "complete_mediation_entry_points": true,
+    "raw_job_ad_text_excluded": true,
+    "raw_external_sentence_text_excluded": true,
+    "acm_fragments_compile": true,
+    "active_manuscript_compile": true
+  },
+  "counts": {
+    "artifacts": 45,
+    "outputs": 103,
+    "png": 24,
+    "pdf": 20,
+    "svg": 20
+  }
+}

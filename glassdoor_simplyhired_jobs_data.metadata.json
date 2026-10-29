@@ -1,0 +1,42 @@
+{
+  "schema_version": "1.0",
+  "dataset_title": "Glassdoor and SimplyHired Jobs Data",
+  "data_file": "glassdoor_simplyhired_jobs_data.xlsx",
+  "data_file_sha256": "5c0592b9ed993a7969fbc5e87852ed4da160eaaabf69c7bd10f93567bcca65cb",
+  "provenance_basis": "author_attestation_and_embedded_workbook_metadata",
+  "collector": "Taiwo Raphael Feyijimi",
+  "collector_role": "first author",
+  "source_platforms": [
+    "Glassdoor",
+    "SimplyHired"
+  ],
+  "collection_method": "web scraping",
+  "temporal_coverage": "June 2023",
+  "temporal_design": "single cross-sectional collection",
+  "exact_collection_date_available": false,
+  "platform_permission_documented": false,
+  "platform_terms_at_collection_archived": false,
+  "author_statement": "The first author reports collecting the combined dataset from Glassdoor and SimplyHired during one cross-sectional scrape in June 2023 without platform permission.",
+  "embedded_workbook_metadata": {
+    "creator": "Taiwo Raphael Feyijimi",
+    "last_modified_by": "Taiwo Raphael Feyijimi",
+    "created": "2023-10-31T14:53:01Z",
+    "modified": "2023-10-31T16:21:42Z"
+  },
+  "provenance_status": "author_attested_file_supported_in_part",
+  "public_release_status": "planned",
+  "intended_public_release_license": "CC BY 4.0",
+  "public_release_url": null,
+  "redistribution_status": "planned_not_yet_verified_by_public_deposit",
+  "rights_scope_note": "The intended CC BY 4.0 release covers rights the dataset creator is able to license. Rights in third-party job-listing text and historical platform terms have not been independently evaluated here.",
+  "sampling_frame_status": "not_documented",
+  "source_platform_label_per_row": false,
+  "analysis_scope": "descriptive corpus structure and method stress testing",
+  "prohibited_inferences_without_additional_evidence": [
+    "labor-market prevalence",
+    "hiring trends",
+    "platform comparisons",
+    "employer rankings",
+    "causal claims"
+  ]
+}

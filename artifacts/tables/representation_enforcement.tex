@@ -1,0 +1,18 @@
+\begin{table*}[t]
+  \caption{Certificate-to-representation enforcement under Policy 2.7.0.}
+  \label{tab:representation-enforcement}
+  \centering
+  \scriptsize
+  \setlength{\tabcolsep}{1.2pt}
+  \begin{tabular}{@{}p{.12\textwidth}p{.06\textwidth}p{.12\textwidth}p{.12\textwidth}p{.12\textwidth}p{.07\textwidth}p{.10\textwidth}p{.07\textwidth}p{.08\textwidth}p{.06\textwidth}@{}}
+    \toprule
+    Certificate state & Decision & Controlling reason & Permitted statement & Mark & Export & Fallback & Witness & Remediation & Conforms \\
+    \midrule
+    admit & ADMIT & none & semantic claim & directed-arrow & allowed & none & present & none & yes \\
+    prevalence-qualify & QUALIFY & prevalence-qualification & qualified statistic & conditional-asymmetry-glyph & allowed & none & present & present & yes \\
+    conflict-qualify & QUALIFY & conflict-present & contested claim & contested-relation & blocked & none & present & present & yes \\
+    refuse-with-fallback & REFUSE & evidence-channel-absent & fallback statement & undirected-link & blocked & lexical-association & present & present & yes \\
+    refuse-without-fallback & REFUSE & evidence-channel-absent & refusal explanation & no-relation & blocked & none & present & present & yes \\
+    \bottomrule
+  \end{tabular}
+\end{table*}

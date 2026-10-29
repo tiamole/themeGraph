@@ -1,0 +1,30 @@
+\begin{table*}[t]
+  \caption{Instantiated Policy 2.7.0 claim types and consequences used in this study.}
+  \label{tab:policy-claim-types}
+  \centering
+  \scriptsize
+  \textbf{(a) Families, governed-object signatures, sufficient evidence predicates, and scope semantics}\par\smallskip
+  \begin{tabular}{@{}p{.12\textwidth}p{.16\textwidth}p{.15\textwidth}p{.35\textwidth}p{.08\textwidth}@{}}
+    \toprule
+    Family & Claim type & Object signature & Sufficient bundle predicate & Scope \\
+    \midrule
+    observational & lexical-association & term->term & co-occurrence & symmetric \\
+    observational & asymmetric-conditional & term->term & co-occurrence & ordered \\
+    semantic-relational & sentential-paraphrase-equivalence & sentence->sentence & annotation-semantic-equivalence with matched positive paraphrase label & symmetric \\
+    semantic-relational & sentential-non-paraphrase & sentence->sentence & annotation-semantic-equivalence with matched non-paraphrase label & symmetric \\
+    semantic-relational & concept-equivalence & concept->concept & annotation-semantic-equivalence & symmetric \\
+    semantic-relational & textual-entailment & sentence->sentence & annotation-entailment & ordered \\
+    semantic-relational & event-temporal-precedence & event->event & event-order OR annotation-temporal-precedence & ordered \\
+    semantic-relational & concept-prerequisite & concept->concept & prerequisite-reference OR annotation-prerequisite & ordered \\
+    causal & causal-influence & intervention->outcome & causal identification with named design, method, assumptions, target estimand, and diagnostics & ordered \\
+    interpretive & theme & analysis->theme-candidate & qualitative interpretation with method, analytic traceability, reflexive documentation, and theory alignment & unscoped \\
+    human-outcome & analyst-benefit & interface->analyst-population & human evaluation with outcome, measure, study design, comparator, population, and estimand & unscoped \\
+    statistical & specification-persistence & result->specification-surface & specification-surface & unscoped \\
+    statistical & meets-specification-persistence-gate & result->specification-surface & specification-surface & unscoped \\
+    statistical & bootstrap-persistence-under-declared-scheme & result->resampling-scheme & cluster-bootstrap & unscoped \\
+    statistical & statistical-stability & result->resampling-scheme & cluster-bootstrap & unscoped \\
+    \bottomrule
+  \end{tabular}\par
+  \medskip
+  \input{../artifacts/tables/policy_claim_consequences.tex}
+\end{table*}

@@ -1,0 +1,5 @@
+architecture,fixtures,unauthorized_statements,unauthorized_marks,unauthorized_exports,lawful_fallbacks
+graph-pipeline-only,3,3/3,3/3,3/3,0/3
+warning-layer,3,3/3,3/3,3/3,0/3
+certificate-visible-non-enforcing,3,3/3,3/3,3/3,0/3
+themegraph-certificate-enforcement,3,0/3,0/3,0/3,1/3

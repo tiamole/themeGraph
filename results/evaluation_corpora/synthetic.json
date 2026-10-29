@@ -1,0 +1,2075 @@
+{
+  "schema_version": "2.0",
+  "corpus_name": "synthetic",
+  "document_count": 90,
+  "unit_count": 90,
+  "node_count": 13,
+  "edge_count": 27,
+  "nodes": [
+    "automation",
+    "calibration",
+    "communication",
+    "compliance",
+    "control",
+    "coordination",
+    "hazard",
+    "inspection",
+    "presentation",
+    "safety",
+    "sensor",
+    "system",
+    "teamwork"
+  ],
+  "edges": [
+    {
+      "source": "calibration",
+      "target": "automation",
+      "relation_type": "conditional-association",
+      "confidence": 1.0,
+      "support": 10,
+      "lift": 3.0,
+      "document_support": 10,
+      "source_support": 1,
+      "effective_support_lower_bound": 1,
+      "evidence": [
+        {
+          "unit_id": "synthetic-control-0:u1",
+          "document_id": "synthetic-control-0",
+          "excerpt": "sensor control automation system calibration."
+        },
+        {
+          "unit_id": "synthetic-control-3:u1",
+          "document_id": "synthetic-control-3",
+          "excerpt": "sensor automation control system calibration."
+        },
+        {
+          "unit_id": "synthetic-control-6:u1",
+          "document_id": "synthetic-control-6",
+          "excerpt": "automation sensor control system calibration."
+        }
+      ]
+    },
+    {
+      "source": "automation",
+      "target": "control",
+      "relation_type": "conditional-association",
+      "confidence": 1.0,
+      "support": 30,
+      "lift": 3.0,
+      "document_support": 30,
+      "source_support": 1,
+      "effective_support_lower_bound": 1,
+      "evidence": [
+        {
+          "unit_id": "synthetic-control-0:u1",
+          "document_id": "synthetic-control-0",
+          "excerpt": "sensor control automation system calibration."
+        },
+        {
+          "unit_id": "synthetic-control-1:u1",
+          "document_id": "synthetic-control-1",
+          "excerpt": "control sensor automation system."
+        },
+        {
+          "unit_id": "synthetic-control-2:u1",
+          "document_id": "synthetic-control-2",
+          "excerpt": "automation control sensor system."
+        }
+      ]
+    },
+    {
+      "source": "control",
+      "target": "automation",
+      "relation_type": "conditional-association",
+      "confidence": 1.0,
+      "support": 30,
+      "lift": 3.0,
+      "document_support": 30,
+      "source_support": 1,
+      "effective_support_lower_bound": 1,
+      "evidence": [
+        {
+          "unit_id": "synthetic-control-0:u1",
+          "document_id": "synthetic-control-0",
+          "excerpt": "sensor control automation system calibration."
+        },
+        {
+          "unit_id": "synthetic-control-1:u1",
+          "document_id": "synthetic-control-1",
+          "excerpt": "control sensor automation system."
+        },
+        {
+          "unit_id": "synthetic-control-2:u1",
+          "document_id": "synthetic-control-2",
+          "excerpt": "automation control sensor system."
+        }
+      ]
+    },
+    {
+      "source": "automation",
+      "target": "sensor",
+      "relation_type": "conditional-association",
+      "confidence": 1.0,
+      "support": 30,
+      "lift": 3.0,
+      "document_support": 30,
+      "source_support": 1,
+      "effective_support_lower_bound": 1,
+      "evidence": [
+        {
+          "unit_id": "synthetic-control-0:u1",
+          "document_id": "synthetic-control-0",
+          "excerpt": "sensor control automation system calibration."
+        },
+        {
+          "unit_id": "synthetic-control-1:u1",
+          "document_id": "synthetic-control-1",
+          "excerpt": "control sensor automation system."
+        },
+        {
+          "unit_id": "synthetic-control-2:u1",
+          "document_id": "synthetic-control-2",
+          "excerpt": "automation control sensor system."
+        }
+      ]
+    },
+    {
+      "source": "sensor",
+      "target": "automation",
+      "relation_type": "conditional-association",
+      "confidence": 1.0,
+      "support": 30,
+      "lift": 3.0,
+      "document_support": 30,
+      "source_support": 1,
+      "effective_support_lower_bound": 1,
+      "evidence": [
+        {
+          "unit_id": "synthetic-control-0:u1",
+          "document_id": "synthetic-control-0",
+          "excerpt": "sensor control automation system calibration."
+        },
+        {
+          "unit_id": "synthetic-control-1:u1",
+          "document_id": "synthetic-control-1",
+          "excerpt": "control sensor automation system."
+        },
+        {
+          "unit_id": "synthetic-control-2:u1",
+          "document_id": "synthetic-control-2",
+          "excerpt": "automation control sensor system."
+        }
+      ]
+    },
+    {
+      "source": "calibration",
+      "target": "control",
+      "relation_type": "conditional-association",
+      "confidence": 1.0,
+      "support": 10,
+      "lift": 3.0,
+      "document_support": 10,
+      "source_support": 1,
+      "effective_support_lower_bound": 1,
+      "evidence": [
+        {
+          "unit_id": "synthetic-control-0:u1",
+          "document_id": "synthetic-control-0",
+          "excerpt": "sensor control automation system calibration."
+        },
+        {
+          "unit_id": "synthetic-control-3:u1",
+          "document_id": "synthetic-control-3",
+          "excerpt": "sensor automation control system calibration."
+        },
+        {
+          "unit_id": "synthetic-control-6:u1",
+          "document_id": "synthetic-control-6",
+          "excerpt": "automation sensor control system calibration."
+        }
+      ]
+    },
+    {
+      "source": "calibration",
+      "target": "sensor",
+      "relation_type": "conditional-association",
+      "confidence": 1.0,
+      "support": 10,
+      "lift": 3.0,
+      "document_support": 10,
+      "source_support": 1,
+      "effective_support_lower_bound": 1,
+      "evidence": [
+        {
+          "unit_id": "synthetic-control-0:u1",
+          "document_id": "synthetic-control-0",
+          "excerpt": "sensor control automation system calibration."
+        },
+        {
+          "unit_id": "synthetic-control-3:u1",
+          "document_id": "synthetic-control-3",
+          "excerpt": "sensor automation control system calibration."
+        },
+        {
+          "unit_id": "synthetic-control-6:u1",
+          "document_id": "synthetic-control-6",
+          "excerpt": "automation sensor control system calibration."
+        }
+      ]
+    },
+    {
+      "source": "communication",
+      "target": "coordination",
+      "relation_type": "conditional-association",
+      "confidence": 1.0,
+      "support": 30,
+      "lift": 3.0,
+      "document_support": 30,
+      "source_support": 1,
+      "effective_support_lower_bound": 1,
+      "evidence": [
+        {
+          "unit_id": "synthetic-collaboration-0:u1",
+          "document_id": "synthetic-collaboration-0",
+          "excerpt": "teamwork communication coordination system presentation."
+        },
+        {
+          "unit_id": "synthetic-collaboration-1:u1",
+          "document_id": "synthetic-collaboration-1",
+          "excerpt": "communication coordination teamwork system."
+        },
+        {
+          "unit_id": "synthetic-collaboration-2:u1",
+          "document_id": "synthetic-collaboration-2",
+          "excerpt": "coordination teamwork communication system."
+        }
+      ]
+    },
+    {
+      "source": "coordination",
+      "target": "communication",
+      "relation_type": "conditional-association",
+      "confidence": 1.0,
+      "support": 30,
+      "lift": 3.0,
+      "document_support": 30,
+      "source_support": 1,
+      "effective_support_lower_bound": 1,
+      "evidence": [
+        {
+          "unit_id": "synthetic-collaboration-0:u1",
+          "document_id": "synthetic-collaboration-0",
+          "excerpt": "teamwork communication coordination system presentation."
+        },
+        {
+          "unit_id": "synthetic-collaboration-1:u1",
+          "document_id": "synthetic-collaboration-1",
+          "excerpt": "communication coordination teamwork system."
+        },
+        {
+          "unit_id": "synthetic-collaboration-2:u1",
+          "document_id": "synthetic-collaboration-2",
+          "excerpt": "coordination teamwork communication system."
+        }
+      ]
+    },
+    {
+      "source": "presentation",
+      "target": "communication",
+      "relation_type": "conditional-association",
+      "confidence": 1.0,
+      "support": 10,
+      "lift": 3.0,
+      "document_support": 10,
+      "source_support": 1,
+      "effective_support_lower_bound": 1,
+      "evidence": [
+        {
+          "unit_id": "synthetic-collaboration-0:u1",
+          "document_id": "synthetic-collaboration-0",
+          "excerpt": "teamwork communication coordination system presentation."
+        },
+        {
+          "unit_id": "synthetic-collaboration-3:u1",
+          "document_id": "synthetic-collaboration-3",
+          "excerpt": "communication teamwork coordination system presentation."
+        },
+        {
+          "unit_id": "synthetic-collaboration-6:u1",
+          "document_id": "synthetic-collaboration-6",
+          "excerpt": "communication coordination teamwork system presentation."
+        }
+      ]
+    },
+    {
+      "source": "communication",
+      "target": "teamwork",
+      "relation_type": "conditional-association",
+      "confidence": 1.0,
+      "support": 30,
+      "lift": 3.0,
+      "document_support": 30,
+      "source_support": 1,
+      "effective_support_lower_bound": 1,
+      "evidence": [
+        {
+          "unit_id": "synthetic-collaboration-0:u1",
+          "document_id": "synthetic-collaboration-0",
+          "excerpt": "teamwork communication coordination system presentation."
+        },
+        {
+          "unit_id": "synthetic-collaboration-1:u1",
+          "document_id": "synthetic-collaboration-1",
+          "excerpt": "communication coordination teamwork system."
+        },
+        {
+          "unit_id": "synthetic-collaboration-2:u1",
+          "document_id": "synthetic-collaboration-2",
+          "excerpt": "coordination teamwork communication system."
+        }
+      ]
+    },
+    {
+      "source": "teamwork",
+      "target": "communication",
+      "relation_type": "conditional-association",
+      "confidence": 1.0,
+      "support": 30,
+      "lift": 3.0,
+      "document_support": 30,
+      "source_support": 1,
+      "effective_support_lower_bound": 1,
+      "evidence": [
+        {
+          "unit_id": "synthetic-collaboration-0:u1",
+          "document_id": "synthetic-collaboration-0",
+          "excerpt": "teamwork communication coordination system presentation."
+        },
+        {
+          "unit_id": "synthetic-collaboration-1:u1",
+          "document_id": "synthetic-collaboration-1",
+          "excerpt": "communication coordination teamwork system."
+        },
+        {
+          "unit_id": "synthetic-collaboration-2:u1",
+          "document_id": "synthetic-collaboration-2",
+          "excerpt": "coordination teamwork communication system."
+        }
+      ]
+    },
+    {
+      "source": "compliance",
+      "target": "hazard",
+      "relation_type": "conditional-association",
+      "confidence": 1.0,
+      "support": 10,
+      "lift": 3.0,
+      "document_support": 10,
+      "source_support": 1,
+      "effective_support_lower_bound": 1,
+      "evidence": [
+        {
+          "unit_id": "synthetic-safety-0:u1",
+          "document_id": "synthetic-safety-0",
+          "excerpt": "safety hazard inspection system compliance."
+        },
+        {
+          "unit_id": "synthetic-safety-3:u1",
+          "document_id": "synthetic-safety-3",
+          "excerpt": "inspection hazard safety system compliance."
+        },
+        {
+          "unit_id": "synthetic-safety-6:u1",
+          "document_id": "synthetic-safety-6",
+          "excerpt": "inspection safety hazard system compliance."
+        }
+      ]
+    },
+    {
+      "source": "compliance",
+      "target": "inspection",
+      "relation_type": "conditional-association",
+      "confidence": 1.0,
+      "support": 10,
+      "lift": 3.0,
+      "document_support": 10,
+      "source_support": 1,
+      "effective_support_lower_bound": 1,
+      "evidence": [
+        {
+          "unit_id": "synthetic-safety-0:u1",
+          "document_id": "synthetic-safety-0",
+          "excerpt": "safety hazard inspection system compliance."
+        },
+        {
+          "unit_id": "synthetic-safety-3:u1",
+          "document_id": "synthetic-safety-3",
+          "excerpt": "inspection hazard safety system compliance."
+        },
+        {
+          "unit_id": "synthetic-safety-6:u1",
+          "document_id": "synthetic-safety-6",
+          "excerpt": "inspection safety hazard system compliance."
+        }
+      ]
+    },
+    {
+      "source": "compliance",
+      "target": "safety",
+      "relation_type": "conditional-association",
+      "confidence": 1.0,
+      "support": 10,
+      "lift": 3.0,
+      "document_support": 10,
+      "source_support": 1,
+      "effective_support_lower_bound": 1,
+      "evidence": [
+        {
+          "unit_id": "synthetic-safety-0:u1",
+          "document_id": "synthetic-safety-0",
+          "excerpt": "safety hazard inspection system compliance."
+        },
+        {
+          "unit_id": "synthetic-safety-3:u1",
+          "document_id": "synthetic-safety-3",
+          "excerpt": "inspection hazard safety system compliance."
+        },
+        {
+          "unit_id": "synthetic-safety-6:u1",
+          "document_id": "synthetic-safety-6",
+          "excerpt": "inspection safety hazard system compliance."
+        }
+      ]
+    },
+    {
+      "source": "control",
+      "target": "sensor",
+      "relation_type": "conditional-association",
+      "confidence": 1.0,
+      "support": 30,
+      "lift": 3.0,
+      "document_support": 30,
+      "source_support": 1,
+      "effective_support_lower_bound": 1,
+      "evidence": [
+        {
+          "unit_id": "synthetic-control-0:u1",
+          "document_id": "synthetic-control-0",
+          "excerpt": "sensor control automation system calibration."
+        },
+        {
+          "unit_id": "synthetic-control-1:u1",
+          "document_id": "synthetic-control-1",
+          "excerpt": "control sensor automation system."
+        },
+        {
+          "unit_id": "synthetic-control-2:u1",
+          "document_id": "synthetic-control-2",
+          "excerpt": "automation control sensor system."
+        }
+      ]
+    },
+    {
+      "source": "sensor",
+      "target": "control",
+      "relation_type": "conditional-association",
+      "confidence": 1.0,
+      "support": 30,
+      "lift": 3.0,
+      "document_support": 30,
+      "source_support": 1,
+      "effective_support_lower_bound": 1,
+      "evidence": [
+        {
+          "unit_id": "synthetic-control-0:u1",
+          "document_id": "synthetic-control-0",
+          "excerpt": "sensor control automation system calibration."
+        },
+        {
+          "unit_id": "synthetic-control-1:u1",
+          "document_id": "synthetic-control-1",
+          "excerpt": "control sensor automation system."
+        },
+        {
+          "unit_id": "synthetic-control-2:u1",
+          "document_id": "synthetic-control-2",
+          "excerpt": "automation control sensor system."
+        }
+      ]
+    },
+    {
+      "source": "presentation",
+      "target": "coordination",
+      "relation_type": "conditional-association",
+      "confidence": 1.0,
+      "support": 10,
+      "lift": 3.0,
+      "document_support": 10,
+      "source_support": 1,
+      "effective_support_lower_bound": 1,
+      "evidence": [
+        {
+          "unit_id": "synthetic-collaboration-0:u1",
+          "document_id": "synthetic-collaboration-0",
+          "excerpt": "teamwork communication coordination system presentation."
+        },
+        {
+          "unit_id": "synthetic-collaboration-3:u1",
+          "document_id": "synthetic-collaboration-3",
+          "excerpt": "communication teamwork coordination system presentation."
+        },
+        {
+          "unit_id": "synthetic-collaboration-6:u1",
+          "document_id": "synthetic-collaboration-6",
+          "excerpt": "communication coordination teamwork system presentation."
+        }
+      ]
+    },
+    {
+      "source": "coordination",
+      "target": "teamwork",
+      "relation_type": "conditional-association",
+      "confidence": 1.0,
+      "support": 30,
+      "lift": 3.0,
+      "document_support": 30,
+      "source_support": 1,
+      "effective_support_lower_bound": 1,
+      "evidence": [
+        {
+          "unit_id": "synthetic-collaboration-0:u1",
+          "document_id": "synthetic-collaboration-0",
+          "excerpt": "teamwork communication coordination system presentation."
+        },
+        {
+          "unit_id": "synthetic-collaboration-1:u1",
+          "document_id": "synthetic-collaboration-1",
+          "excerpt": "communication coordination teamwork system."
+        },
+        {
+          "unit_id": "synthetic-collaboration-2:u1",
+          "document_id": "synthetic-collaboration-2",
+          "excerpt": "coordination teamwork communication system."
+        }
+      ]
+    },
+    {
+      "source": "teamwork",
+      "target": "coordination",
+      "relation_type": "conditional-association",
+      "confidence": 1.0,
+      "support": 30,
+      "lift": 3.0,
+      "document_support": 30,
+      "source_support": 1,
+      "effective_support_lower_bound": 1,
+      "evidence": [
+        {
+          "unit_id": "synthetic-collaboration-0:u1",
+          "document_id": "synthetic-collaboration-0",
+          "excerpt": "teamwork communication coordination system presentation."
+        },
+        {
+          "unit_id": "synthetic-collaboration-1:u1",
+          "document_id": "synthetic-collaboration-1",
+          "excerpt": "communication coordination teamwork system."
+        },
+        {
+          "unit_id": "synthetic-collaboration-2:u1",
+          "document_id": "synthetic-collaboration-2",
+          "excerpt": "coordination teamwork communication system."
+        }
+      ]
+    },
+    {
+      "source": "hazard",
+      "target": "inspection",
+      "relation_type": "conditional-association",
+      "confidence": 1.0,
+      "support": 30,
+      "lift": 3.0,
+      "document_support": 30,
+      "source_support": 1,
+      "effective_support_lower_bound": 1,
+      "evidence": [
+        {
+          "unit_id": "synthetic-safety-0:u1",
+          "document_id": "synthetic-safety-0",
+          "excerpt": "safety hazard inspection system compliance."
+        },
+        {
+          "unit_id": "synthetic-safety-1:u1",
+          "document_id": "synthetic-safety-1",
+          "excerpt": "inspection hazard safety system."
+        },
+        {
+          "unit_id": "synthetic-safety-2:u1",
+          "document_id": "synthetic-safety-2",
+          "excerpt": "inspection hazard safety system."
+        }
+      ]
+    },
+    {
+      "source": "inspection",
+      "target": "hazard",
+      "relation_type": "conditional-association",
+      "confidence": 1.0,
+      "support": 30,
+      "lift": 3.0,
+      "document_support": 30,
+      "source_support": 1,
+      "effective_support_lower_bound": 1,
+      "evidence": [
+        {
+          "unit_id": "synthetic-safety-0:u1",
+          "document_id": "synthetic-safety-0",
+          "excerpt": "safety hazard inspection system compliance."
+        },
+        {
+          "unit_id": "synthetic-safety-1:u1",
+          "document_id": "synthetic-safety-1",
+          "excerpt": "inspection hazard safety system."
+        },
+        {
+          "unit_id": "synthetic-safety-2:u1",
+          "document_id": "synthetic-safety-2",
+          "excerpt": "inspection hazard safety system."
+        }
+      ]
+    },
+    {
+      "source": "hazard",
+      "target": "safety",
+      "relation_type": "conditional-association",
+      "confidence": 1.0,
+      "support": 30,
+      "lift": 3.0,
+      "document_support": 30,
+      "source_support": 1,
+      "effective_support_lower_bound": 1,
+      "evidence": [
+        {
+          "unit_id": "synthetic-safety-0:u1",
+          "document_id": "synthetic-safety-0",
+          "excerpt": "safety hazard inspection system compliance."
+        },
+        {
+          "unit_id": "synthetic-safety-1:u1",
+          "document_id": "synthetic-safety-1",
+          "excerpt": "inspection hazard safety system."
+        },
+        {
+          "unit_id": "synthetic-safety-2:u1",
+          "document_id": "synthetic-safety-2",
+          "excerpt": "inspection hazard safety system."
+        }
+      ]
+    },
+    {
+      "source": "safety",
+      "target": "hazard",
+      "relation_type": "conditional-association",
+      "confidence": 1.0,
+      "support": 30,
+      "lift": 3.0,
+      "document_support": 30,
+      "source_support": 1,
+      "effective_support_lower_bound": 1,
+      "evidence": [
+        {
+          "unit_id": "synthetic-safety-0:u1",
+          "document_id": "synthetic-safety-0",
+          "excerpt": "safety hazard inspection system compliance."
+        },
+        {
+          "unit_id": "synthetic-safety-1:u1",
+          "document_id": "synthetic-safety-1",
+          "excerpt": "inspection hazard safety system."
+        },
+        {
+          "unit_id": "synthetic-safety-2:u1",
+          "document_id": "synthetic-safety-2",
+          "excerpt": "inspection hazard safety system."
+        }
+      ]
+    },
+    {
+      "source": "inspection",
+      "target": "safety",
+      "relation_type": "conditional-association",
+      "confidence": 1.0,
+      "support": 30,
+      "lift": 3.0,
+      "document_support": 30,
+      "source_support": 1,
+      "effective_support_lower_bound": 1,
+      "evidence": [
+        {
+          "unit_id": "synthetic-safety-0:u1",
+          "document_id": "synthetic-safety-0",
+          "excerpt": "safety hazard inspection system compliance."
+        },
+        {
+          "unit_id": "synthetic-safety-1:u1",
+          "document_id": "synthetic-safety-1",
+          "excerpt": "inspection hazard safety system."
+        },
+        {
+          "unit_id": "synthetic-safety-2:u1",
+          "document_id": "synthetic-safety-2",
+          "excerpt": "inspection hazard safety system."
+        }
+      ]
+    },
+    {
+      "source": "safety",
+      "target": "inspection",
+      "relation_type": "conditional-association",
+      "confidence": 1.0,
+      "support": 30,
+      "lift": 3.0,
+      "document_support": 30,
+      "source_support": 1,
+      "effective_support_lower_bound": 1,
+      "evidence": [
+        {
+          "unit_id": "synthetic-safety-0:u1",
+          "document_id": "synthetic-safety-0",
+          "excerpt": "safety hazard inspection system compliance."
+        },
+        {
+          "unit_id": "synthetic-safety-1:u1",
+          "document_id": "synthetic-safety-1",
+          "excerpt": "inspection hazard safety system."
+        },
+        {
+          "unit_id": "synthetic-safety-2:u1",
+          "document_id": "synthetic-safety-2",
+          "excerpt": "inspection hazard safety system."
+        }
+      ]
+    },
+    {
+      "source": "presentation",
+      "target": "teamwork",
+      "relation_type": "conditional-association",
+      "confidence": 1.0,
+      "support": 10,
+      "lift": 3.0,
+      "document_support": 10,
+      "source_support": 1,
+      "effective_support_lower_bound": 1,
+      "evidence": [
+        {
+          "unit_id": "synthetic-collaboration-0:u1",
+          "document_id": "synthetic-collaboration-0",
+          "excerpt": "teamwork communication coordination system presentation."
+        },
+        {
+          "unit_id": "synthetic-collaboration-3:u1",
+          "document_id": "synthetic-collaboration-3",
+          "excerpt": "communication teamwork coordination system presentation."
+        },
+        {
+          "unit_id": "synthetic-collaboration-6:u1",
+          "document_id": "synthetic-collaboration-6",
+          "excerpt": "communication coordination teamwork system presentation."
+        }
+      ]
+    }
+  ],
+  "components": [
+    [
+      "hazard",
+      "inspection",
+      "safety"
+    ],
+    [
+      "compliance"
+    ],
+    [
+      "communication",
+      "coordination",
+      "teamwork"
+    ],
+    [
+      "presentation"
+    ],
+    [
+      "system"
+    ],
+    [
+      "automation",
+      "control",
+      "sensor"
+    ],
+    [
+      "calibration"
+    ]
+  ],
+  "weak_components": [
+    [
+      "compliance",
+      "hazard",
+      "inspection",
+      "safety"
+    ],
+    [
+      "communication",
+      "coordination",
+      "presentation",
+      "teamwork"
+    ],
+    [
+      "system"
+    ],
+    [
+      "automation",
+      "calibration",
+      "control",
+      "sensor"
+    ]
+  ],
+  "condensation_edges": [
+    [
+      1,
+      0
+    ],
+    [
+      3,
+      2
+    ],
+    [
+      6,
+      5
+    ]
+  ],
+  "bridge_scores": {
+    "compliance": 1,
+    "presentation": 1,
+    "calibration": 1
+  },
+  "claim_certificates": [
+    {
+      "policy_version": "2.7.0",
+      "claim_type": "lexical-association",
+      "claim_family": "observational",
+      "requested_relation": [
+        "<source-term>",
+        "<target-term>"
+      ],
+      "governed_object": {
+        "source": "<source-term>",
+        "source_type": "term",
+        "target": "<target-term>",
+        "target_type": "term"
+      },
+      "required_object_signatures": [
+        [
+          "term",
+          "term"
+        ]
+      ],
+      "object_type_match": true,
+      "adjudication_required": false,
+      "adjudication_approved": false,
+      "required_alternatives": [
+        [
+          "co-occurrence"
+        ]
+      ],
+      "required_predicates": [
+        {
+          "predicate_id": "construct-matched-support",
+          "channels": [
+            "co-occurrence"
+          ],
+          "description": "co-occurrence",
+          "target": "lexical-association",
+          "required_metadata": [],
+          "requires_approved_adjudication": false
+        }
+      ],
+      "observed_channels": [
+        "co-occurrence"
+      ],
+      "identifiable": true,
+      "policy_admissible": true,
+      "reason_codes": [],
+      "triggered_reasons": [],
+      "decision_reason": null,
+      "refusal_class": null,
+      "provenance_complete": true,
+      "specification_survival": null,
+      "uncertainty_adequate": false,
+      "dependence_adequate": false,
+      "counterevidence": [],
+      "causal_method": "",
+      "causal_assumptions": [],
+      "causal_estimand": "",
+      "causal_design": "",
+      "causal_diagnostics": "",
+      "decision": "ADMIT",
+      "allowed_encoding": "undirected-link",
+      "allowed_statement": "The terms have a thresholded lexical association under this configuration.",
+      "allowed_export": true,
+      "requested_representation_authorized": true,
+      "fallback_claim": null,
+      "fallback_is_policy_preferred": false,
+      "fallback_projection": null,
+      "fallback_projected_object": null,
+      "fallback_projection_provenance": [],
+      "witness": [
+        "All required evidence and policy gates passed."
+      ],
+      "remediation": []
+    },
+    {
+      "policy_version": "2.7.0",
+      "claim_type": "asymmetric-conditional",
+      "claim_family": "observational",
+      "requested_relation": [
+        "<source-term>",
+        "<target-term>"
+      ],
+      "governed_object": {
+        "source": "<source-term>",
+        "source_type": "term",
+        "target": "<target-term>",
+        "target_type": "term"
+      },
+      "required_object_signatures": [
+        [
+          "term",
+          "term"
+        ]
+      ],
+      "object_type_match": true,
+      "adjudication_required": false,
+      "adjudication_approved": false,
+      "required_alternatives": [
+        [
+          "co-occurrence"
+        ]
+      ],
+      "required_predicates": [
+        {
+          "predicate_id": "construct-matched-support",
+          "channels": [
+            "co-occurrence"
+          ],
+          "description": "co-occurrence",
+          "target": "asymmetric-conditional",
+          "required_metadata": [],
+          "requires_approved_adjudication": false
+        }
+      ],
+      "observed_channels": [
+        "co-occurrence"
+      ],
+      "identifiable": true,
+      "policy_admissible": true,
+      "reason_codes": [
+        "prevalence-qualification"
+      ],
+      "triggered_reasons": [
+        "prevalence-qualification"
+      ],
+      "decision_reason": "prevalence-qualification",
+      "refusal_class": null,
+      "provenance_complete": true,
+      "specification_survival": null,
+      "uncertainty_adequate": false,
+      "dependence_adequate": false,
+      "counterevidence": [],
+      "causal_method": "",
+      "causal_assumptions": [],
+      "causal_estimand": "",
+      "causal_design": "",
+      "causal_diagnostics": "",
+      "decision": "QUALIFY",
+      "allowed_encoding": "conditional-asymmetry-glyph",
+      "allowed_statement": "The conditional confidence differs by orientation under this configuration.",
+      "allowed_export": true,
+      "requested_representation_authorized": true,
+      "fallback_claim": null,
+      "fallback_is_policy_preferred": false,
+      "fallback_projection": null,
+      "fallback_projected_object": null,
+      "fallback_projection_provenance": [],
+      "witness": [
+        "Orientation is determined by marginal prevalence, not directional observation."
+      ],
+      "remediation": [
+        "Inspect sensitivity and uncertainty before using the claim."
+      ]
+    },
+    {
+      "policy_version": "2.7.0",
+      "claim_type": "sentential-paraphrase-equivalence",
+      "claim_family": "semantic-relational",
+      "requested_relation": [
+        "<source-term>",
+        "<target-term>"
+      ],
+      "governed_object": {
+        "source": "<source-term>",
+        "source_type": "term",
+        "target": "<target-term>",
+        "target_type": "term"
+      },
+      "required_object_signatures": [
+        [
+          "sentence",
+          "sentence"
+        ]
+      ],
+      "object_type_match": false,
+      "adjudication_required": false,
+      "adjudication_approved": false,
+      "required_alternatives": [
+        [
+          "annotation-semantic-equivalence"
+        ]
+      ],
+      "required_predicates": [
+        {
+          "predicate_id": "construct-matched-support",
+          "channels": [
+            "annotation-semantic-equivalence"
+          ],
+          "description": "annotation-semantic-equivalence",
+          "target": "sentential-paraphrase-equivalence",
+          "required_metadata": [],
+          "requires_approved_adjudication": false
+        }
+      ],
+      "observed_channels": [
+        "co-occurrence"
+      ],
+      "identifiable": false,
+      "policy_admissible": false,
+      "reason_codes": [
+        "evidence-channel-absent"
+      ],
+      "triggered_reasons": [
+        "evidence-channel-absent"
+      ],
+      "decision_reason": "evidence-channel-absent",
+      "refusal_class": "epistemic",
+      "provenance_complete": true,
+      "specification_survival": null,
+      "uncertainty_adequate": false,
+      "dependence_adequate": false,
+      "counterevidence": [],
+      "causal_method": "",
+      "causal_assumptions": [],
+      "causal_estimand": "",
+      "causal_design": "",
+      "causal_diagnostics": "",
+      "decision": "REFUSE",
+      "allowed_encoding": "no-relation",
+      "allowed_statement": "No relation claim is exportable from the available evidence.",
+      "allowed_export": false,
+      "requested_representation_authorized": false,
+      "fallback_claim": null,
+      "fallback_is_policy_preferred": false,
+      "fallback_projection": null,
+      "fallback_projected_object": null,
+      "fallback_projection_provenance": [],
+      "witness": [
+        "Missing required evidence alternative: annotation-semantic-equivalence.",
+        "The governed object types do not match the requested claim."
+      ],
+      "remediation": [
+        "Supply a construct-matched sentential paraphrase annotation."
+      ]
+    },
+    {
+      "policy_version": "2.7.0",
+      "claim_type": "sentential-non-paraphrase",
+      "claim_family": "semantic-relational",
+      "requested_relation": [
+        "<source-term>",
+        "<target-term>"
+      ],
+      "governed_object": {
+        "source": "<source-term>",
+        "source_type": "term",
+        "target": "<target-term>",
+        "target_type": "term"
+      },
+      "required_object_signatures": [
+        [
+          "sentence",
+          "sentence"
+        ]
+      ],
+      "object_type_match": false,
+      "adjudication_required": false,
+      "adjudication_approved": false,
+      "required_alternatives": [
+        [
+          "annotation-semantic-equivalence"
+        ]
+      ],
+      "required_predicates": [
+        {
+          "predicate_id": "construct-matched-support",
+          "channels": [
+            "annotation-semantic-equivalence"
+          ],
+          "description": "annotation-semantic-equivalence",
+          "target": "sentential-non-paraphrase",
+          "required_metadata": [],
+          "requires_approved_adjudication": false
+        }
+      ],
+      "observed_channels": [
+        "co-occurrence"
+      ],
+      "identifiable": false,
+      "policy_admissible": false,
+      "reason_codes": [
+        "evidence-channel-absent"
+      ],
+      "triggered_reasons": [
+        "evidence-channel-absent"
+      ],
+      "decision_reason": "evidence-channel-absent",
+      "refusal_class": "epistemic",
+      "provenance_complete": true,
+      "specification_survival": null,
+      "uncertainty_adequate": false,
+      "dependence_adequate": false,
+      "counterevidence": [],
+      "causal_method": "",
+      "causal_assumptions": [],
+      "causal_estimand": "",
+      "causal_design": "",
+      "causal_diagnostics": "",
+      "decision": "REFUSE",
+      "allowed_encoding": "no-relation",
+      "allowed_statement": "No relation claim is exportable from the available evidence.",
+      "allowed_export": false,
+      "requested_representation_authorized": false,
+      "fallback_claim": null,
+      "fallback_is_policy_preferred": false,
+      "fallback_projection": null,
+      "fallback_projected_object": null,
+      "fallback_projection_provenance": [],
+      "witness": [
+        "Missing required evidence alternative: annotation-semantic-equivalence.",
+        "The governed object types do not match the requested claim."
+      ],
+      "remediation": [
+        "Supply a construct-matched negative sentential paraphrase annotation."
+      ]
+    },
+    {
+      "policy_version": "2.7.0",
+      "claim_type": "textual-entailment",
+      "claim_family": "semantic-relational",
+      "requested_relation": [
+        "<source-term>",
+        "<target-term>"
+      ],
+      "governed_object": {
+        "source": "<source-term>",
+        "source_type": "term",
+        "target": "<target-term>",
+        "target_type": "term"
+      },
+      "required_object_signatures": [
+        [
+          "sentence",
+          "sentence"
+        ]
+      ],
+      "object_type_match": false,
+      "adjudication_required": false,
+      "adjudication_approved": false,
+      "required_alternatives": [
+        [
+          "annotation-entailment"
+        ]
+      ],
+      "required_predicates": [
+        {
+          "predicate_id": "construct-matched-support",
+          "channels": [
+            "annotation-entailment"
+          ],
+          "description": "annotation-entailment",
+          "target": "textual-entailment",
+          "required_metadata": [],
+          "requires_approved_adjudication": false
+        }
+      ],
+      "observed_channels": [
+        "co-occurrence"
+      ],
+      "identifiable": false,
+      "policy_admissible": false,
+      "reason_codes": [
+        "evidence-channel-absent"
+      ],
+      "triggered_reasons": [
+        "evidence-channel-absent"
+      ],
+      "decision_reason": "evidence-channel-absent",
+      "refusal_class": "epistemic",
+      "provenance_complete": true,
+      "specification_survival": null,
+      "uncertainty_adequate": false,
+      "dependence_adequate": false,
+      "counterevidence": [],
+      "causal_method": "",
+      "causal_assumptions": [],
+      "causal_estimand": "",
+      "causal_design": "",
+      "causal_diagnostics": "",
+      "decision": "REFUSE",
+      "allowed_encoding": "no-relation",
+      "allowed_statement": "No relation claim is exportable from the available evidence.",
+      "allowed_export": false,
+      "requested_representation_authorized": false,
+      "fallback_claim": null,
+      "fallback_is_policy_preferred": false,
+      "fallback_projection": null,
+      "fallback_projected_object": null,
+      "fallback_projection_provenance": [],
+      "witness": [
+        "Missing required evidence alternative: annotation-entailment.",
+        "The governed object types do not match the requested claim."
+      ],
+      "remediation": [
+        "Supply a construct-matched directional entailment annotation."
+      ]
+    },
+    {
+      "policy_version": "2.7.0",
+      "claim_type": "event-temporal-precedence",
+      "claim_family": "semantic-relational",
+      "requested_relation": [
+        "<source-term>",
+        "<target-term>"
+      ],
+      "governed_object": {
+        "source": "<source-term>",
+        "source_type": "term",
+        "target": "<target-term>",
+        "target_type": "term"
+      },
+      "required_object_signatures": [
+        [
+          "event",
+          "event"
+        ]
+      ],
+      "object_type_match": false,
+      "adjudication_required": false,
+      "adjudication_approved": false,
+      "required_alternatives": [
+        [
+          "event-order"
+        ],
+        [
+          "annotation-temporal-precedence"
+        ]
+      ],
+      "required_predicates": [
+        {
+          "predicate_id": "construct-matched-support",
+          "channels": [
+            "event-order"
+          ],
+          "description": "event-order",
+          "target": "event-temporal-precedence",
+          "required_metadata": [],
+          "requires_approved_adjudication": false
+        },
+        {
+          "predicate_id": "construct-matched-support",
+          "channels": [
+            "annotation-temporal-precedence"
+          ],
+          "description": "annotation-temporal-precedence",
+          "target": "event-temporal-precedence",
+          "required_metadata": [],
+          "requires_approved_adjudication": false
+        }
+      ],
+      "observed_channels": [
+        "co-occurrence"
+      ],
+      "identifiable": false,
+      "policy_admissible": false,
+      "reason_codes": [
+        "evidence-channel-absent"
+      ],
+      "triggered_reasons": [
+        "evidence-channel-absent"
+      ],
+      "decision_reason": "evidence-channel-absent",
+      "refusal_class": "epistemic",
+      "provenance_complete": true,
+      "specification_survival": null,
+      "uncertainty_adequate": false,
+      "dependence_adequate": false,
+      "counterevidence": [],
+      "causal_method": "",
+      "causal_assumptions": [],
+      "causal_estimand": "",
+      "causal_design": "",
+      "causal_diagnostics": "",
+      "decision": "REFUSE",
+      "allowed_encoding": "no-relation",
+      "allowed_statement": "No relation claim is exportable from the available evidence.",
+      "allowed_export": false,
+      "requested_representation_authorized": false,
+      "fallback_claim": null,
+      "fallback_is_policy_preferred": false,
+      "fallback_projection": null,
+      "fallback_projected_object": null,
+      "fallback_projection_provenance": [],
+      "witness": [
+        "Missing required evidence alternative: event-order OR annotation-temporal-precedence.",
+        "The governed object types do not match the requested claim."
+      ],
+      "remediation": [
+        "Supply observed event order or a construct-matched temporal annotation."
+      ]
+    },
+    {
+      "policy_version": "2.7.0",
+      "claim_type": "concept-prerequisite",
+      "claim_family": "semantic-relational",
+      "requested_relation": [
+        "<source-term>",
+        "<target-term>"
+      ],
+      "governed_object": {
+        "source": "<source-term>",
+        "source_type": "term",
+        "target": "<target-term>",
+        "target_type": "term"
+      },
+      "required_object_signatures": [
+        [
+          "concept",
+          "concept"
+        ]
+      ],
+      "object_type_match": false,
+      "adjudication_required": false,
+      "adjudication_approved": false,
+      "required_alternatives": [
+        [
+          "prerequisite-reference"
+        ],
+        [
+          "annotation-prerequisite"
+        ]
+      ],
+      "required_predicates": [
+        {
+          "predicate_id": "construct-matched-support",
+          "channels": [
+            "prerequisite-reference"
+          ],
+          "description": "prerequisite-reference",
+          "target": "concept-prerequisite",
+          "required_metadata": [],
+          "requires_approved_adjudication": false
+        },
+        {
+          "predicate_id": "construct-matched-support",
+          "channels": [
+            "annotation-prerequisite"
+          ],
+          "description": "annotation-prerequisite",
+          "target": "concept-prerequisite",
+          "required_metadata": [],
+          "requires_approved_adjudication": false
+        }
+      ],
+      "observed_channels": [
+        "co-occurrence"
+      ],
+      "identifiable": false,
+      "policy_admissible": false,
+      "reason_codes": [
+        "evidence-channel-absent"
+      ],
+      "triggered_reasons": [
+        "evidence-channel-absent"
+      ],
+      "decision_reason": "evidence-channel-absent",
+      "refusal_class": "epistemic",
+      "provenance_complete": true,
+      "specification_survival": null,
+      "uncertainty_adequate": false,
+      "dependence_adequate": false,
+      "counterevidence": [],
+      "causal_method": "",
+      "causal_assumptions": [],
+      "causal_estimand": "",
+      "causal_design": "",
+      "causal_diagnostics": "",
+      "decision": "REFUSE",
+      "allowed_encoding": "no-relation",
+      "allowed_statement": "No relation claim is exportable from the available evidence.",
+      "allowed_export": false,
+      "requested_representation_authorized": false,
+      "fallback_claim": null,
+      "fallback_is_policy_preferred": false,
+      "fallback_projection": null,
+      "fallback_projected_object": null,
+      "fallback_projection_provenance": [],
+      "witness": [
+        "Missing required evidence alternative: prerequisite-reference OR annotation-prerequisite.",
+        "The governed object types do not match the requested claim."
+      ],
+      "remediation": [
+        "Supply a concept-prerequisite reference or construct-matched annotation."
+      ]
+    },
+    {
+      "policy_version": "2.7.0",
+      "claim_type": "causal-influence",
+      "claim_family": "causal",
+      "requested_relation": [
+        "<source-term>",
+        "<target-term>"
+      ],
+      "governed_object": {
+        "source": "<source-term>",
+        "source_type": "term",
+        "target": "<target-term>",
+        "target_type": "term"
+      },
+      "required_object_signatures": [
+        [
+          "intervention",
+          "outcome"
+        ]
+      ],
+      "object_type_match": false,
+      "adjudication_required": true,
+      "adjudication_approved": false,
+      "required_alternatives": [
+        [
+          "causal-identification"
+        ]
+      ],
+      "required_predicates": [
+        {
+          "predicate_id": "causal-identification-record",
+          "channels": [
+            "causal-identification"
+          ],
+          "description": "causal identification with named design, method, assumptions, target estimand, and diagnostics",
+          "target": "causal-influence",
+          "required_metadata": [
+            "method",
+            "assumptions",
+            "estimand",
+            "study_design",
+            "diagnostics"
+          ],
+          "requires_approved_adjudication": true
+        }
+      ],
+      "observed_channels": [
+        "co-occurrence"
+      ],
+      "identifiable": false,
+      "policy_admissible": false,
+      "reason_codes": [
+        "evidence-channel-absent"
+      ],
+      "triggered_reasons": [
+        "evidence-channel-absent"
+      ],
+      "decision_reason": "evidence-channel-absent",
+      "refusal_class": "epistemic",
+      "provenance_complete": true,
+      "specification_survival": null,
+      "uncertainty_adequate": false,
+      "dependence_adequate": false,
+      "counterevidence": [],
+      "causal_method": "",
+      "causal_assumptions": [],
+      "causal_estimand": "",
+      "causal_design": "",
+      "causal_diagnostics": "",
+      "decision": "REFUSE",
+      "allowed_encoding": "no-relation",
+      "allowed_statement": "No relation claim is exportable from the available evidence.",
+      "allowed_export": false,
+      "requested_representation_authorized": false,
+      "fallback_claim": null,
+      "fallback_is_policy_preferred": false,
+      "fallback_projection": null,
+      "fallback_projected_object": null,
+      "fallback_projection_provenance": [],
+      "witness": [
+        "Missing required evidence alternative: causal-identification.",
+        "The governed object types do not match the requested claim."
+      ],
+      "remediation": [
+        "Supply a causal-identification design with a named method, assumptions, estimand, and diagnostics; intervention may be the design subtype."
+      ]
+    },
+    {
+      "policy_version": "2.7.0",
+      "claim_type": "theme",
+      "claim_family": "interpretive",
+      "requested_relation": [
+        "<source-term>",
+        "<target-term>"
+      ],
+      "governed_object": {
+        "source": "<source-term>",
+        "source_type": "term",
+        "target": "<target-term>",
+        "target_type": "term"
+      },
+      "required_object_signatures": [
+        [
+          "analysis",
+          "theme-candidate"
+        ]
+      ],
+      "object_type_match": false,
+      "adjudication_required": true,
+      "adjudication_approved": false,
+      "required_alternatives": [
+        [
+          "qualitative-interpretation"
+        ]
+      ],
+      "required_predicates": [
+        {
+          "predicate_id": "traceable-qualitative-interpretation",
+          "channels": [
+            "qualitative-interpretation"
+          ],
+          "description": "qualitative interpretation with method, analytic traceability, reflexive documentation, and theory alignment",
+          "target": "theme",
+          "required_metadata": [
+            "method",
+            "analytic_traceability",
+            "reflexive_documentation",
+            "theory_alignment"
+          ],
+          "requires_approved_adjudication": true
+        }
+      ],
+      "observed_channels": [
+        "co-occurrence"
+      ],
+      "identifiable": false,
+      "policy_admissible": false,
+      "reason_codes": [
+        "evidence-channel-absent"
+      ],
+      "triggered_reasons": [
+        "evidence-channel-absent"
+      ],
+      "decision_reason": "evidence-channel-absent",
+      "refusal_class": "epistemic",
+      "provenance_complete": true,
+      "specification_survival": null,
+      "uncertainty_adequate": false,
+      "dependence_adequate": false,
+      "counterevidence": [],
+      "causal_method": "",
+      "causal_assumptions": [],
+      "causal_estimand": "",
+      "causal_design": "",
+      "causal_diagnostics": "",
+      "decision": "REFUSE",
+      "allowed_encoding": "no-relation",
+      "allowed_statement": "No relation claim is exportable from the available evidence.",
+      "allowed_export": false,
+      "requested_representation_authorized": false,
+      "fallback_claim": null,
+      "fallback_is_policy_preferred": false,
+      "fallback_projection": null,
+      "fallback_projected_object": null,
+      "fallback_projection_provenance": [],
+      "witness": [
+        "Missing required evidence alternative: qualitative-interpretation.",
+        "The governed object types do not match the requested claim."
+      ],
+      "remediation": [
+        "Supply reflexive interpretation, theoretical coherence, and analytic traceability."
+      ]
+    },
+    {
+      "policy_version": "2.7.0",
+      "claim_type": "analyst-benefit",
+      "claim_family": "human-outcome",
+      "requested_relation": [
+        "<source-term>",
+        "<target-term>"
+      ],
+      "governed_object": {
+        "source": "<source-term>",
+        "source_type": "term",
+        "target": "<target-term>",
+        "target_type": "term"
+      },
+      "required_object_signatures": [
+        [
+          "interface",
+          "analyst-population"
+        ]
+      ],
+      "object_type_match": false,
+      "adjudication_required": true,
+      "adjudication_approved": false,
+      "required_alternatives": [
+        [
+          "human-evaluation"
+        ]
+      ],
+      "required_predicates": [
+        {
+          "predicate_id": "identified-analyst-benefit-evaluation",
+          "channels": [
+            "human-evaluation"
+          ],
+          "description": "human evaluation with outcome, measure, study design, comparator, population, and estimand",
+          "target": "analyst-benefit",
+          "required_metadata": [
+            "outcome",
+            "measure",
+            "study_design",
+            "comparator",
+            "population",
+            "estimand"
+          ],
+          "requires_approved_adjudication": true
+        }
+      ],
+      "observed_channels": [
+        "co-occurrence"
+      ],
+      "identifiable": false,
+      "policy_admissible": false,
+      "reason_codes": [
+        "evidence-channel-absent"
+      ],
+      "triggered_reasons": [
+        "evidence-channel-absent"
+      ],
+      "decision_reason": "evidence-channel-absent",
+      "refusal_class": "epistemic",
+      "provenance_complete": true,
+      "specification_survival": null,
+      "uncertainty_adequate": false,
+      "dependence_adequate": false,
+      "counterevidence": [],
+      "causal_method": "",
+      "causal_assumptions": [],
+      "causal_estimand": "",
+      "causal_design": "",
+      "causal_diagnostics": "",
+      "decision": "REFUSE",
+      "allowed_encoding": "no-relation",
+      "allowed_statement": "No relation claim is exportable from the available evidence.",
+      "allowed_export": false,
+      "requested_representation_authorized": false,
+      "fallback_claim": null,
+      "fallback_is_policy_preferred": false,
+      "fallback_projection": null,
+      "fallback_projected_object": null,
+      "fallback_projection_provenance": [],
+      "witness": [
+        "Missing required evidence alternative: human-evaluation.",
+        "The governed object types do not match the requested claim."
+      ],
+      "remediation": [
+        "Supply a human evaluation with a prespecified outcome, valid measure, study design, comparator, target population, and estimand."
+      ]
+    },
+    {
+      "policy_version": "2.7.0",
+      "claim_type": "specification-persistence",
+      "claim_family": "statistical",
+      "requested_relation": [
+        "<source-term>",
+        "<target-term>"
+      ],
+      "governed_object": {
+        "source": "<source-term>",
+        "source_type": "term",
+        "target": "<target-term>",
+        "target_type": "term"
+      },
+      "required_object_signatures": [
+        [
+          "result",
+          "specification-surface"
+        ]
+      ],
+      "object_type_match": false,
+      "adjudication_required": false,
+      "adjudication_approved": false,
+      "required_alternatives": [
+        [
+          "specification-surface"
+        ]
+      ],
+      "required_predicates": [
+        {
+          "predicate_id": "construct-matched-support",
+          "channels": [
+            "specification-surface"
+          ],
+          "description": "specification-surface",
+          "target": "specification-persistence",
+          "required_metadata": [],
+          "requires_approved_adjudication": false
+        }
+      ],
+      "observed_channels": [
+        "co-occurrence"
+      ],
+      "identifiable": false,
+      "policy_admissible": false,
+      "reason_codes": [
+        "evidence-channel-absent"
+      ],
+      "triggered_reasons": [
+        "evidence-channel-absent"
+      ],
+      "decision_reason": "evidence-channel-absent",
+      "refusal_class": "epistemic",
+      "provenance_complete": true,
+      "specification_survival": null,
+      "uncertainty_adequate": false,
+      "dependence_adequate": false,
+      "counterevidence": [],
+      "causal_method": "",
+      "causal_assumptions": [],
+      "causal_estimand": "",
+      "causal_design": "",
+      "causal_diagnostics": "",
+      "decision": "REFUSE",
+      "allowed_encoding": "no-relation",
+      "allowed_statement": "No relation claim is exportable from the available evidence.",
+      "allowed_export": false,
+      "requested_representation_authorized": false,
+      "fallback_claim": null,
+      "fallback_is_policy_preferred": false,
+      "fallback_projection": null,
+      "fallback_projected_object": null,
+      "fallback_projection_provenance": [],
+      "witness": [
+        "Missing required evidence alternative: specification-surface.",
+        "The governed object types do not match the requested claim."
+      ],
+      "remediation": [
+        "Evaluate the result across a declared specification surface."
+      ]
+    },
+    {
+      "policy_version": "2.7.0",
+      "claim_type": "meets-specification-persistence-gate",
+      "claim_family": "statistical",
+      "requested_relation": [
+        "<source-term>",
+        "<target-term>"
+      ],
+      "governed_object": {
+        "source": "<source-term>",
+        "source_type": "term",
+        "target": "<target-term>",
+        "target_type": "term"
+      },
+      "required_object_signatures": [
+        [
+          "result",
+          "specification-surface"
+        ]
+      ],
+      "object_type_match": false,
+      "adjudication_required": false,
+      "adjudication_approved": false,
+      "required_alternatives": [
+        [
+          "specification-surface"
+        ]
+      ],
+      "required_predicates": [
+        {
+          "predicate_id": "construct-matched-support",
+          "channels": [
+            "specification-surface"
+          ],
+          "description": "specification-surface",
+          "target": "meets-specification-persistence-gate",
+          "required_metadata": [],
+          "requires_approved_adjudication": false
+        }
+      ],
+      "observed_channels": [
+        "co-occurrence"
+      ],
+      "identifiable": false,
+      "policy_admissible": false,
+      "reason_codes": [
+        "evidence-channel-absent"
+      ],
+      "triggered_reasons": [
+        "evidence-channel-absent"
+      ],
+      "decision_reason": "evidence-channel-absent",
+      "refusal_class": "epistemic",
+      "provenance_complete": true,
+      "specification_survival": null,
+      "uncertainty_adequate": false,
+      "dependence_adequate": false,
+      "counterevidence": [],
+      "causal_method": "",
+      "causal_assumptions": [],
+      "causal_estimand": "",
+      "causal_design": "",
+      "causal_diagnostics": "",
+      "decision": "REFUSE",
+      "allowed_encoding": "no-relation",
+      "allowed_statement": "No relation claim is exportable from the available evidence.",
+      "allowed_export": false,
+      "requested_representation_authorized": false,
+      "fallback_claim": null,
+      "fallback_is_policy_preferred": false,
+      "fallback_projection": null,
+      "fallback_projected_object": null,
+      "fallback_projection_provenance": [],
+      "witness": [
+        "Missing required evidence alternative: specification-surface.",
+        "The governed object types do not match the requested claim."
+      ],
+      "remediation": [
+        "Measure persistence across the declared surface and meet the declared gate."
+      ]
+    },
+    {
+      "policy_version": "2.7.0",
+      "claim_type": "bootstrap-persistence-under-declared-scheme",
+      "claim_family": "statistical",
+      "requested_relation": [
+        "<source-term>",
+        "<target-term>"
+      ],
+      "governed_object": {
+        "source": "<source-term>",
+        "source_type": "term",
+        "target": "<target-term>",
+        "target_type": "term"
+      },
+      "required_object_signatures": [
+        [
+          "result",
+          "resampling-scheme"
+        ]
+      ],
+      "object_type_match": false,
+      "adjudication_required": false,
+      "adjudication_approved": false,
+      "required_alternatives": [
+        [
+          "cluster-bootstrap"
+        ]
+      ],
+      "required_predicates": [
+        {
+          "predicate_id": "construct-matched-support",
+          "channels": [
+            "cluster-bootstrap"
+          ],
+          "description": "cluster-bootstrap",
+          "target": "bootstrap-persistence-under-declared-scheme",
+          "required_metadata": [],
+          "requires_approved_adjudication": false
+        }
+      ],
+      "observed_channels": [
+        "co-occurrence"
+      ],
+      "identifiable": false,
+      "policy_admissible": false,
+      "reason_codes": [
+        "evidence-channel-absent"
+      ],
+      "triggered_reasons": [
+        "evidence-channel-absent"
+      ],
+      "decision_reason": "evidence-channel-absent",
+      "refusal_class": "epistemic",
+      "provenance_complete": true,
+      "specification_survival": null,
+      "uncertainty_adequate": false,
+      "dependence_adequate": false,
+      "counterevidence": [],
+      "causal_method": "",
+      "causal_assumptions": [],
+      "causal_estimand": "",
+      "causal_design": "",
+      "causal_diagnostics": "",
+      "decision": "REFUSE",
+      "allowed_encoding": "no-relation",
+      "allowed_statement": "No relation claim is exportable from the available evidence.",
+      "allowed_export": false,
+      "requested_representation_authorized": false,
+      "fallback_claim": null,
+      "fallback_is_policy_preferred": false,
+      "fallback_projection": null,
+      "fallback_projected_object": null,
+      "fallback_projection_provenance": [],
+      "witness": [
+        "Missing required evidence alternative: cluster-bootstrap.",
+        "The governed object types do not match the requested claim."
+      ],
+      "remediation": [
+        "Supply a declared resampling scheme that repeats the extraction pipeline."
+      ]
+    },
+    {
+      "policy_version": "2.7.0",
+      "claim_type": "statistical-stability",
+      "claim_family": "statistical",
+      "requested_relation": [
+        "<source-term>",
+        "<target-term>"
+      ],
+      "governed_object": {
+        "source": "<source-term>",
+        "source_type": "term",
+        "target": "<target-term>",
+        "target_type": "term"
+      },
+      "required_object_signatures": [
+        [
+          "result",
+          "resampling-scheme"
+        ]
+      ],
+      "object_type_match": false,
+      "adjudication_required": false,
+      "adjudication_approved": false,
+      "required_alternatives": [
+        [
+          "cluster-bootstrap"
+        ]
+      ],
+      "required_predicates": [
+        {
+          "predicate_id": "construct-matched-support",
+          "channels": [
+            "cluster-bootstrap"
+          ],
+          "description": "cluster-bootstrap",
+          "target": "statistical-stability",
+          "required_metadata": [],
+          "requires_approved_adjudication": false
+        }
+      ],
+      "observed_channels": [
+        "co-occurrence"
+      ],
+      "identifiable": false,
+      "policy_admissible": false,
+      "reason_codes": [
+        "evidence-channel-absent"
+      ],
+      "triggered_reasons": [
+        "evidence-channel-absent"
+      ],
+      "decision_reason": "evidence-channel-absent",
+      "refusal_class": "epistemic",
+      "provenance_complete": true,
+      "specification_survival": null,
+      "uncertainty_adequate": false,
+      "dependence_adequate": false,
+      "counterevidence": [],
+      "causal_method": "",
+      "causal_assumptions": [],
+      "causal_estimand": "",
+      "causal_design": "",
+      "causal_diagnostics": "",
+      "decision": "REFUSE",
+      "allowed_encoding": "no-relation",
+      "allowed_statement": "No relation claim is exportable from the available evidence.",
+      "allowed_export": false,
+      "requested_representation_authorized": false,
+      "fallback_claim": null,
+      "fallback_is_policy_preferred": false,
+      "fallback_projection": null,
+      "fallback_projected_object": null,
+      "fallback_projection_provenance": [],
+      "witness": [
+        "Missing required evidence alternative: cluster-bootstrap.",
+        "The governed object types do not match the requested claim.",
+        "Uncertainty evidence is inadequate for identification.",
+        "Dependence-aware resampling is not established."
+      ],
+      "remediation": [
+        "Supply a dependence-aware cluster bootstrap that repeats the extraction pipeline."
+      ]
+    }
+  ],
+  "configuration": {
+    "unit_extractor": {
+      "unit_mode": "sentence",
+      "min_token_length": 3,
+      "include_bigrams": false,
+      "max_terms_per_unit": 30,
+      "stopwords": [
+        "a",
+        "an",
+        "and",
+        "are",
+        "as",
+        "at",
+        "be",
+        "by",
+        "for",
+        "from",
+        "has",
+        "have",
+        "in",
+        "is",
+        "it",
+        "of",
+        "on",
+        "or",
+        "our",
+        "that",
+        "the",
+        "their",
+        "this",
+        "to",
+        "we",
+        "will",
+        "with",
+        "you",
+        "your"
+      ]
+    },
+    "relation_extractor": {
+      "min_term_units": 3,
+      "min_pair_units": 2,
+      "min_confidence": 0.65,
+      "min_lift": 1.05,
+      "max_vocabulary": 500,
+      "evidence_limit": 3
+    },
+    "admissibility_policy_version": "2.7.0",
+    "edge_semantics": "A -> B means B occurs in a configured fraction of units containing A, with minimum lift over B prevalence."
+  }
+}

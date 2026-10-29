@@ -1,0 +1,16 @@
+\begin{table*}[t]
+  \caption{Output reachability for three generated adversarial fixtures under four output-control conditions. Unauthorized means not authorized under Policy 2.7.0 for the supplied claim/evidence fixture. Each numeric entry is a count out of the three fixtures. A fallback only listed in certificate metadata is not reachable unless emitted, selectable, renderable, or exportable as an output. The ablation isolates enforcement: it does not compare human effectiveness or characterize all warning or inspection systems. Eight maintained certificate-guarded output entry points are audited separately, not as a 24-case cross-product.}
+  \label{tab:architecture-ablation}
+  \centering
+  \scriptsize
+  \begin{tabular}{@{}p{.25\textwidth}rrrr@{}}
+    \toprule
+    Output-control condition & Statements & Marks & Exports & Fallbacks \\
+    \midrule
+    graph-pipeline-only & 3/3 & 3/3 & 3/3 & 0/3 \\
+    warning-layer & 3/3 & 3/3 & 3/3 & 0/3 \\
+    certificate-visible-non-enforcing & 3/3 & 3/3 & 3/3 & 0/3 \\
+    themegraph-certificate-enforcement & 0/3 & 0/3 & 0/3 & 1/3 \\
+    \bottomrule
+  \end{tabular}
+\end{table*}

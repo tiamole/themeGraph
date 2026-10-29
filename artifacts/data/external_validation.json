@@ -1,0 +1,1116 @@
+{
+  "schema_version": "1.4",
+  "policy_version": "2.7.0",
+  "evaluation_type": "external construct-matched policy stress testing",
+  "scope": "Externally produced annotations and dataset-derived labels stress-test evidence-to-claim matching only within their published constructs. Human annotations and preprocessing-derived labels are distinguished where the source archive permits; relation records are not treated as statistically independent samples. Results are not predictive trials, normative policy validation, or validation of excluded constructs.",
+  "datasets": {
+    "mrpc": {
+      "dataset_id": "mrpc",
+      "tier": "natural human-annotated paraphrase judgments",
+      "validated_construct": "sentential paraphrase equivalence and non-paraphrase",
+      "record_count": 5801,
+      "split_counts": {
+        "test": 1725,
+        "train": 3668,
+        "validation": 408
+      },
+      "label_counts": {
+        "non_paraphrase": 1901,
+        "paraphrase": 3900
+      },
+      "lexical_overlap": {
+        "mean_jaccard": 0.5192738585718825,
+        "high_overlap_threshold": 0.5,
+        "high_overlap_non_paraphrase_count": 558,
+        "high_overlap_non_paraphrase_rate": 0.29352972119936876,
+        "by_label": {
+          "non_paraphrase": {
+            "count": 1901,
+            "mean": 0.4182977400658812,
+            "p25": 0.3181818181818182,
+            "median": 0.4,
+            "p75": 0.5151515151515151,
+            "high_overlap_count": 558,
+            "histogram_bin_edges": [
+              0.0,
+              0.1,
+              0.2,
+              0.3,
+              0.4,
+              0.5,
+              0.6,
+              0.7,
+              0.8,
+              0.9,
+              1.0
+            ],
+            "histogram_counts": [
+              0,
+              47,
+              326,
+              556,
+              414,
+              327,
+              180,
+              44,
+              6,
+              1
+            ]
+          },
+          "paraphrase": {
+            "count": 3900,
+            "mean": 0.5684932435154487,
+            "p25": 0.4444444444444444,
+            "median": 0.5714285714285714,
+            "p75": 0.6842105263157895,
+            "high_overlap_count": 2582,
+            "histogram_bin_edges": [
+              0.0,
+              0.1,
+              0.2,
+              0.3,
+              0.4,
+              0.5,
+              0.6,
+              0.7,
+              0.8,
+              0.9,
+              1.0
+            ],
+            "histogram_counts": [
+              0,
+              5,
+              128,
+              499,
+              686,
+              828,
+              872,
+              594,
+              225,
+              63
+            ]
+          }
+        }
+      },
+      "contract_outcomes": {
+        "lexical_only_positive_claim_refusal_rate": 1.0,
+        "positive_annotation_admission_rate": 1.0,
+        "negative_counterevidence_refusal_rate": 1.0,
+        "negative_claim_admission_rate": 1.0,
+        "cross_construct_admission_rate": 0.0,
+        "cross_construct_requests": [
+          {
+            "requested_claim": "textual-entailment",
+            "request_count": 1,
+            "expected_consequence": "REFUSE",
+            "observed_consequence": "REFUSE"
+          },
+          {
+            "requested_claim": "event-temporal-precedence",
+            "request_count": 1,
+            "expected_consequence": "REFUSE",
+            "observed_consequence": "REFUSE"
+          },
+          {
+            "requested_claim": "concept-prerequisite",
+            "request_count": 1,
+            "expected_consequence": "REFUSE",
+            "observed_consequence": "REFUSE"
+          },
+          {
+            "requested_claim": "causal-influence",
+            "request_count": 1,
+            "expected_consequence": "REFUSE",
+            "observed_consequence": "REFUSE"
+          },
+          {
+            "requested_claim": "theme",
+            "request_count": 1,
+            "expected_consequence": "REFUSE",
+            "observed_consequence": "REFUSE"
+          },
+          {
+            "requested_claim": "analyst-benefit",
+            "request_count": 1,
+            "expected_consequence": "REFUSE",
+            "observed_consequence": "REFUSE"
+          }
+        ]
+      },
+      "license_status": "MRPC terms are not stated in the GLUE mirror card; only aggregate statistics are redistributed here.",
+      "sources": [
+        {
+          "split": "train",
+          "path": "data/external/mrpc_train.parquet",
+          "source_url": "https://huggingface.co/datasets/nyu-mll/glue/resolve/refs%2Fconvert%2Fparquet/mrpc/train/0000.parquet",
+          "sha256": "61fd41301e0e244b0420c4350a170c8e7cf64740335fc875a4af2d79af0df0af",
+          "bytes": 649281
+        },
+        {
+          "split": "validation",
+          "path": "data/external/mrpc_validation.parquet",
+          "source_url": "https://huggingface.co/datasets/nyu-mll/glue/resolve/refs%2Fconvert%2Fparquet/mrpc/validation/0000.parquet",
+          "sha256": "33c007dbf5bfa8463d87a13e6226df8c0fcf2596c2cd39d0f3bb79754e00f50f",
+          "bytes": 75678
+        },
+        {
+          "split": "test",
+          "path": "data/external/mrpc_test.parquet",
+          "source_url": "https://huggingface.co/datasets/nyu-mll/glue/resolve/refs%2Fconvert%2Fparquet/mrpc/test/0000.parquet",
+          "sha256": "a623ed1cbdf445b11f8e249acbf649d7d3a5ee58c918554c40cbd8307e488693",
+          "bytes": 308441
+        }
+      ],
+      "excluded_claims": [
+        "semantic entailment",
+        "temporal precedence",
+        "prerequisite",
+        "causal influence",
+        "theme",
+        "analyst benefit"
+      ],
+      "contract_routes": [
+        {
+          "route_id": "24d23db88704fc15",
+          "policy_version": "2.7.0",
+          "evidence_condition": "matched positive annotation",
+          "outcome_key": "positive_annotation_admission_rate",
+          "requested_claim": "sentential-paraphrase-equivalence",
+          "request_count": 1,
+          "expected_consequence": "ADMIT",
+          "observed_consequence": "ADMIT",
+          "failure_or_authorization_path": "authorized"
+        },
+        {
+          "route_id": "7a0e617d10b90678",
+          "policy_version": "2.7.0",
+          "evidence_condition": "lexical evidence only",
+          "outcome_key": "lexical_only_positive_claim_refusal_rate",
+          "requested_claim": "sentential-paraphrase-equivalence",
+          "request_count": 1,
+          "expected_consequence": "REFUSE",
+          "observed_consequence": "REFUSE",
+          "failure_or_authorization_path": "missing construct-matched evidence"
+        },
+        {
+          "route_id": "7038de15d1c86742",
+          "policy_version": "2.7.0",
+          "evidence_condition": "negative annotation",
+          "outcome_key": "negative_counterevidence_refusal_rate",
+          "requested_claim": "sentential-paraphrase-equivalence",
+          "request_count": 1,
+          "expected_consequence": "REFUSE",
+          "observed_consequence": "REFUSE",
+          "failure_or_authorization_path": "construct-matched counterevidence"
+        },
+        {
+          "route_id": "53570ebdc5597d09",
+          "policy_version": "2.7.0",
+          "evidence_condition": "matched non-paraphrase annotation",
+          "outcome_key": "negative_claim_admission_rate",
+          "requested_claim": "sentential-non-paraphrase",
+          "request_count": 1,
+          "expected_consequence": "ADMIT",
+          "observed_consequence": "ADMIT",
+          "failure_or_authorization_path": "authorized"
+        },
+        {
+          "route_id": "1c642d7b4dee9e51",
+          "policy_version": "2.7.0",
+          "evidence_condition": "cross-construct request",
+          "outcome_key": "cross_construct_admission_rate",
+          "requested_claim": "textual-entailment",
+          "request_count": 1,
+          "expected_consequence": "REFUSE",
+          "observed_consequence": "REFUSE",
+          "failure_or_authorization_path": "construct mismatch"
+        },
+        {
+          "route_id": "fe6008287cb104d3",
+          "policy_version": "2.7.0",
+          "evidence_condition": "cross-construct request",
+          "outcome_key": "cross_construct_admission_rate",
+          "requested_claim": "event-temporal-precedence",
+          "request_count": 1,
+          "expected_consequence": "REFUSE",
+          "observed_consequence": "REFUSE",
+          "failure_or_authorization_path": "construct mismatch"
+        },
+        {
+          "route_id": "5a6ba0130d7b906e",
+          "policy_version": "2.7.0",
+          "evidence_condition": "cross-construct request",
+          "outcome_key": "cross_construct_admission_rate",
+          "requested_claim": "concept-prerequisite",
+          "request_count": 1,
+          "expected_consequence": "REFUSE",
+          "observed_consequence": "REFUSE",
+          "failure_or_authorization_path": "construct mismatch"
+        },
+        {
+          "route_id": "3451e8f5358a39e8",
+          "policy_version": "2.7.0",
+          "evidence_condition": "cross-construct request",
+          "outcome_key": "cross_construct_admission_rate",
+          "requested_claim": "causal-influence",
+          "request_count": 1,
+          "expected_consequence": "REFUSE",
+          "observed_consequence": "REFUSE",
+          "failure_or_authorization_path": "construct mismatch"
+        },
+        {
+          "route_id": "ff31aad44a81f794",
+          "policy_version": "2.7.0",
+          "evidence_condition": "cross-construct request",
+          "outcome_key": "cross_construct_admission_rate",
+          "requested_claim": "theme",
+          "request_count": 1,
+          "expected_consequence": "REFUSE",
+          "observed_consequence": "REFUSE",
+          "failure_or_authorization_path": "construct mismatch"
+        },
+        {
+          "route_id": "68e7638a3cfb90ac",
+          "policy_version": "2.7.0",
+          "evidence_condition": "cross-construct request",
+          "outcome_key": "cross_construct_admission_rate",
+          "requested_claim": "analyst-benefit",
+          "request_count": 1,
+          "expected_consequence": "REFUSE",
+          "observed_consequence": "REFUSE",
+          "failure_or_authorization_path": "construct mismatch"
+        }
+      ]
+    },
+    "paws": {
+      "dataset_id": "paws-wiki-labeled-final",
+      "tier": "adversarial high-overlap paraphrase judgments",
+      "validated_construct": "sentential paraphrase equivalence and non-paraphrase",
+      "record_count": 65401,
+      "split_counts": {
+        "test": 8000,
+        "train": 49401,
+        "validation": 8000
+      },
+      "label_counts": {
+        "non_paraphrase": 36497,
+        "paraphrase": 28904
+      },
+      "lexical_overlap": {
+        "mean_jaccard": 0.8936092813046012,
+        "high_overlap_threshold": 0.5,
+        "high_overlap_non_paraphrase_count": 36492,
+        "high_overlap_non_paraphrase_rate": 0.9998630024385566,
+        "by_label": {
+          "non_paraphrase": {
+            "count": 36497,
+            "mean": 0.8935395865342874,
+            "p25": 0.8421052631578947,
+            "median": 0.8888888888888888,
+            "p75": 0.9444444444444444,
+            "high_overlap_count": 36492,
+            "histogram_bin_edges": [
+              0.0,
+              0.1,
+              0.2,
+              0.3,
+              0.4,
+              0.5,
+              0.6,
+              0.7,
+              0.8,
+              0.9,
+              1.0
+            ],
+            "histogram_counts": [
+              1,
+              0,
+              1,
+              0,
+              3,
+              6,
+              227,
+              2211,
+              17576,
+              16472
+            ]
+          },
+          "paraphrase": {
+            "count": 28904,
+            "mean": 0.8936972846962474,
+            "p25": 0.8461538461538461,
+            "median": 0.8846153846153846,
+            "p75": 0.9375,
+            "high_overlap_count": 28904,
+            "histogram_bin_edges": [
+              0.0,
+              0.1,
+              0.2,
+              0.3,
+              0.4,
+              0.5,
+              0.6,
+              0.7,
+              0.8,
+              0.9,
+              1.0
+            ],
+            "histogram_counts": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              8,
+              14,
+              718,
+              15662,
+              12502
+            ]
+          }
+        }
+      },
+      "contract_outcomes": {
+        "lexical_only_positive_claim_refusal_rate": 1.0,
+        "positive_annotation_admission_rate": 1.0,
+        "negative_counterevidence_refusal_rate": 1.0,
+        "negative_claim_admission_rate": 1.0,
+        "cross_construct_admission_rate": 0.0,
+        "cross_construct_requests": [
+          {
+            "requested_claim": "textual-entailment",
+            "request_count": 1,
+            "expected_consequence": "REFUSE",
+            "observed_consequence": "REFUSE"
+          },
+          {
+            "requested_claim": "event-temporal-precedence",
+            "request_count": 1,
+            "expected_consequence": "REFUSE",
+            "observed_consequence": "REFUSE"
+          },
+          {
+            "requested_claim": "concept-prerequisite",
+            "request_count": 1,
+            "expected_consequence": "REFUSE",
+            "observed_consequence": "REFUSE"
+          },
+          {
+            "requested_claim": "causal-influence",
+            "request_count": 1,
+            "expected_consequence": "REFUSE",
+            "observed_consequence": "REFUSE"
+          },
+          {
+            "requested_claim": "theme",
+            "request_count": 1,
+            "expected_consequence": "REFUSE",
+            "observed_consequence": "REFUSE"
+          },
+          {
+            "requested_claim": "analyst-benefit",
+            "request_count": 1,
+            "expected_consequence": "REFUSE",
+            "observed_consequence": "REFUSE"
+          }
+        ]
+      },
+      "license_status": "Google dataset terms permit use for any purpose and request source acknowledgement; mirror card consulted.",
+      "sources": [
+        {
+          "split": "train",
+          "path": "data/external/paws_train.parquet",
+          "source_url": "https://huggingface.co/datasets/google-research-datasets/paws/resolve/refs%2Fconvert%2Fparquet/labeled_final/train/0000.parquet",
+          "sha256": "8dc9ad3e5f30ad9a86b290fe236d528ef23a5751fec9a35d99cbacf68ba277cf",
+          "bytes": 8433884
+        },
+        {
+          "split": "validation",
+          "path": "data/external/paws_validation.parquet",
+          "source_url": "https://huggingface.co/datasets/google-research-datasets/paws/resolve/refs%2Fconvert%2Fparquet/labeled_final/validation/0000.parquet",
+          "sha256": "7760d829453764ba342a6f562809a8ed21c2c3eec3fd9ffa544089f145d42f6d",
+          "bytes": 1230379
+        },
+        {
+          "split": "test",
+          "path": "data/external/paws_test.parquet",
+          "source_url": "https://huggingface.co/datasets/google-research-datasets/paws/resolve/refs%2Fconvert%2Fparquet/labeled_final/test/0000.parquet",
+          "sha256": "ae342ff12bb84b84b95f468abf5db6cb7c7bd578271299fe9c99be75b8132f4d",
+          "bytes": 1235128
+        }
+      ],
+      "excluded_claims": [
+        "semantic entailment",
+        "temporal precedence",
+        "prerequisite",
+        "causal influence",
+        "theme",
+        "analyst benefit"
+      ],
+      "contract_routes": [
+        {
+          "route_id": "6f4503b970533a16",
+          "policy_version": "2.7.0",
+          "evidence_condition": "matched positive annotation",
+          "outcome_key": "positive_annotation_admission_rate",
+          "requested_claim": "sentential-paraphrase-equivalence",
+          "request_count": 1,
+          "expected_consequence": "ADMIT",
+          "observed_consequence": "ADMIT",
+          "failure_or_authorization_path": "authorized"
+        },
+        {
+          "route_id": "675434df5d750575",
+          "policy_version": "2.7.0",
+          "evidence_condition": "lexical evidence only",
+          "outcome_key": "lexical_only_positive_claim_refusal_rate",
+          "requested_claim": "sentential-paraphrase-equivalence",
+          "request_count": 1,
+          "expected_consequence": "REFUSE",
+          "observed_consequence": "REFUSE",
+          "failure_or_authorization_path": "missing construct-matched evidence"
+        },
+        {
+          "route_id": "46cc0fd231d1b870",
+          "policy_version": "2.7.0",
+          "evidence_condition": "negative annotation",
+          "outcome_key": "negative_counterevidence_refusal_rate",
+          "requested_claim": "sentential-paraphrase-equivalence",
+          "request_count": 1,
+          "expected_consequence": "REFUSE",
+          "observed_consequence": "REFUSE",
+          "failure_or_authorization_path": "construct-matched counterevidence"
+        },
+        {
+          "route_id": "a07d8b8e5a335b69",
+          "policy_version": "2.7.0",
+          "evidence_condition": "matched non-paraphrase annotation",
+          "outcome_key": "negative_claim_admission_rate",
+          "requested_claim": "sentential-non-paraphrase",
+          "request_count": 1,
+          "expected_consequence": "ADMIT",
+          "observed_consequence": "ADMIT",
+          "failure_or_authorization_path": "authorized"
+        },
+        {
+          "route_id": "51ec5bf516bce28f",
+          "policy_version": "2.7.0",
+          "evidence_condition": "cross-construct request",
+          "outcome_key": "cross_construct_admission_rate",
+          "requested_claim": "textual-entailment",
+          "request_count": 1,
+          "expected_consequence": "REFUSE",
+          "observed_consequence": "REFUSE",
+          "failure_or_authorization_path": "construct mismatch"
+        },
+        {
+          "route_id": "66b8bfd285309863",
+          "policy_version": "2.7.0",
+          "evidence_condition": "cross-construct request",
+          "outcome_key": "cross_construct_admission_rate",
+          "requested_claim": "event-temporal-precedence",
+          "request_count": 1,
+          "expected_consequence": "REFUSE",
+          "observed_consequence": "REFUSE",
+          "failure_or_authorization_path": "construct mismatch"
+        },
+        {
+          "route_id": "92583e4bb9068ade",
+          "policy_version": "2.7.0",
+          "evidence_condition": "cross-construct request",
+          "outcome_key": "cross_construct_admission_rate",
+          "requested_claim": "concept-prerequisite",
+          "request_count": 1,
+          "expected_consequence": "REFUSE",
+          "observed_consequence": "REFUSE",
+          "failure_or_authorization_path": "construct mismatch"
+        },
+        {
+          "route_id": "2c1de3255a907096",
+          "policy_version": "2.7.0",
+          "evidence_condition": "cross-construct request",
+          "outcome_key": "cross_construct_admission_rate",
+          "requested_claim": "causal-influence",
+          "request_count": 1,
+          "expected_consequence": "REFUSE",
+          "observed_consequence": "REFUSE",
+          "failure_or_authorization_path": "construct mismatch"
+        },
+        {
+          "route_id": "0866f0a5dfea60aa",
+          "policy_version": "2.7.0",
+          "evidence_condition": "cross-construct request",
+          "outcome_key": "cross_construct_admission_rate",
+          "requested_claim": "theme",
+          "request_count": 1,
+          "expected_consequence": "REFUSE",
+          "observed_consequence": "REFUSE",
+          "failure_or_authorization_path": "construct mismatch"
+        },
+        {
+          "route_id": "e43ae03ab951ba76",
+          "policy_version": "2.7.0",
+          "evidence_condition": "cross-construct request",
+          "outcome_key": "cross_construct_admission_rate",
+          "requested_claim": "analyst-benefit",
+          "request_count": 1,
+          "expected_consequence": "REFUSE",
+          "observed_consequence": "REFUSE",
+          "failure_or_authorization_path": "construct mismatch"
+        }
+      ]
+    },
+    "snli": {
+      "dataset_id": "snli-1.0",
+      "tier": "directional human-annotated inference",
+      "validated_construct": "premise-to-hypothesis semantic entailment",
+      "record_count": 569033,
+      "split_counts": {
+        "dev": 9842,
+        "test": 9824,
+        "train": 549367
+      },
+      "label_counts": {
+        "contradiction": 189702,
+        "entailment": 190113,
+        "neutral": 189218
+      },
+      "lexical_overlap": {
+        "mean_jaccard": 0.2332502442989691,
+        "high_overlap_threshold": 0.5,
+        "high_overlap_non_entailment_count": 24957,
+        "high_overlap_non_entailment_rate": 0.06586350680882508,
+        "by_label": {
+          "entailment": {
+            "count": 190113,
+            "mean": 0.2824169810255083,
+            "p25": 0.15,
+            "median": 0.25,
+            "p75": 0.375,
+            "high_overlap_count": 27078,
+            "histogram_bin_edges": [
+              0.0,
+              0.1,
+              0.2,
+              0.3,
+              0.4,
+              0.5,
+              0.6,
+              0.7,
+              0.8,
+              0.9,
+              1.0
+            ],
+            "histogram_counts": [
+              26565,
+              42494,
+              45486,
+              30793,
+              17697,
+              13641,
+              6382,
+              3395,
+              2457,
+              1203
+            ]
+          },
+          "neutral": {
+            "count": 189218,
+            "mean": 0.2286192062072207,
+            "p25": 0.1111111111111111,
+            "median": 0.1875,
+            "p75": 0.3,
+            "high_overlap_count": 15415,
+            "histogram_bin_edges": [
+              0.0,
+              0.1,
+              0.2,
+              0.3,
+              0.4,
+              0.5,
+              0.6,
+              0.7,
+              0.8,
+              0.9,
+              1.0
+            ],
+            "histogram_counts": [
+              38445,
+              58472,
+              44159,
+              22276,
+              10451,
+              6889,
+              3274,
+              2048,
+              2010,
+              1194
+            ]
+          },
+          "contradiction": {
+            "count": 189702,
+            "mean": 0.18859620768550112,
+            "p25": 0.08333333333333333,
+            "median": 0.15384615384615385,
+            "p75": 0.25,
+            "high_overlap_count": 9542,
+            "histogram_bin_edges": [
+              0.0,
+              0.1,
+              0.2,
+              0.3,
+              0.4,
+              0.5,
+              0.6,
+              0.7,
+              0.8,
+              0.9,
+              1.0
+            ],
+            "histogram_counts": [
+              55200,
+              62734,
+              39078,
+              16318,
+              6830,
+              4023,
+              1934,
+              1601,
+              1822,
+              162
+            ]
+          }
+        }
+      },
+      "contract_outcomes": {
+        "lexical_only_entailment_refusal_rate": 1.0,
+        "directional_annotation_admission_rate": 1.0,
+        "neutral_insufficient_support_refusal_rate": 1.0,
+        "contradiction_counterevidence_refusal_rate": 1.0,
+        "annotation_nontransfer_refusal_rate": 1.0,
+        "cross_construct_admission_rate": 0.0,
+        "cross_construct_requests": [
+          {
+            "requested_claim": "event-temporal-precedence",
+            "request_count": 1,
+            "expected_consequence": "REFUSE",
+            "observed_consequence": "REFUSE"
+          },
+          {
+            "requested_claim": "concept-prerequisite",
+            "request_count": 1,
+            "expected_consequence": "REFUSE",
+            "observed_consequence": "REFUSE"
+          },
+          {
+            "requested_claim": "causal-influence",
+            "request_count": 1,
+            "expected_consequence": "REFUSE",
+            "observed_consequence": "REFUSE"
+          },
+          {
+            "requested_claim": "theme",
+            "request_count": 1,
+            "expected_consequence": "REFUSE",
+            "observed_consequence": "REFUSE"
+          },
+          {
+            "requested_claim": "analyst-benefit",
+            "request_count": 1,
+            "expected_consequence": "REFUSE",
+            "observed_consequence": "REFUSE"
+          }
+        ]
+      },
+      "license_status": "CC BY-SA 4.0 (Stanford NLP Group source page)",
+      "sources": [
+        {
+          "path": "data/external/snli_1.0.zip",
+          "source_url": "https://nlp.stanford.edu/projects/snli/snli_1.0.zip",
+          "sha256": "afb3d70a5af5d8de0d9d81e2637e0fb8c22d1235c2749d83125ca43dab0dbd3e",
+          "bytes": 94550081
+        }
+      ],
+      "excluded_claims": [
+        "temporal precedence",
+        "prerequisite",
+        "causal influence",
+        "theme",
+        "analyst benefit"
+      ],
+      "contract_routes": [
+        {
+          "route_id": "bddcbe3fd185968f",
+          "policy_version": "2.7.0",
+          "evidence_condition": "matched directional annotation",
+          "outcome_key": "directional_annotation_admission_rate",
+          "requested_claim": "textual-entailment",
+          "request_count": 1,
+          "expected_consequence": "ADMIT",
+          "observed_consequence": "ADMIT",
+          "failure_or_authorization_path": "authorized"
+        },
+        {
+          "route_id": "908e05fec681e79b",
+          "policy_version": "2.7.0",
+          "evidence_condition": "neutral annotation",
+          "outcome_key": "neutral_insufficient_support_refusal_rate",
+          "requested_claim": "textual-entailment",
+          "request_count": 1,
+          "expected_consequence": "REFUSE",
+          "observed_consequence": "REFUSE",
+          "failure_or_authorization_path": "insufficient support"
+        },
+        {
+          "route_id": "02e340e33cf22558",
+          "policy_version": "2.7.0",
+          "evidence_condition": "contradiction annotation",
+          "outcome_key": "contradiction_counterevidence_refusal_rate",
+          "requested_claim": "textual-entailment",
+          "request_count": 1,
+          "expected_consequence": "REFUSE",
+          "observed_consequence": "REFUSE",
+          "failure_or_authorization_path": "construct-matched counterevidence"
+        },
+        {
+          "route_id": "9796aab542bd2444",
+          "policy_version": "2.7.0",
+          "evidence_condition": "reversed relation request",
+          "outcome_key": "annotation_nontransfer_refusal_rate",
+          "requested_claim": "textual-entailment",
+          "request_count": 1,
+          "expected_consequence": "REFUSE",
+          "observed_consequence": "REFUSE",
+          "failure_or_authorization_path": "scope mismatch"
+        },
+        {
+          "route_id": "edb9887c9c14c698",
+          "policy_version": "2.7.0",
+          "evidence_condition": "cross-construct request",
+          "outcome_key": "cross_construct_admission_rate",
+          "requested_claim": "event-temporal-precedence",
+          "request_count": 1,
+          "expected_consequence": "REFUSE",
+          "observed_consequence": "REFUSE",
+          "failure_or_authorization_path": "construct mismatch"
+        },
+        {
+          "route_id": "cd6b2200ddf1ff40",
+          "policy_version": "2.7.0",
+          "evidence_condition": "cross-construct request",
+          "outcome_key": "cross_construct_admission_rate",
+          "requested_claim": "concept-prerequisite",
+          "request_count": 1,
+          "expected_consequence": "REFUSE",
+          "observed_consequence": "REFUSE",
+          "failure_or_authorization_path": "construct mismatch"
+        },
+        {
+          "route_id": "53deed2a34856f96",
+          "policy_version": "2.7.0",
+          "evidence_condition": "cross-construct request",
+          "outcome_key": "cross_construct_admission_rate",
+          "requested_claim": "causal-influence",
+          "request_count": 1,
+          "expected_consequence": "REFUSE",
+          "observed_consequence": "REFUSE",
+          "failure_or_authorization_path": "construct mismatch"
+        },
+        {
+          "route_id": "5c1884c740719a33",
+          "policy_version": "2.7.0",
+          "evidence_condition": "cross-construct request",
+          "outcome_key": "cross_construct_admission_rate",
+          "requested_claim": "theme",
+          "request_count": 1,
+          "expected_consequence": "REFUSE",
+          "observed_consequence": "REFUSE",
+          "failure_or_authorization_path": "construct mismatch"
+        },
+        {
+          "route_id": "2d8946799603bf17",
+          "policy_version": "2.7.0",
+          "evidence_condition": "cross-construct request",
+          "outcome_key": "cross_construct_admission_rate",
+          "requested_claim": "analyst-benefit",
+          "request_count": 1,
+          "expected_consequence": "REFUSE",
+          "observed_consequence": "REFUSE",
+          "failure_or_authorization_path": "construct mismatch"
+        }
+      ]
+    },
+    "al_cpl": {
+      "dataset_id": "al-cpl",
+      "tier": "expert-corrected concept prerequisite annotations",
+      "validated_construct": "directed concept prerequisite relation",
+      "record_count": 6529,
+      "label_counts": {
+        "prerequisite": 2002,
+        "non_prerequisite": 4527
+      },
+      "label_provenance": {
+        "final_processed_positive_count": 2002,
+        "final_processed_negative_count": 4527,
+        "dataset_negative_corresponding_to_positive_reverse_count": 2002,
+        "observed_two_edge_composition_count": 1356,
+        "positive_closure_of_observed_composition_count": 1356,
+        "record_level_original_or_derived_identifiable": false,
+        "interpretation": "The pinned release provides final processed relation data in .pairs and .preqs files within its data directory. Its README documents expert label correction, reverse-negative generation, and transitive-positive augmentation, but the released relations lack record-level derivation provenance. Counts therefore describe dataset-provided negatives that correspond to positive reversals and positive closures of observed two-edge compositions; they do not identify which rows were generated by preprocessing or independently confirm those preprocessing rules."
+      },
+      "domain_summaries": {
+        "data_mining": {
+          "concept_count": 120,
+          "candidate_pair_count": 826,
+          "positive_pair_count": 292,
+          "negative_pair_count": 534,
+          "irreflexive_violation_count": 0,
+          "asymmetry_violation_count": 0,
+          "reverse_negative_count": 292,
+          "reverse_negative_coverage_rate": 1.0,
+          "transitive_composition_count": 180,
+          "closed_transitive_composition_count": 180
+        },
+        "geometry": {
+          "concept_count": 89,
+          "candidate_pair_count": 1681,
+          "positive_pair_count": 524,
+          "negative_pair_count": 1157,
+          "irreflexive_violation_count": 0,
+          "asymmetry_violation_count": 0,
+          "reverse_negative_count": 524,
+          "reverse_negative_coverage_rate": 1.0,
+          "transitive_composition_count": 414,
+          "closed_transitive_composition_count": 414
+        },
+        "physics": {
+          "concept_count": 153,
+          "candidate_pair_count": 1962,
+          "positive_pair_count": 487,
+          "negative_pair_count": 1475,
+          "irreflexive_violation_count": 0,
+          "asymmetry_violation_count": 0,
+          "reverse_negative_count": 487,
+          "reverse_negative_coverage_rate": 1.0,
+          "transitive_composition_count": 308,
+          "closed_transitive_composition_count": 308
+        },
+        "precalculus": {
+          "concept_count": 224,
+          "candidate_pair_count": 2060,
+          "positive_pair_count": 699,
+          "negative_pair_count": 1361,
+          "irreflexive_violation_count": 0,
+          "asymmetry_violation_count": 0,
+          "reverse_negative_count": 699,
+          "reverse_negative_coverage_rate": 1.0,
+          "transitive_composition_count": 454,
+          "closed_transitive_composition_count": 454
+        }
+      },
+      "contract_outcomes": {
+        "lexical_only_refusal_rate": 1.0,
+        "mention_order_refusal_rate": 1.0,
+        "mention_order_triggered_reasons": [
+          "evidence-channel-absent"
+        ],
+        "matched_annotation_admission_rate": 1.0,
+        "reverse_nontransfer_refusal_rate": 1.0,
+        "cross_construct_admission_rate": 0.0,
+        "cross_construct_requests": [
+          {
+            "requested_claim": "event-temporal-precedence",
+            "request_count": 2002,
+            "expected_consequence": "REFUSE",
+            "observed_consequence": "REFUSE"
+          }
+        ],
+        "negative_counterevidence_refusal_rate": 1.0
+      },
+      "license_status": "CC BY-NC-SA 4.0; publication artifacts contain aggregates only.",
+      "sources": [
+        {
+          "path": "data/external/al_cpl_11397eaa.zip",
+          "source_url": "https://github.com/harrylclc/AL-CPL-dataset/archive/11397eaa3ea01c5e06fefcfc1c02a84f21164081.zip",
+          "commit": "11397eaa3ea01c5e06fefcfc1c02a84f21164081",
+          "sha256": "de6a387d787469ecb54e42f95117b02bd617a7a76e7ac14ed75ee81523d4f161",
+          "bytes": 1186642
+        }
+      ],
+      "excluded_claims": [
+        "temporal precedence",
+        "causal influence",
+        "semantic entailment",
+        "theme",
+        "analyst benefit"
+      ],
+      "contract_routes": [
+        {
+          "route_id": "d46595c50923fe67",
+          "policy_version": "2.7.0",
+          "evidence_condition": "matched prerequisite annotation",
+          "outcome_key": "matched_annotation_admission_rate",
+          "requested_claim": "concept-prerequisite",
+          "request_count": 1,
+          "expected_consequence": "ADMIT",
+          "observed_consequence": "ADMIT",
+          "failure_or_authorization_path": "authorized"
+        },
+        {
+          "route_id": "456fff4721d3f12c",
+          "policy_version": "2.7.0",
+          "evidence_condition": "lexical evidence only",
+          "outcome_key": "lexical_only_refusal_rate",
+          "requested_claim": "concept-prerequisite",
+          "request_count": 1,
+          "expected_consequence": "REFUSE",
+          "observed_consequence": "REFUSE",
+          "failure_or_authorization_path": "missing construct-matched evidence"
+        },
+        {
+          "route_id": "4795b7f658a2323a",
+          "policy_version": "2.7.0",
+          "evidence_condition": "mention order only",
+          "outcome_key": "mention_order_refusal_rate",
+          "requested_claim": "concept-prerequisite",
+          "request_count": 1,
+          "expected_consequence": "REFUSE",
+          "observed_consequence": "REFUSE",
+          "failure_or_authorization_path": "evidence-channel-absent"
+        },
+        {
+          "route_id": "6c574633e9c7bb0b",
+          "policy_version": "2.7.0",
+          "evidence_condition": "negative annotation",
+          "outcome_key": "negative_counterevidence_refusal_rate",
+          "requested_claim": "concept-prerequisite",
+          "request_count": 1,
+          "expected_consequence": "REFUSE",
+          "observed_consequence": "REFUSE",
+          "failure_or_authorization_path": "construct-matched counterevidence"
+        },
+        {
+          "route_id": "07ab4bcf9d163991",
+          "policy_version": "2.7.0",
+          "evidence_condition": "reversed relation request",
+          "outcome_key": "reverse_nontransfer_refusal_rate",
+          "requested_claim": "concept-prerequisite",
+          "request_count": 1,
+          "expected_consequence": "REFUSE",
+          "observed_consequence": "REFUSE",
+          "failure_or_authorization_path": "scope mismatch"
+        },
+        {
+          "route_id": "2823ef0e32a4a657",
+          "policy_version": "2.7.0",
+          "evidence_condition": "cross-construct request",
+          "outcome_key": "cross_construct_admission_rate",
+          "requested_claim": "event-temporal-precedence",
+          "request_count": 2002,
+          "expected_consequence": "REFUSE",
+          "observed_consequence": "REFUSE",
+          "failure_or_authorization_path": "construct mismatch"
+        }
+      ]
+    },
+    "torque": {
+      "dataset_id": "torque",
+      "tier": "human-validated event temporal annotations",
+      "validated_construct": "event temporal precedence",
+      "record_count": 1928,
+      "split_counts": {
+        "dev_passages": 145
+      },
+      "label_counts": {
+        "before_questions": 411,
+        "after_questions": 438,
+        "usable_relation_annotations": 1928,
+        "answerless_directional_questions": 184
+      },
+      "question_count": 1483,
+      "contract_outcomes": {
+        "lexical_only_refusal_rate": 1.0,
+        "mention_order_refusal_rate": 1.0,
+        "mention_order_triggered_reasons": [
+          "mention-order-insufficient"
+        ],
+        "matched_annotation_admission_rate": 1.0,
+        "reverse_nontransfer_refusal_rate": 1.0,
+        "cross_construct_admission_rate": 0.0,
+        "cross_construct_requests": [
+          {
+            "requested_claim": "concept-prerequisite",
+            "request_count": 1928,
+            "expected_consequence": "REFUSE",
+            "observed_consequence": "REFUSE"
+          }
+        ]
+      },
+      "license_status": "Apache 2.0 repository; public test answers are withheld and excluded.",
+      "sources": [
+        {
+          "path": "data/external/torque_ab27019c.zip",
+          "source_url": "https://github.com/qiangning/TORQUE-dataset/archive/ab27019cc6a317fde3c879900499f02acce8b16d.zip",
+          "commit": "ab27019cc6a317fde3c879900499f02acce8b16d",
+          "sha256": "5b3b1b2589e5da6067833d74da85e469be305f018bf7f12c4593e2d90ed6a503",
+          "bytes": 1951225,
+          "evaluated_split": "dev"
+        }
+      ],
+      "excluded_claims": [
+        "prerequisite",
+        "causal influence",
+        "semantic entailment",
+        "theme",
+        "analyst benefit"
+      ],
+      "contract_routes": [
+        {
+          "route_id": "eb737f04ca74edcd",
+          "policy_version": "2.7.0",
+          "evidence_condition": "matched event-order annotation",
+          "outcome_key": "matched_annotation_admission_rate",
+          "requested_claim": "event-temporal-precedence",
+          "request_count": 1,
+          "expected_consequence": "ADMIT",
+          "observed_consequence": "ADMIT",
+          "failure_or_authorization_path": "authorized"
+        },
+        {
+          "route_id": "e3f8793850f49d40",
+          "policy_version": "2.7.0",
+          "evidence_condition": "mention order only",
+          "outcome_key": "mention_order_refusal_rate",
+          "requested_claim": "event-temporal-precedence",
+          "request_count": 1,
+          "expected_consequence": "REFUSE",
+          "observed_consequence": "REFUSE",
+          "failure_or_authorization_path": "mention-order-insufficient"
+        },
+        {
+          "route_id": "730be55bee1c373c",
+          "policy_version": "2.7.0",
+          "evidence_condition": "reversed relation request",
+          "outcome_key": "reverse_nontransfer_refusal_rate",
+          "requested_claim": "event-temporal-precedence",
+          "request_count": 1,
+          "expected_consequence": "REFUSE",
+          "observed_consequence": "REFUSE",
+          "failure_or_authorization_path": "scope mismatch"
+        },
+        {
+          "route_id": "ca5534677b8110e7",
+          "policy_version": "2.7.0",
+          "evidence_condition": "cross-construct request",
+          "outcome_key": "cross_construct_admission_rate",
+          "requested_claim": "concept-prerequisite",
+          "request_count": 1928,
+          "expected_consequence": "REFUSE",
+          "observed_consequence": "REFUSE",
+          "failure_or_authorization_path": "construct mismatch"
+        }
+      ]
+    }
+  },
+  "raw_text_redistributed": false
+}

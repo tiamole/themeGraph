@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "themegraph"
+version = "0.1.0"
+description = "Auditable directed evidence graphs for dataset-independent thematic structure analysis"
+requires-python = ">=3.11"
+dependencies = ["networkx>=3.6", "scikit-learn>=1.9"]
+
+[project.scripts]
+themegraph = "themegraph.cli:main"
+
+[project.optional-dependencies]
+dev = ["pyarrow>=19", "pytest>=8.0", "ruff>=0.6"]
+external-validation = ["pyarrow>=19"]
+publication = ["matplotlib>=3.10", "pillow>=11"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+addopts = "-q"
+testpaths = ["tests"]
+pythonpath = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+

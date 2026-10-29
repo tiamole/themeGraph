@@ -1,0 +1,3347 @@
+{
+  "schema_version": "2.7",
+  "policy": {
+    "schema_version": "1.0",
+    "policy_version": "2.7.0",
+    "decision_order": [
+      "evidence-and-policy-admissibility",
+      "provenance",
+      "qualification-and-conflict-gates"
+    ],
+    "decisions": [
+      "ADMIT",
+      "QUALIFY",
+      "REFUSE"
+    ],
+    "claims": [
+      {
+        "claim": "lexical-association",
+        "claim_family": "observational",
+        "scope_semantics": "symmetric",
+        "object_signatures": [
+          [
+            "term",
+            "term"
+          ]
+        ],
+        "evidence_predicates": [
+          {
+            "predicate_id": "construct-matched-support",
+            "channels": [
+              "co-occurrence"
+            ],
+            "target": "lexical-association",
+            "required_metadata": [],
+            "requires_approved_adjudication": false,
+            "description": "co-occurrence"
+          }
+        ],
+        "encoding": "undirected-link",
+        "statement": "The terms have a thresholded lexical association under this configuration.",
+        "remediation": "Supply within-unit co-occurrence evidence with complete lineage.",
+        "on_counterevidence": "qualify-conflict-when-support-matches",
+        "fallback_preferences": [],
+        "fallback_projections": [],
+        "requires_uncertainty": false,
+        "requires_independence": false,
+        "refused_export_blocked": true
+      },
+      {
+        "claim": "asymmetric-conditional",
+        "claim_family": "observational",
+        "scope_semantics": "ordered",
+        "object_signatures": [
+          [
+            "term",
+            "term"
+          ]
+        ],
+        "evidence_predicates": [
+          {
+            "predicate_id": "construct-matched-support",
+            "channels": [
+              "co-occurrence"
+            ],
+            "target": "asymmetric-conditional",
+            "required_metadata": [],
+            "requires_approved_adjudication": false,
+            "description": "co-occurrence"
+          }
+        ],
+        "encoding": "conditional-asymmetry-glyph",
+        "statement": "The conditional confidence differs by orientation under this configuration.",
+        "remediation": "Supply a directional evidence channel to request semantic direction.",
+        "on_counterevidence": "qualify-conflict-when-support-matches",
+        "fallback_preferences": [
+          "lexical-association"
+        ],
+        "fallback_projections": [
+          {
+            "target_claim": "lexical-association",
+            "projection_id": "lexicalize-pair-v1",
+            "target_signature": [
+              "term",
+              "term"
+            ],
+            "preserves_labels": false,
+            "preserves_provenance": true,
+            "defined_when": [
+              "each endpoint has one canonical lexical handle",
+              "both handles occur in the represented corpus vocabulary",
+              "distinct endpoints do not collapse to one handle",
+              "the projected pair has independently observed co-occurrence"
+            ],
+            "undefined_consequence": "no-relation"
+          }
+        ],
+        "requires_uncertainty": false,
+        "requires_independence": false,
+        "refused_export_blocked": true
+      },
+      {
+        "claim": "sentential-paraphrase-equivalence",
+        "claim_family": "semantic-relational",
+        "scope_semantics": "symmetric",
+        "object_signatures": [
+          [
+            "sentence",
+            "sentence"
+          ]
+        ],
+        "evidence_predicates": [
+          {
+            "predicate_id": "construct-matched-support",
+            "channels": [
+              "annotation-semantic-equivalence"
+            ],
+            "target": "sentential-paraphrase-equivalence",
+            "required_metadata": [],
+            "requires_approved_adjudication": false,
+            "description": "annotation-semantic-equivalence with matched positive paraphrase label"
+          }
+        ],
+        "encoding": "undirected-link",
+        "statement": "The sentence pair is paraphrase-equivalent under the declared annotation protocol.",
+        "remediation": "Supply a construct-matched sentential paraphrase annotation.",
+        "on_counterevidence": "qualify-conflict-when-support-matches",
+        "fallback_preferences": [
+          "lexical-association"
+        ],
+        "fallback_projections": [
+          {
+            "target_claim": "lexical-association",
+            "projection_id": "lexicalize-pair-v1",
+            "target_signature": [
+              "term",
+              "term"
+            ],
+            "preserves_labels": false,
+            "preserves_provenance": true,
+            "defined_when": [
+              "each endpoint has one canonical lexical handle",
+              "both handles occur in the represented corpus vocabulary",
+              "distinct endpoints do not collapse to one handle",
+              "the projected pair has independently observed co-occurrence"
+            ],
+            "undefined_consequence": "no-relation"
+          }
+        ],
+        "requires_uncertainty": false,
+        "requires_independence": false,
+        "refused_export_blocked": true
+      },
+      {
+        "claim": "sentential-non-paraphrase",
+        "claim_family": "semantic-relational",
+        "scope_semantics": "symmetric",
+        "object_signatures": [
+          [
+            "sentence",
+            "sentence"
+          ]
+        ],
+        "evidence_predicates": [
+          {
+            "predicate_id": "construct-matched-support",
+            "channels": [
+              "annotation-semantic-equivalence"
+            ],
+            "target": "sentential-non-paraphrase",
+            "required_metadata": [],
+            "requires_approved_adjudication": false,
+            "description": "annotation-semantic-equivalence with matched non-paraphrase label"
+          }
+        ],
+        "encoding": "no-relation",
+        "statement": "The sentence pair was not judged a paraphrase under the declared annotation protocol.",
+        "remediation": "Supply a construct-matched negative sentential paraphrase annotation.",
+        "on_counterevidence": "qualify-conflict-when-support-matches",
+        "fallback_preferences": [],
+        "fallback_projections": [],
+        "requires_uncertainty": false,
+        "requires_independence": false,
+        "refused_export_blocked": true
+      },
+      {
+        "claim": "concept-equivalence",
+        "claim_family": "semantic-relational",
+        "scope_semantics": "symmetric",
+        "object_signatures": [
+          [
+            "concept",
+            "concept"
+          ]
+        ],
+        "evidence_predicates": [
+          {
+            "predicate_id": "construct-matched-support",
+            "channels": [
+              "annotation-semantic-equivalence"
+            ],
+            "target": "concept-equivalence",
+            "required_metadata": [],
+            "requires_approved_adjudication": false,
+            "description": "annotation-semantic-equivalence"
+          }
+        ],
+        "encoding": "undirected-link",
+        "statement": "The concept pair was judged equivalent under the declared annotation protocol.",
+        "remediation": "Supply a construct-matched concept-equivalence annotation.",
+        "on_counterevidence": "qualify-conflict-when-support-matches",
+        "fallback_preferences": [],
+        "fallback_projections": [],
+        "requires_uncertainty": false,
+        "requires_independence": false,
+        "refused_export_blocked": true
+      },
+      {
+        "claim": "textual-entailment",
+        "claim_family": "semantic-relational",
+        "scope_semantics": "ordered",
+        "object_signatures": [
+          [
+            "sentence",
+            "sentence"
+          ]
+        ],
+        "evidence_predicates": [
+          {
+            "predicate_id": "construct-matched-support",
+            "channels": [
+              "annotation-entailment"
+            ],
+            "target": "textual-entailment",
+            "required_metadata": [],
+            "requires_approved_adjudication": false,
+            "description": "annotation-entailment"
+          }
+        ],
+        "encoding": "directed-arrow",
+        "statement": "The premise entails the hypothesis under the declared annotation protocol.",
+        "remediation": "Supply a construct-matched directional entailment annotation.",
+        "on_counterevidence": "qualify-conflict-when-support-matches",
+        "fallback_preferences": [
+          "lexical-association"
+        ],
+        "fallback_projections": [
+          {
+            "target_claim": "lexical-association",
+            "projection_id": "lexicalize-pair-v1",
+            "target_signature": [
+              "term",
+              "term"
+            ],
+            "preserves_labels": false,
+            "preserves_provenance": true,
+            "defined_when": [
+              "each endpoint has one canonical lexical handle",
+              "both handles occur in the represented corpus vocabulary",
+              "distinct endpoints do not collapse to one handle",
+              "the projected pair has independently observed co-occurrence"
+            ],
+            "undefined_consequence": "no-relation"
+          }
+        ],
+        "requires_uncertainty": false,
+        "requires_independence": false,
+        "refused_export_blocked": true
+      },
+      {
+        "claim": "event-temporal-precedence",
+        "claim_family": "semantic-relational",
+        "scope_semantics": "ordered",
+        "object_signatures": [
+          [
+            "event",
+            "event"
+          ]
+        ],
+        "evidence_predicates": [
+          {
+            "predicate_id": "construct-matched-support",
+            "channels": [
+              "event-order"
+            ],
+            "target": "event-temporal-precedence",
+            "required_metadata": [],
+            "requires_approved_adjudication": false,
+            "description": "event-order"
+          },
+          {
+            "predicate_id": "construct-matched-support",
+            "channels": [
+              "annotation-temporal-precedence"
+            ],
+            "target": "event-temporal-precedence",
+            "required_metadata": [],
+            "requires_approved_adjudication": false,
+            "description": "annotation-temporal-precedence"
+          }
+        ],
+        "encoding": "directed-arrow",
+        "statement": "The source precedes the target in the declared temporal observation.",
+        "remediation": "Supply observed event order or a construct-matched temporal annotation.",
+        "on_counterevidence": "qualify-conflict-when-support-matches",
+        "fallback_preferences": [
+          "lexical-association"
+        ],
+        "fallback_projections": [
+          {
+            "target_claim": "lexical-association",
+            "projection_id": "lexicalize-pair-v1",
+            "target_signature": [
+              "term",
+              "term"
+            ],
+            "preserves_labels": false,
+            "preserves_provenance": true,
+            "defined_when": [
+              "each endpoint has one canonical lexical handle",
+              "both handles occur in the represented corpus vocabulary",
+              "distinct endpoints do not collapse to one handle",
+              "the projected pair has independently observed co-occurrence"
+            ],
+            "undefined_consequence": "no-relation"
+          }
+        ],
+        "requires_uncertainty": false,
+        "requires_independence": false,
+        "refused_export_blocked": true
+      },
+      {
+        "claim": "concept-prerequisite",
+        "claim_family": "semantic-relational",
+        "scope_semantics": "ordered",
+        "object_signatures": [
+          [
+            "concept",
+            "concept"
+          ]
+        ],
+        "evidence_predicates": [
+          {
+            "predicate_id": "construct-matched-support",
+            "channels": [
+              "prerequisite-reference"
+            ],
+            "target": "concept-prerequisite",
+            "required_metadata": [],
+            "requires_approved_adjudication": false,
+            "description": "prerequisite-reference"
+          },
+          {
+            "predicate_id": "construct-matched-support",
+            "channels": [
+              "annotation-prerequisite"
+            ],
+            "target": "concept-prerequisite",
+            "required_metadata": [],
+            "requires_approved_adjudication": false,
+            "description": "annotation-prerequisite"
+          }
+        ],
+        "encoding": "directed-arrow",
+        "statement": "The source concept is an explicit prerequisite for the target concept.",
+        "remediation": "Supply a concept-prerequisite reference or construct-matched annotation.",
+        "on_counterevidence": "qualify-conflict-when-support-matches",
+        "fallback_preferences": [
+          "lexical-association"
+        ],
+        "fallback_projections": [
+          {
+            "target_claim": "lexical-association",
+            "projection_id": "lexicalize-pair-v1",
+            "target_signature": [
+              "term",
+              "term"
+            ],
+            "preserves_labels": false,
+            "preserves_provenance": true,
+            "defined_when": [
+              "each endpoint has one canonical lexical handle",
+              "both handles occur in the represented corpus vocabulary",
+              "distinct endpoints do not collapse to one handle",
+              "the projected pair has independently observed co-occurrence"
+            ],
+            "undefined_consequence": "no-relation"
+          }
+        ],
+        "requires_uncertainty": false,
+        "requires_independence": false,
+        "refused_export_blocked": true
+      },
+      {
+        "claim": "causal-influence",
+        "claim_family": "causal",
+        "scope_semantics": "ordered",
+        "object_signatures": [
+          [
+            "intervention",
+            "outcome"
+          ]
+        ],
+        "evidence_predicates": [
+          {
+            "predicate_id": "causal-identification-record",
+            "channels": [
+              "causal-identification"
+            ],
+            "target": "causal-influence",
+            "required_metadata": [
+              "method",
+              "assumptions",
+              "estimand",
+              "study_design",
+              "diagnostics"
+            ],
+            "requires_approved_adjudication": true,
+            "description": "causal identification with named design, method, assumptions, target estimand, and diagnostics"
+          }
+        ],
+        "encoding": "directed-arrow",
+        "statement": "The declared identifying design and assumptions support a causal influence claim.",
+        "remediation": "Supply a causal-identification design with a named method, assumptions, estimand, and diagnostics; intervention may be the design subtype.",
+        "on_counterevidence": "qualify-conflict-when-support-matches",
+        "fallback_preferences": [
+          "lexical-association"
+        ],
+        "fallback_projections": [
+          {
+            "target_claim": "lexical-association",
+            "projection_id": "lexicalize-pair-v1",
+            "target_signature": [
+              "term",
+              "term"
+            ],
+            "preserves_labels": false,
+            "preserves_provenance": true,
+            "defined_when": [
+              "each endpoint has one canonical lexical handle",
+              "both handles occur in the represented corpus vocabulary",
+              "distinct endpoints do not collapse to one handle",
+              "the projected pair has independently observed co-occurrence"
+            ],
+            "undefined_consequence": "no-relation"
+          }
+        ],
+        "requires_uncertainty": false,
+        "requires_independence": false,
+        "refused_export_blocked": true
+      },
+      {
+        "claim": "theme",
+        "claim_family": "interpretive",
+        "scope_semantics": "unscoped",
+        "object_signatures": [
+          [
+            "analysis",
+            "theme-candidate"
+          ]
+        ],
+        "evidence_predicates": [
+          {
+            "predicate_id": "traceable-qualitative-interpretation",
+            "channels": [
+              "qualitative-interpretation"
+            ],
+            "target": "theme",
+            "required_metadata": [
+              "method",
+              "analytic_traceability",
+              "reflexive_documentation",
+              "theory_alignment"
+            ],
+            "requires_approved_adjudication": true,
+            "description": "qualitative interpretation with method, analytic traceability, reflexive documentation, and theory alignment"
+          }
+        ],
+        "encoding": "no-relation",
+        "statement": "A researcher interpreted the candidate as a theme under the declared qualitative method.",
+        "remediation": "Supply reflexive interpretation, theoretical coherence, and analytic traceability.",
+        "on_counterevidence": "qualify-conflict-when-support-matches",
+        "fallback_preferences": [],
+        "fallback_projections": [],
+        "requires_uncertainty": false,
+        "requires_independence": false,
+        "refused_export_blocked": true
+      },
+      {
+        "claim": "analyst-benefit",
+        "claim_family": "human-outcome",
+        "scope_semantics": "unscoped",
+        "object_signatures": [
+          [
+            "interface",
+            "analyst-population"
+          ]
+        ],
+        "evidence_predicates": [
+          {
+            "predicate_id": "identified-analyst-benefit-evaluation",
+            "channels": [
+              "human-evaluation"
+            ],
+            "target": "analyst-benefit",
+            "required_metadata": [
+              "outcome",
+              "measure",
+              "study_design",
+              "comparator",
+              "population",
+              "estimand"
+            ],
+            "requires_approved_adjudication": true,
+            "description": "human evaluation with outcome, measure, study design, comparator, population, and estimand"
+          }
+        ],
+        "encoding": "no-relation",
+        "statement": "The evaluated interface supports the named analyst outcome.",
+        "remediation": "Supply a human evaluation with a prespecified outcome, valid measure, study design, comparator, target population, and estimand.",
+        "on_counterevidence": "qualify-conflict-when-support-matches",
+        "fallback_preferences": [],
+        "fallback_projections": [],
+        "requires_uncertainty": false,
+        "requires_independence": false,
+        "refused_export_blocked": true
+      },
+      {
+        "claim": "specification-persistence",
+        "claim_family": "statistical",
+        "scope_semantics": "unscoped",
+        "object_signatures": [
+          [
+            "result",
+            "specification-surface"
+          ]
+        ],
+        "evidence_predicates": [
+          {
+            "predicate_id": "construct-matched-support",
+            "channels": [
+              "specification-surface"
+            ],
+            "target": "specification-persistence",
+            "required_metadata": [],
+            "requires_approved_adjudication": false,
+            "description": "specification-surface"
+          }
+        ],
+        "encoding": "no-relation",
+        "statement": "The result has the reported descriptive frequency across the declared specification surface.",
+        "remediation": "Evaluate the result across a declared specification surface.",
+        "on_counterevidence": "qualify-conflict-when-support-matches",
+        "fallback_preferences": [],
+        "fallback_projections": [],
+        "requires_uncertainty": false,
+        "requires_independence": false,
+        "refused_export_blocked": true
+      },
+      {
+        "claim": "meets-specification-persistence-gate",
+        "claim_family": "statistical",
+        "scope_semantics": "unscoped",
+        "object_signatures": [
+          [
+            "result",
+            "specification-surface"
+          ]
+        ],
+        "evidence_predicates": [
+          {
+            "predicate_id": "construct-matched-support",
+            "channels": [
+              "specification-surface"
+            ],
+            "target": "meets-specification-persistence-gate",
+            "required_metadata": [],
+            "requires_approved_adjudication": false,
+            "description": "specification-surface"
+          }
+        ],
+        "encoding": "no-relation",
+        "statement": "The result meets the declared specification-persistence gate.",
+        "remediation": "Measure persistence across the declared surface and meet the declared gate.",
+        "on_counterevidence": "qualify-conflict-when-support-matches",
+        "fallback_preferences": [],
+        "fallback_projections": [],
+        "requires_uncertainty": false,
+        "requires_independence": false,
+        "refused_export_blocked": true
+      },
+      {
+        "claim": "bootstrap-persistence-under-declared-scheme",
+        "claim_family": "statistical",
+        "scope_semantics": "unscoped",
+        "object_signatures": [
+          [
+            "result",
+            "resampling-scheme"
+          ]
+        ],
+        "evidence_predicates": [
+          {
+            "predicate_id": "construct-matched-support",
+            "channels": [
+              "cluster-bootstrap"
+            ],
+            "target": "bootstrap-persistence-under-declared-scheme",
+            "required_metadata": [],
+            "requires_approved_adjudication": false,
+            "description": "cluster-bootstrap"
+          }
+        ],
+        "encoding": "no-relation",
+        "statement": "The result has the reported persistence under the declared resampling scheme.",
+        "remediation": "Supply a declared resampling scheme that repeats the extraction pipeline.",
+        "on_counterevidence": "qualify-conflict-when-support-matches",
+        "fallback_preferences": [],
+        "fallback_projections": [],
+        "requires_uncertainty": false,
+        "requires_independence": false,
+        "refused_export_blocked": true
+      },
+      {
+        "claim": "statistical-stability",
+        "claim_family": "statistical",
+        "scope_semantics": "unscoped",
+        "object_signatures": [
+          [
+            "result",
+            "resampling-scheme"
+          ]
+        ],
+        "evidence_predicates": [
+          {
+            "predicate_id": "construct-matched-support",
+            "channels": [
+              "cluster-bootstrap"
+            ],
+            "target": "statistical-stability",
+            "required_metadata": [],
+            "requires_approved_adjudication": false,
+            "description": "cluster-bootstrap"
+          }
+        ],
+        "encoding": "no-relation",
+        "statement": "The result meets the declared cluster-bootstrap stability criterion.",
+        "remediation": "Supply a dependence-aware cluster bootstrap that repeats the extraction pipeline.",
+        "on_counterevidence": "qualify-conflict-when-support-matches",
+        "fallback_preferences": [],
+        "fallback_projections": [],
+        "requires_uncertainty": true,
+        "requires_independence": true,
+        "refused_export_blocked": true
+      }
+    ]
+  },
+  "policy_lint": {
+    "policy_version": "2.7.0",
+    "check_count": 21,
+    "passed_count": 21,
+    "all_passed": true,
+    "checks": {
+      "all_claims_declared": true,
+      "requirements_reachable": true,
+      "no_duplicate_predicates": true,
+      "remediation_complete": true,
+      "construct_specific_order": true,
+      "construct_specific_reference": true,
+      "causal_metadata_consistent": true,
+      "object_signatures_complete": true,
+      "interpretive_adjudication_required": true,
+      "causal_adjudication_required": true,
+      "causal_identification_not_intervention_alternative": true,
+      "fallback_targets_declared": true,
+      "fallback_graph_acyclic": true,
+      "fallback_scope_compatible": true,
+      "fallback_projections_complete": true,
+      "fallback_projection_target_compatible": true,
+      "fallback_projection_provenance_preserved": true,
+      "refused_exports_blocked": true,
+      "encoding_semantic_separation": true,
+      "interpretive_metadata_consistent": true,
+      "declared_semantic_change_witnessed": true
+    },
+    "issues": [],
+    "scope": "Static and behavioral policy linting establishes internal consistency, not normative validity."
+  },
+  "policy_lint_mutations": {
+    "benchmark_type": "targeted policy-linter mutation testing",
+    "mutation_count": 21,
+    "detected_count": 21,
+    "detection_rate": 1.0,
+    "all_intended_mutations_detected": true,
+    "check_names": [
+      "all_claims_declared",
+      "requirements_reachable",
+      "no_duplicate_predicates",
+      "remediation_complete",
+      "construct_specific_order",
+      "construct_specific_reference",
+      "causal_metadata_consistent",
+      "object_signatures_complete",
+      "interpretive_adjudication_required",
+      "causal_adjudication_required",
+      "causal_identification_not_intervention_alternative",
+      "fallback_targets_declared",
+      "fallback_graph_acyclic",
+      "fallback_scope_compatible",
+      "fallback_projections_complete",
+      "fallback_projection_target_compatible",
+      "fallback_projection_provenance_preserved",
+      "refused_exports_blocked",
+      "encoding_semantic_separation",
+      "interpretive_metadata_consistent",
+      "declared_semantic_change_witnessed"
+    ],
+    "exact_localization_count": 15,
+    "exact_localization_rate": 0.7142857142857143,
+    "mutations": [
+      {
+        "mutation_id": "remove-claim-declaration",
+        "intended_check": "all_claims_declared",
+        "detected": true,
+        "failed_checks": [
+          "all_claims_declared",
+          "interpretive_adjudication_required"
+        ],
+        "additional_failed_checks": [
+          "interpretive_adjudication_required"
+        ],
+        "additional_failure_count": 1,
+        "exact_localization": false,
+        "detection_vector": {
+          "all_claims_declared": true,
+          "requirements_reachable": false,
+          "no_duplicate_predicates": false,
+          "remediation_complete": false,
+          "construct_specific_order": false,
+          "construct_specific_reference": false,
+          "causal_metadata_consistent": false,
+          "object_signatures_complete": false,
+          "interpretive_adjudication_required": true,
+          "causal_adjudication_required": false,
+          "causal_identification_not_intervention_alternative": false,
+          "fallback_targets_declared": false,
+          "fallback_graph_acyclic": false,
+          "fallback_scope_compatible": false,
+          "fallback_projections_complete": false,
+          "fallback_projection_target_compatible": false,
+          "fallback_projection_provenance_preserved": false,
+          "refused_exports_blocked": false,
+          "encoding_semantic_separation": false,
+          "interpretive_metadata_consistent": false,
+          "declared_semantic_change_witnessed": false
+        }
+      },
+      {
+        "mutation_id": "unreachable-predicate",
+        "intended_check": "requirements_reachable",
+        "detected": true,
+        "failed_checks": [
+          "requirements_reachable",
+          "interpretive_adjudication_required",
+          "interpretive_metadata_consistent"
+        ],
+        "additional_failed_checks": [
+          "interpretive_adjudication_required",
+          "interpretive_metadata_consistent"
+        ],
+        "additional_failure_count": 2,
+        "exact_localization": false,
+        "detection_vector": {
+          "all_claims_declared": false,
+          "requirements_reachable": true,
+          "no_duplicate_predicates": false,
+          "remediation_complete": false,
+          "construct_specific_order": false,
+          "construct_specific_reference": false,
+          "causal_metadata_consistent": false,
+          "object_signatures_complete": false,
+          "interpretive_adjudication_required": true,
+          "causal_adjudication_required": false,
+          "causal_identification_not_intervention_alternative": false,
+          "fallback_targets_declared": false,
+          "fallback_graph_acyclic": false,
+          "fallback_scope_compatible": false,
+          "fallback_projections_complete": false,
+          "fallback_projection_target_compatible": false,
+          "fallback_projection_provenance_preserved": false,
+          "refused_exports_blocked": false,
+          "encoding_semantic_separation": false,
+          "interpretive_metadata_consistent": true,
+          "declared_semantic_change_witnessed": false
+        }
+      },
+      {
+        "mutation_id": "duplicate-predicate",
+        "intended_check": "no_duplicate_predicates",
+        "detected": true,
+        "failed_checks": [
+          "no_duplicate_predicates",
+          "interpretive_adjudication_required",
+          "interpretive_metadata_consistent"
+        ],
+        "additional_failed_checks": [
+          "interpretive_adjudication_required",
+          "interpretive_metadata_consistent"
+        ],
+        "additional_failure_count": 2,
+        "exact_localization": false,
+        "detection_vector": {
+          "all_claims_declared": false,
+          "requirements_reachable": false,
+          "no_duplicate_predicates": true,
+          "remediation_complete": false,
+          "construct_specific_order": false,
+          "construct_specific_reference": false,
+          "causal_metadata_consistent": false,
+          "object_signatures_complete": false,
+          "interpretive_adjudication_required": true,
+          "causal_adjudication_required": false,
+          "causal_identification_not_intervention_alternative": false,
+          "fallback_targets_declared": false,
+          "fallback_graph_acyclic": false,
+          "fallback_scope_compatible": false,
+          "fallback_projections_complete": false,
+          "fallback_projection_target_compatible": false,
+          "fallback_projection_provenance_preserved": false,
+          "refused_exports_blocked": false,
+          "encoding_semantic_separation": false,
+          "interpretive_metadata_consistent": true,
+          "declared_semantic_change_witnessed": false
+        }
+      },
+      {
+        "mutation_id": "remove-remediation",
+        "intended_check": "remediation_complete",
+        "detected": true,
+        "failed_checks": [
+          "remediation_complete"
+        ],
+        "additional_failed_checks": [],
+        "additional_failure_count": 0,
+        "exact_localization": true,
+        "detection_vector": {
+          "all_claims_declared": false,
+          "requirements_reachable": false,
+          "no_duplicate_predicates": false,
+          "remediation_complete": true,
+          "construct_specific_order": false,
+          "construct_specific_reference": false,
+          "causal_metadata_consistent": false,
+          "object_signatures_complete": false,
+          "interpretive_adjudication_required": false,
+          "causal_adjudication_required": false,
+          "causal_identification_not_intervention_alternative": false,
+          "fallback_targets_declared": false,
+          "fallback_graph_acyclic": false,
+          "fallback_scope_compatible": false,
+          "fallback_projections_complete": false,
+          "fallback_projection_target_compatible": false,
+          "fallback_projection_provenance_preserved": false,
+          "refused_exports_blocked": false,
+          "encoding_semantic_separation": false,
+          "interpretive_metadata_consistent": false,
+          "declared_semantic_change_witnessed": false
+        }
+      },
+      {
+        "mutation_id": "generic-order-substitution",
+        "intended_check": "construct_specific_order",
+        "detected": true,
+        "failed_checks": [
+          "construct_specific_order"
+        ],
+        "additional_failed_checks": [],
+        "additional_failure_count": 0,
+        "exact_localization": true,
+        "detection_vector": {
+          "all_claims_declared": false,
+          "requirements_reachable": false,
+          "no_duplicate_predicates": false,
+          "remediation_complete": false,
+          "construct_specific_order": true,
+          "construct_specific_reference": false,
+          "causal_metadata_consistent": false,
+          "object_signatures_complete": false,
+          "interpretive_adjudication_required": false,
+          "causal_adjudication_required": false,
+          "causal_identification_not_intervention_alternative": false,
+          "fallback_targets_declared": false,
+          "fallback_graph_acyclic": false,
+          "fallback_scope_compatible": false,
+          "fallback_projections_complete": false,
+          "fallback_projection_target_compatible": false,
+          "fallback_projection_provenance_preserved": false,
+          "refused_exports_blocked": false,
+          "encoding_semantic_separation": false,
+          "interpretive_metadata_consistent": false,
+          "declared_semantic_change_witnessed": false
+        }
+      },
+      {
+        "mutation_id": "generic-reference-substitution",
+        "intended_check": "construct_specific_reference",
+        "detected": true,
+        "failed_checks": [
+          "construct_specific_reference"
+        ],
+        "additional_failed_checks": [],
+        "additional_failure_count": 0,
+        "exact_localization": true,
+        "detection_vector": {
+          "all_claims_declared": false,
+          "requirements_reachable": false,
+          "no_duplicate_predicates": false,
+          "remediation_complete": false,
+          "construct_specific_order": false,
+          "construct_specific_reference": true,
+          "causal_metadata_consistent": false,
+          "object_signatures_complete": false,
+          "interpretive_adjudication_required": false,
+          "causal_adjudication_required": false,
+          "causal_identification_not_intervention_alternative": false,
+          "fallback_targets_declared": false,
+          "fallback_graph_acyclic": false,
+          "fallback_scope_compatible": false,
+          "fallback_projections_complete": false,
+          "fallback_projection_target_compatible": false,
+          "fallback_projection_provenance_preserved": false,
+          "refused_exports_blocked": false,
+          "encoding_semantic_separation": false,
+          "interpretive_metadata_consistent": false,
+          "declared_semantic_change_witnessed": false
+        }
+      },
+      {
+        "mutation_id": "omit-causal-estimand",
+        "intended_check": "causal_metadata_consistent",
+        "detected": true,
+        "failed_checks": [
+          "causal_metadata_consistent"
+        ],
+        "additional_failed_checks": [],
+        "additional_failure_count": 0,
+        "exact_localization": true,
+        "detection_vector": {
+          "all_claims_declared": false,
+          "requirements_reachable": false,
+          "no_duplicate_predicates": false,
+          "remediation_complete": false,
+          "construct_specific_order": false,
+          "construct_specific_reference": false,
+          "causal_metadata_consistent": true,
+          "object_signatures_complete": false,
+          "interpretive_adjudication_required": false,
+          "causal_adjudication_required": false,
+          "causal_identification_not_intervention_alternative": false,
+          "fallback_targets_declared": false,
+          "fallback_graph_acyclic": false,
+          "fallback_scope_compatible": false,
+          "fallback_projections_complete": false,
+          "fallback_projection_target_compatible": false,
+          "fallback_projection_provenance_preserved": false,
+          "refused_exports_blocked": false,
+          "encoding_semantic_separation": false,
+          "interpretive_metadata_consistent": false,
+          "declared_semantic_change_witnessed": false
+        }
+      },
+      {
+        "mutation_id": "omit-object-signature",
+        "intended_check": "object_signatures_complete",
+        "detected": true,
+        "failed_checks": [
+          "object_signatures_complete"
+        ],
+        "additional_failed_checks": [],
+        "additional_failure_count": 0,
+        "exact_localization": true,
+        "detection_vector": {
+          "all_claims_declared": false,
+          "requirements_reachable": false,
+          "no_duplicate_predicates": false,
+          "remediation_complete": false,
+          "construct_specific_order": false,
+          "construct_specific_reference": false,
+          "causal_metadata_consistent": false,
+          "object_signatures_complete": true,
+          "interpretive_adjudication_required": false,
+          "causal_adjudication_required": false,
+          "causal_identification_not_intervention_alternative": false,
+          "fallback_targets_declared": false,
+          "fallback_graph_acyclic": false,
+          "fallback_scope_compatible": false,
+          "fallback_projections_complete": false,
+          "fallback_projection_target_compatible": false,
+          "fallback_projection_provenance_preserved": false,
+          "refused_exports_blocked": false,
+          "encoding_semantic_separation": false,
+          "interpretive_metadata_consistent": false,
+          "declared_semantic_change_witnessed": false
+        }
+      },
+      {
+        "mutation_id": "omit-theme-adjudication",
+        "intended_check": "interpretive_adjudication_required",
+        "detected": true,
+        "failed_checks": [
+          "interpretive_adjudication_required"
+        ],
+        "additional_failed_checks": [],
+        "additional_failure_count": 0,
+        "exact_localization": true,
+        "detection_vector": {
+          "all_claims_declared": false,
+          "requirements_reachable": false,
+          "no_duplicate_predicates": false,
+          "remediation_complete": false,
+          "construct_specific_order": false,
+          "construct_specific_reference": false,
+          "causal_metadata_consistent": false,
+          "object_signatures_complete": false,
+          "interpretive_adjudication_required": true,
+          "causal_adjudication_required": false,
+          "causal_identification_not_intervention_alternative": false,
+          "fallback_targets_declared": false,
+          "fallback_graph_acyclic": false,
+          "fallback_scope_compatible": false,
+          "fallback_projections_complete": false,
+          "fallback_projection_target_compatible": false,
+          "fallback_projection_provenance_preserved": false,
+          "refused_exports_blocked": false,
+          "encoding_semantic_separation": false,
+          "interpretive_metadata_consistent": false,
+          "declared_semantic_change_witnessed": false
+        }
+      },
+      {
+        "mutation_id": "omit-causal-adjudication",
+        "intended_check": "causal_adjudication_required",
+        "detected": true,
+        "failed_checks": [
+          "causal_adjudication_required"
+        ],
+        "additional_failed_checks": [],
+        "additional_failure_count": 0,
+        "exact_localization": true,
+        "detection_vector": {
+          "all_claims_declared": false,
+          "requirements_reachable": false,
+          "no_duplicate_predicates": false,
+          "remediation_complete": false,
+          "construct_specific_order": false,
+          "construct_specific_reference": false,
+          "causal_metadata_consistent": false,
+          "object_signatures_complete": false,
+          "interpretive_adjudication_required": false,
+          "causal_adjudication_required": true,
+          "causal_identification_not_intervention_alternative": false,
+          "fallback_targets_declared": false,
+          "fallback_graph_acyclic": false,
+          "fallback_scope_compatible": false,
+          "fallback_projections_complete": false,
+          "fallback_projection_target_compatible": false,
+          "fallback_projection_provenance_preserved": false,
+          "refused_exports_blocked": false,
+          "encoding_semantic_separation": false,
+          "interpretive_metadata_consistent": false,
+          "declared_semantic_change_witnessed": false
+        }
+      },
+      {
+        "mutation_id": "intervention-as-causal-alternative",
+        "intended_check": "causal_identification_not_intervention_alternative",
+        "detected": true,
+        "failed_checks": [
+          "causal_identification_not_intervention_alternative"
+        ],
+        "additional_failed_checks": [],
+        "additional_failure_count": 0,
+        "exact_localization": true,
+        "detection_vector": {
+          "all_claims_declared": false,
+          "requirements_reachable": false,
+          "no_duplicate_predicates": false,
+          "remediation_complete": false,
+          "construct_specific_order": false,
+          "construct_specific_reference": false,
+          "causal_metadata_consistent": false,
+          "object_signatures_complete": false,
+          "interpretive_adjudication_required": false,
+          "causal_adjudication_required": false,
+          "causal_identification_not_intervention_alternative": true,
+          "fallback_targets_declared": false,
+          "fallback_graph_acyclic": false,
+          "fallback_scope_compatible": false,
+          "fallback_projections_complete": false,
+          "fallback_projection_target_compatible": false,
+          "fallback_projection_provenance_preserved": false,
+          "refused_exports_blocked": false,
+          "encoding_semantic_separation": false,
+          "interpretive_metadata_consistent": false,
+          "declared_semantic_change_witnessed": false
+        }
+      },
+      {
+        "mutation_id": "fallback-cycle",
+        "intended_check": "fallback_graph_acyclic",
+        "detected": true,
+        "failed_checks": [
+          "fallback_graph_acyclic",
+          "fallback_projections_complete"
+        ],
+        "additional_failed_checks": [
+          "fallback_projections_complete"
+        ],
+        "additional_failure_count": 1,
+        "exact_localization": false,
+        "detection_vector": {
+          "all_claims_declared": false,
+          "requirements_reachable": false,
+          "no_duplicate_predicates": false,
+          "remediation_complete": false,
+          "construct_specific_order": false,
+          "construct_specific_reference": false,
+          "causal_metadata_consistent": false,
+          "object_signatures_complete": false,
+          "interpretive_adjudication_required": false,
+          "causal_adjudication_required": false,
+          "causal_identification_not_intervention_alternative": false,
+          "fallback_targets_declared": false,
+          "fallback_graph_acyclic": true,
+          "fallback_scope_compatible": false,
+          "fallback_projections_complete": true,
+          "fallback_projection_target_compatible": false,
+          "fallback_projection_provenance_preserved": false,
+          "refused_exports_blocked": false,
+          "encoding_semantic_separation": false,
+          "interpretive_metadata_consistent": false,
+          "declared_semantic_change_witnessed": false
+        }
+      },
+      {
+        "mutation_id": "undeclared-fallback-target",
+        "intended_check": "fallback_targets_declared",
+        "detected": true,
+        "failed_checks": [
+          "all_claims_declared",
+          "fallback_targets_declared"
+        ],
+        "additional_failed_checks": [
+          "all_claims_declared"
+        ],
+        "additional_failure_count": 1,
+        "exact_localization": false,
+        "detection_vector": {
+          "all_claims_declared": true,
+          "requirements_reachable": false,
+          "no_duplicate_predicates": false,
+          "remediation_complete": false,
+          "construct_specific_order": false,
+          "construct_specific_reference": false,
+          "causal_metadata_consistent": false,
+          "object_signatures_complete": false,
+          "interpretive_adjudication_required": false,
+          "causal_adjudication_required": false,
+          "causal_identification_not_intervention_alternative": false,
+          "fallback_targets_declared": true,
+          "fallback_graph_acyclic": false,
+          "fallback_scope_compatible": false,
+          "fallback_projections_complete": false,
+          "fallback_projection_target_compatible": false,
+          "fallback_projection_provenance_preserved": false,
+          "refused_exports_blocked": false,
+          "encoding_semantic_separation": false,
+          "interpretive_metadata_consistent": false,
+          "declared_semantic_change_witnessed": false
+        }
+      },
+      {
+        "mutation_id": "unscoped-to-pair-fallback",
+        "intended_check": "fallback_scope_compatible",
+        "detected": true,
+        "failed_checks": [
+          "fallback_scope_compatible",
+          "fallback_projections_complete"
+        ],
+        "additional_failed_checks": [
+          "fallback_projections_complete"
+        ],
+        "additional_failure_count": 1,
+        "exact_localization": false,
+        "detection_vector": {
+          "all_claims_declared": false,
+          "requirements_reachable": false,
+          "no_duplicate_predicates": false,
+          "remediation_complete": false,
+          "construct_specific_order": false,
+          "construct_specific_reference": false,
+          "causal_metadata_consistent": false,
+          "object_signatures_complete": false,
+          "interpretive_adjudication_required": false,
+          "causal_adjudication_required": false,
+          "causal_identification_not_intervention_alternative": false,
+          "fallback_targets_declared": false,
+          "fallback_graph_acyclic": false,
+          "fallback_scope_compatible": true,
+          "fallback_projections_complete": true,
+          "fallback_projection_target_compatible": false,
+          "fallback_projection_provenance_preserved": false,
+          "refused_exports_blocked": false,
+          "encoding_semantic_separation": false,
+          "interpretive_metadata_consistent": false,
+          "declared_semantic_change_witnessed": false
+        }
+      },
+      {
+        "mutation_id": "omit-fallback-projection",
+        "intended_check": "fallback_projections_complete",
+        "detected": true,
+        "failed_checks": [
+          "fallback_projections_complete"
+        ],
+        "additional_failed_checks": [],
+        "additional_failure_count": 0,
+        "exact_localization": true,
+        "detection_vector": {
+          "all_claims_declared": false,
+          "requirements_reachable": false,
+          "no_duplicate_predicates": false,
+          "remediation_complete": false,
+          "construct_specific_order": false,
+          "construct_specific_reference": false,
+          "causal_metadata_consistent": false,
+          "object_signatures_complete": false,
+          "interpretive_adjudication_required": false,
+          "causal_adjudication_required": false,
+          "causal_identification_not_intervention_alternative": false,
+          "fallback_targets_declared": false,
+          "fallback_graph_acyclic": false,
+          "fallback_scope_compatible": false,
+          "fallback_projections_complete": true,
+          "fallback_projection_target_compatible": false,
+          "fallback_projection_provenance_preserved": false,
+          "refused_exports_blocked": false,
+          "encoding_semantic_separation": false,
+          "interpretive_metadata_consistent": false,
+          "declared_semantic_change_witnessed": false
+        }
+      },
+      {
+        "mutation_id": "mistype-fallback-projection",
+        "intended_check": "fallback_projection_target_compatible",
+        "detected": true,
+        "failed_checks": [
+          "fallback_projection_target_compatible"
+        ],
+        "additional_failed_checks": [],
+        "additional_failure_count": 0,
+        "exact_localization": true,
+        "detection_vector": {
+          "all_claims_declared": false,
+          "requirements_reachable": false,
+          "no_duplicate_predicates": false,
+          "remediation_complete": false,
+          "construct_specific_order": false,
+          "construct_specific_reference": false,
+          "causal_metadata_consistent": false,
+          "object_signatures_complete": false,
+          "interpretive_adjudication_required": false,
+          "causal_adjudication_required": false,
+          "causal_identification_not_intervention_alternative": false,
+          "fallback_targets_declared": false,
+          "fallback_graph_acyclic": false,
+          "fallback_scope_compatible": false,
+          "fallback_projections_complete": false,
+          "fallback_projection_target_compatible": true,
+          "fallback_projection_provenance_preserved": false,
+          "refused_exports_blocked": false,
+          "encoding_semantic_separation": false,
+          "interpretive_metadata_consistent": false,
+          "declared_semantic_change_witnessed": false
+        }
+      },
+      {
+        "mutation_id": "drop-fallback-projection-provenance",
+        "intended_check": "fallback_projection_provenance_preserved",
+        "detected": true,
+        "failed_checks": [
+          "fallback_projection_provenance_preserved"
+        ],
+        "additional_failed_checks": [],
+        "additional_failure_count": 0,
+        "exact_localization": true,
+        "detection_vector": {
+          "all_claims_declared": false,
+          "requirements_reachable": false,
+          "no_duplicate_predicates": false,
+          "remediation_complete": false,
+          "construct_specific_order": false,
+          "construct_specific_reference": false,
+          "causal_metadata_consistent": false,
+          "object_signatures_complete": false,
+          "interpretive_adjudication_required": false,
+          "causal_adjudication_required": false,
+          "causal_identification_not_intervention_alternative": false,
+          "fallback_targets_declared": false,
+          "fallback_graph_acyclic": false,
+          "fallback_scope_compatible": false,
+          "fallback_projections_complete": false,
+          "fallback_projection_target_compatible": false,
+          "fallback_projection_provenance_preserved": true,
+          "refused_exports_blocked": false,
+          "encoding_semantic_separation": false,
+          "interpretive_metadata_consistent": false,
+          "declared_semantic_change_witnessed": false
+        }
+      },
+      {
+        "mutation_id": "allow-refused-export",
+        "intended_check": "refused_exports_blocked",
+        "detected": true,
+        "failed_checks": [
+          "refused_exports_blocked"
+        ],
+        "additional_failed_checks": [],
+        "additional_failure_count": 0,
+        "exact_localization": true,
+        "detection_vector": {
+          "all_claims_declared": false,
+          "requirements_reachable": false,
+          "no_duplicate_predicates": false,
+          "remediation_complete": false,
+          "construct_specific_order": false,
+          "construct_specific_reference": false,
+          "causal_metadata_consistent": false,
+          "object_signatures_complete": false,
+          "interpretive_adjudication_required": false,
+          "causal_adjudication_required": false,
+          "causal_identification_not_intervention_alternative": false,
+          "fallback_targets_declared": false,
+          "fallback_graph_acyclic": false,
+          "fallback_scope_compatible": false,
+          "fallback_projections_complete": false,
+          "fallback_projection_target_compatible": false,
+          "fallback_projection_provenance_preserved": false,
+          "refused_exports_blocked": true,
+          "encoding_semantic_separation": false,
+          "interpretive_metadata_consistent": false,
+          "declared_semantic_change_witnessed": false
+        }
+      },
+      {
+        "mutation_id": "collapse-statistical-semantic-encoding",
+        "intended_check": "encoding_semantic_separation",
+        "detected": true,
+        "failed_checks": [
+          "encoding_semantic_separation"
+        ],
+        "additional_failed_checks": [],
+        "additional_failure_count": 0,
+        "exact_localization": true,
+        "detection_vector": {
+          "all_claims_declared": false,
+          "requirements_reachable": false,
+          "no_duplicate_predicates": false,
+          "remediation_complete": false,
+          "construct_specific_order": false,
+          "construct_specific_reference": false,
+          "causal_metadata_consistent": false,
+          "object_signatures_complete": false,
+          "interpretive_adjudication_required": false,
+          "causal_adjudication_required": false,
+          "causal_identification_not_intervention_alternative": false,
+          "fallback_targets_declared": false,
+          "fallback_graph_acyclic": false,
+          "fallback_scope_compatible": false,
+          "fallback_projections_complete": false,
+          "fallback_projection_target_compatible": false,
+          "fallback_projection_provenance_preserved": false,
+          "refused_exports_blocked": false,
+          "encoding_semantic_separation": true,
+          "interpretive_metadata_consistent": false,
+          "declared_semantic_change_witnessed": false
+        }
+      },
+      {
+        "mutation_id": "omit-analyst-comparator",
+        "intended_check": "interpretive_metadata_consistent",
+        "detected": true,
+        "failed_checks": [
+          "interpretive_metadata_consistent"
+        ],
+        "additional_failed_checks": [],
+        "additional_failure_count": 0,
+        "exact_localization": true,
+        "detection_vector": {
+          "all_claims_declared": false,
+          "requirements_reachable": false,
+          "no_duplicate_predicates": false,
+          "remediation_complete": false,
+          "construct_specific_order": false,
+          "construct_specific_reference": false,
+          "causal_metadata_consistent": false,
+          "object_signatures_complete": false,
+          "interpretive_adjudication_required": false,
+          "causal_adjudication_required": false,
+          "causal_identification_not_intervention_alternative": false,
+          "fallback_targets_declared": false,
+          "fallback_graph_acyclic": false,
+          "fallback_scope_compatible": false,
+          "fallback_projections_complete": false,
+          "fallback_projection_target_compatible": false,
+          "fallback_projection_provenance_preserved": false,
+          "refused_exports_blocked": false,
+          "encoding_semantic_separation": false,
+          "interpretive_metadata_consistent": true,
+          "declared_semantic_change_witnessed": false
+        }
+      },
+      {
+        "mutation_id": "behaviorally-identical-version",
+        "intended_check": "declared_semantic_change_witnessed",
+        "detected": true,
+        "failed_checks": [
+          "declared_semantic_change_witnessed"
+        ],
+        "additional_failed_checks": [],
+        "additional_failure_count": 0,
+        "exact_localization": true,
+        "detection_vector": {
+          "all_claims_declared": false,
+          "requirements_reachable": false,
+          "no_duplicate_predicates": false,
+          "remediation_complete": false,
+          "construct_specific_order": false,
+          "construct_specific_reference": false,
+          "causal_metadata_consistent": false,
+          "object_signatures_complete": false,
+          "interpretive_adjudication_required": false,
+          "causal_adjudication_required": false,
+          "causal_identification_not_intervention_alternative": false,
+          "fallback_targets_declared": false,
+          "fallback_graph_acyclic": false,
+          "fallback_scope_compatible": false,
+          "fallback_projections_complete": false,
+          "fallback_projection_target_compatible": false,
+          "fallback_projection_provenance_preserved": false,
+          "refused_exports_blocked": false,
+          "encoding_semantic_separation": false,
+          "interpretive_metadata_consistent": false,
+          "declared_semantic_change_witnessed": true
+        }
+      }
+    ],
+    "scope": "Targeted mutations report intended detection and all co-triggered checks; localization does not establish the normative validity of the active policy."
+  },
+  "contract_field_necessity": {
+    "benchmark_type": "contract-field necessity and failure analysis",
+    "distinction_count": 7,
+    "all_failures_detected": true,
+    "rows": [
+      {
+        "distinction": "governed-object type",
+        "probe_id": "omit-object-signature",
+        "probe_type": "policy mutation",
+        "invalid_behavior_enabled": "Sentence evidence may license an incompatible event or concept claim.",
+        "contribution_consequence": "Object-specific authorization collapses into channel-only admission.",
+        "detected": true
+      },
+      {
+        "distinction": "scope and orientation",
+        "probe_id": "pair-scope-nontransfer",
+        "probe_type": "adversarial property",
+        "invalid_behavior_enabled": "Evidence for a->b may license b->a.",
+        "contribution_consequence": "Directional authorization transfers to an unevidenced pair.",
+        "detected": true
+      },
+      {
+        "distinction": "evidence polarity",
+        "probe_id": "counterevidence-as-support",
+        "probe_type": "counterfactual evidence record",
+        "invalid_behavior_enabled": "A negative annotation may be read as positive support or reverse truth.",
+        "contribution_consequence": "Construct conflict becomes an admitted semantic relation.",
+        "detected": true
+      },
+      {
+        "distinction": "projection provenance",
+        "probe_id": "drop-fallback-projection-provenance",
+        "probe_type": "policy mutation",
+        "invalid_behavior_enabled": "A fallback may lose lineage while remaining emit-able.",
+        "contribution_consequence": "The downgraded representation is no longer auditable to its evidence.",
+        "detected": true
+      },
+      {
+        "distinction": "fallback projection",
+        "probe_id": "omit-fallback-projection",
+        "probe_type": "policy mutation",
+        "invalid_behavior_enabled": "A refused semantic claim may silently collapse to lexical association.",
+        "contribution_consequence": "Refusal no longer controls the representation reached by downgrade.",
+        "detected": true
+      },
+      {
+        "distinction": "export authorization",
+        "probe_id": "allow-refused-export",
+        "probe_type": "policy mutation",
+        "invalid_behavior_enabled": "A visibly refused claim may leak into a downstream artifact.",
+        "contribution_consequence": "Statement and mark governance can be bypassed through export.",
+        "detected": true
+      },
+      {
+        "distinction": "required adjudication",
+        "probe_id": "omit-causal-adjudication",
+        "probe_type": "policy mutation",
+        "invalid_behavior_enabled": "Metadata-complete causal evidence may be promoted without approval.",
+        "contribution_consequence": "An authored governance gate disappears while the claim still admits.",
+        "detected": true
+      }
+    ],
+    "scope": "One-at-a-time removals and corruptions demonstrate implementation failure modes, not minimality of the ontology or normative policy validity."
+  },
+  "claim_decisions": {
+    "benchmark_type": "author-specified policy-conformance fixtures",
+    "case_count": 10,
+    "policy_conformance_rate": 1.0,
+    "decision_disagreement_rate": 0.0,
+    "fallback_disagreement_rate": 0.0,
+    "policy_coverage": 1.0,
+    "remediation_coverage": 1.0,
+    "cases": [
+      {
+        "case_id": "unordered-association",
+        "situation": "Unordered co-occurrence supports a local lexical association.",
+        "expected_decision": "ADMIT",
+        "expected_fallback": null,
+        "decision_correct": true,
+        "fallback_correct": true,
+        "certificate": {
+          "policy_version": "2.7.0",
+          "claim_type": "lexical-association",
+          "claim_family": "observational",
+          "requested_relation": null,
+          "governed_object": null,
+          "required_object_signatures": [
+            [
+              "term",
+              "term"
+            ]
+          ],
+          "object_type_match": true,
+          "adjudication_required": false,
+          "adjudication_approved": false,
+          "required_alternatives": [
+            [
+              "co-occurrence"
+            ]
+          ],
+          "required_predicates": [
+            {
+              "predicate_id": "construct-matched-support",
+              "channels": [
+                "co-occurrence"
+              ],
+              "description": "co-occurrence",
+              "target": "lexical-association",
+              "required_metadata": [],
+              "requires_approved_adjudication": false
+            }
+          ],
+          "observed_channels": [
+            "co-occurrence"
+          ],
+          "observational_identifiability": true,
+          "identifiable": true,
+          "policy_admissible": true,
+          "reason_codes": [],
+          "triggered_reasons": [],
+          "decision_reason": null,
+          "refusal_class": null,
+          "provenance_complete": true,
+          "specification_survival": null,
+          "uncertainty_adequate": false,
+          "dependence_adequate": false,
+          "counterevidence": [],
+          "causal_method": "",
+          "causal_assumptions": [],
+          "causal_estimand": "",
+          "causal_design": "",
+          "causal_diagnostics": "",
+          "decision": "ADMIT",
+          "allowed_encoding": "undirected-link",
+          "allowed_statement": "The terms have a thresholded lexical association under this configuration.",
+          "allowed_export": true,
+          "requested_representation_authorized": true,
+          "fallback_claim": null,
+          "fallback_decision": null,
+          "fallback_allowed_export": null,
+          "fallback_is_policy_preferred": false,
+          "fallback_projection": null,
+          "fallback_projected_object": null,
+          "fallback_projection_provenance": [],
+          "witness": [
+            "All required evidence and policy gates passed."
+          ],
+          "remediation": []
+        }
+      },
+      {
+        "case_id": "prevalence-asymmetry",
+        "situation": "Conditional asymmetry exists but is determined by marginal prevalence.",
+        "expected_decision": "QUALIFY",
+        "expected_fallback": null,
+        "decision_correct": true,
+        "fallback_correct": true,
+        "certificate": {
+          "policy_version": "2.7.0",
+          "claim_type": "asymmetric-conditional",
+          "claim_family": "observational",
+          "requested_relation": null,
+          "governed_object": null,
+          "required_object_signatures": [
+            [
+              "term",
+              "term"
+            ]
+          ],
+          "object_type_match": true,
+          "adjudication_required": false,
+          "adjudication_approved": false,
+          "required_alternatives": [
+            [
+              "co-occurrence"
+            ]
+          ],
+          "required_predicates": [
+            {
+              "predicate_id": "construct-matched-support",
+              "channels": [
+                "co-occurrence"
+              ],
+              "description": "co-occurrence",
+              "target": "asymmetric-conditional",
+              "required_metadata": [],
+              "requires_approved_adjudication": false
+            }
+          ],
+          "observed_channels": [
+            "co-occurrence"
+          ],
+          "observational_identifiability": true,
+          "identifiable": true,
+          "policy_admissible": true,
+          "reason_codes": [
+            "prevalence-qualification"
+          ],
+          "triggered_reasons": [
+            "prevalence-qualification"
+          ],
+          "decision_reason": "prevalence-qualification",
+          "refusal_class": null,
+          "provenance_complete": true,
+          "specification_survival": null,
+          "uncertainty_adequate": false,
+          "dependence_adequate": false,
+          "counterevidence": [],
+          "causal_method": "",
+          "causal_assumptions": [],
+          "causal_estimand": "",
+          "causal_design": "",
+          "causal_diagnostics": "",
+          "decision": "QUALIFY",
+          "allowed_encoding": "conditional-asymmetry-glyph",
+          "allowed_statement": "The conditional confidence differs by orientation under this configuration.",
+          "allowed_export": true,
+          "requested_representation_authorized": true,
+          "fallback_claim": null,
+          "fallback_decision": null,
+          "fallback_allowed_export": null,
+          "fallback_is_policy_preferred": false,
+          "fallback_projection": null,
+          "fallback_projected_object": null,
+          "fallback_projection_provenance": [],
+          "witness": [
+            "Orientation is determined by marginal prevalence, not directional observation."
+          ],
+          "remediation": [
+            "Inspect sensitivity and uncertainty before using the claim."
+          ]
+        }
+      },
+      {
+        "case_id": "unsupported-temporal-order",
+        "situation": "Unordered co-occurrence cannot identify temporal precedence.",
+        "expected_decision": "REFUSE",
+        "expected_fallback": "lexical-association",
+        "decision_correct": true,
+        "fallback_correct": true,
+        "certificate": {
+          "policy_version": "2.7.0",
+          "claim_type": "event-temporal-precedence",
+          "claim_family": "semantic-relational",
+          "requested_relation": [
+            "event A",
+            "event B"
+          ],
+          "governed_object": {
+            "source": "event A",
+            "source_type": "event",
+            "target": "event B",
+            "target_type": "event"
+          },
+          "required_object_signatures": [
+            [
+              "event",
+              "event"
+            ]
+          ],
+          "object_type_match": true,
+          "adjudication_required": false,
+          "adjudication_approved": false,
+          "required_alternatives": [
+            [
+              "event-order"
+            ],
+            [
+              "annotation-temporal-precedence"
+            ]
+          ],
+          "required_predicates": [
+            {
+              "predicate_id": "construct-matched-support",
+              "channels": [
+                "event-order"
+              ],
+              "description": "event-order",
+              "target": "event-temporal-precedence",
+              "required_metadata": [],
+              "requires_approved_adjudication": false
+            },
+            {
+              "predicate_id": "construct-matched-support",
+              "channels": [
+                "annotation-temporal-precedence"
+              ],
+              "description": "annotation-temporal-precedence",
+              "target": "event-temporal-precedence",
+              "required_metadata": [],
+              "requires_approved_adjudication": false
+            }
+          ],
+          "observed_channels": [
+            "co-occurrence"
+          ],
+          "observational_identifiability": false,
+          "identifiable": false,
+          "policy_admissible": false,
+          "reason_codes": [
+            "evidence-channel-absent"
+          ],
+          "triggered_reasons": [
+            "evidence-channel-absent"
+          ],
+          "decision_reason": "evidence-channel-absent",
+          "refusal_class": "epistemic",
+          "provenance_complete": true,
+          "specification_survival": null,
+          "uncertainty_adequate": false,
+          "dependence_adequate": false,
+          "counterevidence": [],
+          "causal_method": "",
+          "causal_assumptions": [],
+          "causal_estimand": "",
+          "causal_design": "",
+          "causal_diagnostics": "",
+          "decision": "REFUSE",
+          "allowed_encoding": "undirected-link",
+          "allowed_statement": "The terms have a thresholded lexical association under this configuration.",
+          "allowed_export": false,
+          "requested_representation_authorized": false,
+          "fallback_claim": "lexical-association",
+          "fallback_decision": "ADMIT",
+          "fallback_allowed_export": true,
+          "fallback_is_policy_preferred": true,
+          "fallback_projection": "lexicalize-pair-v1",
+          "fallback_projected_object": {
+            "source": "event-a",
+            "source_type": "term",
+            "target": "event-b",
+            "target_type": "term"
+          },
+          "fallback_projection_provenance": [
+            "Canonical lexical handles map 'event A' to 'event-a' and 'event B' to 'event-b'.",
+            "Both projected handles occur in the represented corpus vocabulary.",
+            "The projected pair has independently observed co-occurrence evidence.",
+            "Evidence-record and corpus lineage retained from the requested claim bundle."
+          ],
+          "witness": [
+            "Missing required evidence alternative: event-order OR annotation-temporal-precedence."
+          ],
+          "remediation": [
+            "Supply observed event order or a construct-matched temporal annotation."
+          ]
+        }
+      },
+      {
+        "case_id": "observed-temporal-order",
+        "situation": "Observed event order supplies the temporal channel required by policy.",
+        "expected_decision": "ADMIT",
+        "expected_fallback": null,
+        "decision_correct": true,
+        "fallback_correct": true,
+        "certificate": {
+          "policy_version": "2.7.0",
+          "claim_type": "event-temporal-precedence",
+          "claim_family": "semantic-relational",
+          "requested_relation": null,
+          "governed_object": null,
+          "required_object_signatures": [
+            [
+              "event",
+              "event"
+            ]
+          ],
+          "object_type_match": true,
+          "adjudication_required": false,
+          "adjudication_approved": false,
+          "required_alternatives": [
+            [
+              "event-order"
+            ],
+            [
+              "annotation-temporal-precedence"
+            ]
+          ],
+          "required_predicates": [
+            {
+              "predicate_id": "construct-matched-support",
+              "channels": [
+                "event-order"
+              ],
+              "description": "event-order",
+              "target": "event-temporal-precedence",
+              "required_metadata": [],
+              "requires_approved_adjudication": false
+            },
+            {
+              "predicate_id": "construct-matched-support",
+              "channels": [
+                "annotation-temporal-precedence"
+              ],
+              "description": "annotation-temporal-precedence",
+              "target": "event-temporal-precedence",
+              "required_metadata": [],
+              "requires_approved_adjudication": false
+            }
+          ],
+          "observed_channels": [
+            "co-occurrence",
+            "event-order"
+          ],
+          "observational_identifiability": false,
+          "identifiable": true,
+          "policy_admissible": true,
+          "reason_codes": [],
+          "triggered_reasons": [],
+          "decision_reason": null,
+          "refusal_class": null,
+          "provenance_complete": true,
+          "specification_survival": null,
+          "uncertainty_adequate": false,
+          "dependence_adequate": false,
+          "counterevidence": [],
+          "causal_method": "",
+          "causal_assumptions": [],
+          "causal_estimand": "",
+          "causal_design": "",
+          "causal_diagnostics": "",
+          "decision": "ADMIT",
+          "allowed_encoding": "directed-arrow",
+          "allowed_statement": "The source precedes the target in the declared temporal observation.",
+          "allowed_export": true,
+          "requested_representation_authorized": true,
+          "fallback_claim": null,
+          "fallback_decision": null,
+          "fallback_allowed_export": null,
+          "fallback_is_policy_preferred": false,
+          "fallback_projection": null,
+          "fallback_projected_object": null,
+          "fallback_projection_provenance": [],
+          "witness": [
+            "All required evidence and policy gates passed."
+          ],
+          "remediation": []
+        }
+      },
+      {
+        "case_id": "explicit-prerequisite",
+        "situation": "A prerequisite-bearing reference supplies directional evidence.",
+        "expected_decision": "ADMIT",
+        "expected_fallback": null,
+        "decision_correct": true,
+        "fallback_correct": true,
+        "certificate": {
+          "policy_version": "2.7.0",
+          "claim_type": "concept-prerequisite",
+          "claim_family": "semantic-relational",
+          "requested_relation": null,
+          "governed_object": null,
+          "required_object_signatures": [
+            [
+              "concept",
+              "concept"
+            ]
+          ],
+          "object_type_match": true,
+          "adjudication_required": false,
+          "adjudication_approved": false,
+          "required_alternatives": [
+            [
+              "prerequisite-reference"
+            ],
+            [
+              "annotation-prerequisite"
+            ]
+          ],
+          "required_predicates": [
+            {
+              "predicate_id": "construct-matched-support",
+              "channels": [
+                "prerequisite-reference"
+              ],
+              "description": "prerequisite-reference",
+              "target": "concept-prerequisite",
+              "required_metadata": [],
+              "requires_approved_adjudication": false
+            },
+            {
+              "predicate_id": "construct-matched-support",
+              "channels": [
+                "annotation-prerequisite"
+              ],
+              "description": "annotation-prerequisite",
+              "target": "concept-prerequisite",
+              "required_metadata": [],
+              "requires_approved_adjudication": false
+            }
+          ],
+          "observed_channels": [
+            "co-occurrence",
+            "prerequisite-reference"
+          ],
+          "observational_identifiability": false,
+          "identifiable": true,
+          "policy_admissible": true,
+          "reason_codes": [],
+          "triggered_reasons": [],
+          "decision_reason": null,
+          "refusal_class": null,
+          "provenance_complete": true,
+          "specification_survival": null,
+          "uncertainty_adequate": false,
+          "dependence_adequate": false,
+          "counterevidence": [],
+          "causal_method": "",
+          "causal_assumptions": [],
+          "causal_estimand": "",
+          "causal_design": "",
+          "causal_diagnostics": "",
+          "decision": "ADMIT",
+          "allowed_encoding": "directed-arrow",
+          "allowed_statement": "The source concept is an explicit prerequisite for the target concept.",
+          "allowed_export": true,
+          "requested_representation_authorized": true,
+          "fallback_claim": null,
+          "fallback_decision": null,
+          "fallback_allowed_export": null,
+          "fallback_is_policy_preferred": false,
+          "fallback_projection": null,
+          "fallback_projected_object": null,
+          "fallback_projection_provenance": [],
+          "witness": [
+            "All required evidence and policy gates passed."
+          ],
+          "remediation": []
+        }
+      },
+      {
+        "case_id": "unsupported-causality",
+        "situation": "Order and syntax do not substitute for intervention evidence.",
+        "expected_decision": "REFUSE",
+        "expected_fallback": "lexical-association",
+        "decision_correct": true,
+        "fallback_correct": true,
+        "certificate": {
+          "policy_version": "2.7.0",
+          "claim_type": "causal-influence",
+          "claim_family": "causal",
+          "requested_relation": [
+            "intervention A",
+            "outcome B"
+          ],
+          "governed_object": {
+            "source": "intervention A",
+            "source_type": "intervention",
+            "target": "outcome B",
+            "target_type": "outcome"
+          },
+          "required_object_signatures": [
+            [
+              "intervention",
+              "outcome"
+            ]
+          ],
+          "object_type_match": true,
+          "adjudication_required": true,
+          "adjudication_approved": false,
+          "required_alternatives": [
+            [
+              "causal-identification"
+            ]
+          ],
+          "required_predicates": [
+            {
+              "predicate_id": "causal-identification-record",
+              "channels": [
+                "causal-identification"
+              ],
+              "description": "causal identification with named design, method, assumptions, target estimand, and diagnostics",
+              "target": "causal-influence",
+              "required_metadata": [
+                "method",
+                "assumptions",
+                "estimand",
+                "study_design",
+                "diagnostics"
+              ],
+              "requires_approved_adjudication": true
+            }
+          ],
+          "observed_channels": [
+            "co-occurrence",
+            "mention-order",
+            "syntax"
+          ],
+          "observational_identifiability": false,
+          "identifiable": false,
+          "policy_admissible": false,
+          "reason_codes": [
+            "evidence-channel-absent"
+          ],
+          "triggered_reasons": [
+            "evidence-channel-absent"
+          ],
+          "decision_reason": "evidence-channel-absent",
+          "refusal_class": "epistemic",
+          "provenance_complete": true,
+          "specification_survival": null,
+          "uncertainty_adequate": false,
+          "dependence_adequate": false,
+          "counterevidence": [],
+          "causal_method": "",
+          "causal_assumptions": [],
+          "causal_estimand": "",
+          "causal_design": "",
+          "causal_diagnostics": "",
+          "decision": "REFUSE",
+          "allowed_encoding": "undirected-link",
+          "allowed_statement": "The terms have a thresholded lexical association under this configuration.",
+          "allowed_export": false,
+          "requested_representation_authorized": false,
+          "fallback_claim": "lexical-association",
+          "fallback_decision": "ADMIT",
+          "fallback_allowed_export": true,
+          "fallback_is_policy_preferred": true,
+          "fallback_projection": "lexicalize-pair-v1",
+          "fallback_projected_object": {
+            "source": "intervention-a",
+            "source_type": "term",
+            "target": "outcome-b",
+            "target_type": "term"
+          },
+          "fallback_projection_provenance": [
+            "Canonical lexical handles map 'intervention A' to 'intervention-a' and 'outcome B' to 'outcome-b'.",
+            "Both projected handles occur in the represented corpus vocabulary.",
+            "The projected pair has independently observed co-occurrence evidence.",
+            "Evidence-record and corpus lineage retained from the requested claim bundle."
+          ],
+          "witness": [
+            "Missing required evidence alternative: causal-identification."
+          ],
+          "remediation": [
+            "Supply a causal-identification design with a named method, assumptions, estimand, and diagnostics; intervention may be the design subtype."
+          ]
+        }
+      },
+      {
+        "case_id": "low-specification-persistence",
+        "situation": "The association does not meet the declared specification-persistence gate.",
+        "expected_decision": "REFUSE",
+        "expected_fallback": null,
+        "decision_correct": true,
+        "fallback_correct": true,
+        "certificate": {
+          "policy_version": "2.7.0",
+          "claim_type": "meets-specification-persistence-gate",
+          "claim_family": "statistical",
+          "requested_relation": null,
+          "governed_object": null,
+          "required_object_signatures": [
+            [
+              "result",
+              "specification-surface"
+            ]
+          ],
+          "object_type_match": true,
+          "adjudication_required": false,
+          "adjudication_approved": false,
+          "required_alternatives": [
+            [
+              "specification-surface"
+            ]
+          ],
+          "required_predicates": [
+            {
+              "predicate_id": "construct-matched-support",
+              "channels": [
+                "specification-surface"
+              ],
+              "description": "specification-surface",
+              "target": "meets-specification-persistence-gate",
+              "required_metadata": [],
+              "requires_approved_adjudication": false
+            }
+          ],
+          "observed_channels": [
+            "co-occurrence",
+            "specification-surface"
+          ],
+          "observational_identifiability": false,
+          "identifiable": false,
+          "policy_admissible": false,
+          "reason_codes": [
+            "persistence-gate-failed"
+          ],
+          "triggered_reasons": [
+            "persistence-gate-failed"
+          ],
+          "decision_reason": "persistence-gate-failed",
+          "refusal_class": "policy",
+          "provenance_complete": true,
+          "specification_survival": 0.65,
+          "uncertainty_adequate": false,
+          "dependence_adequate": false,
+          "counterevidence": [],
+          "causal_method": "",
+          "causal_assumptions": [],
+          "causal_estimand": "",
+          "causal_design": "",
+          "causal_diagnostics": "",
+          "decision": "REFUSE",
+          "allowed_encoding": "no-relation",
+          "allowed_statement": "No relation claim is exportable from the available evidence.",
+          "allowed_export": false,
+          "requested_representation_authorized": false,
+          "fallback_claim": null,
+          "fallback_decision": null,
+          "fallback_allowed_export": null,
+          "fallback_is_policy_preferred": false,
+          "fallback_projection": null,
+          "fallback_projected_object": null,
+          "fallback_projection_provenance": [],
+          "witness": [
+            "The observed persistence S=0.650 does not meet gate=0.800."
+          ],
+          "remediation": [
+            "Measure persistence across the declared surface and meet the declared gate."
+          ]
+        }
+      },
+      {
+        "case_id": "duplicated-evidence",
+        "situation": "A bootstrap over copied documents does not identify dependence-aware stability.",
+        "expected_decision": "REFUSE",
+        "expected_fallback": null,
+        "decision_correct": true,
+        "fallback_correct": true,
+        "certificate": {
+          "policy_version": "2.7.0",
+          "claim_type": "statistical-stability",
+          "claim_family": "statistical",
+          "requested_relation": null,
+          "governed_object": null,
+          "required_object_signatures": [
+            [
+              "result",
+              "resampling-scheme"
+            ]
+          ],
+          "object_type_match": true,
+          "adjudication_required": false,
+          "adjudication_approved": false,
+          "required_alternatives": [
+            [
+              "cluster-bootstrap"
+            ]
+          ],
+          "required_predicates": [
+            {
+              "predicate_id": "construct-matched-support",
+              "channels": [
+                "cluster-bootstrap"
+              ],
+              "description": "cluster-bootstrap",
+              "target": "statistical-stability",
+              "required_metadata": [],
+              "requires_approved_adjudication": false
+            }
+          ],
+          "observed_channels": [
+            "cluster-bootstrap"
+          ],
+          "observational_identifiability": null,
+          "identifiable": false,
+          "policy_admissible": false,
+          "reason_codes": [
+            "uncertainty-inadequate",
+            "dependence-inadequate"
+          ],
+          "triggered_reasons": [
+            "uncertainty-inadequate",
+            "dependence-inadequate"
+          ],
+          "decision_reason": "uncertainty-inadequate",
+          "refusal_class": "policy",
+          "provenance_complete": true,
+          "specification_survival": null,
+          "uncertainty_adequate": false,
+          "dependence_adequate": false,
+          "counterevidence": [],
+          "causal_method": "",
+          "causal_assumptions": [],
+          "causal_estimand": "",
+          "causal_design": "",
+          "causal_diagnostics": "",
+          "decision": "REFUSE",
+          "allowed_encoding": "no-relation",
+          "allowed_statement": "No relation claim is exportable from the available evidence.",
+          "allowed_export": false,
+          "requested_representation_authorized": false,
+          "fallback_claim": null,
+          "fallback_decision": null,
+          "fallback_allowed_export": null,
+          "fallback_is_policy_preferred": false,
+          "fallback_projection": null,
+          "fallback_projected_object": null,
+          "fallback_projection_provenance": [],
+          "witness": [
+            "Uncertainty evidence is inadequate for identification.",
+            "Dependence-aware resampling is not established."
+          ],
+          "remediation": [
+            "Supply a dependence-aware cluster bootstrap that repeats the extraction pipeline."
+          ]
+        }
+      },
+      {
+        "case_id": "conflicting-annotations",
+        "situation": "Validated annotations identify the relation but disagree on its direction.",
+        "expected_decision": "QUALIFY",
+        "expected_fallback": null,
+        "decision_correct": true,
+        "fallback_correct": true,
+        "certificate": {
+          "policy_version": "2.7.0",
+          "claim_type": "event-temporal-precedence",
+          "claim_family": "semantic-relational",
+          "requested_relation": [
+            "event A",
+            "event B"
+          ],
+          "governed_object": {
+            "source": "event A",
+            "source_type": "event",
+            "target": "event B",
+            "target_type": "event"
+          },
+          "required_object_signatures": [
+            [
+              "event",
+              "event"
+            ]
+          ],
+          "object_type_match": true,
+          "adjudication_required": false,
+          "adjudication_approved": false,
+          "required_alternatives": [
+            [
+              "event-order"
+            ],
+            [
+              "annotation-temporal-precedence"
+            ]
+          ],
+          "required_predicates": [
+            {
+              "predicate_id": "construct-matched-support",
+              "channels": [
+                "event-order"
+              ],
+              "description": "event-order",
+              "target": "event-temporal-precedence",
+              "required_metadata": [],
+              "requires_approved_adjudication": false
+            },
+            {
+              "predicate_id": "construct-matched-support",
+              "channels": [
+                "annotation-temporal-precedence"
+              ],
+              "description": "annotation-temporal-precedence",
+              "target": "event-temporal-precedence",
+              "required_metadata": [],
+              "requires_approved_adjudication": false
+            }
+          ],
+          "observed_channels": [
+            "annotation-temporal-precedence"
+          ],
+          "observational_identifiability": null,
+          "identifiable": true,
+          "policy_admissible": true,
+          "reason_codes": [
+            "conflict-present"
+          ],
+          "triggered_reasons": [
+            "conflict-present"
+          ],
+          "decision_reason": "conflict-present",
+          "refusal_class": null,
+          "provenance_complete": true,
+          "specification_survival": null,
+          "uncertainty_adequate": false,
+          "dependence_adequate": false,
+          "counterevidence": [],
+          "causal_method": "",
+          "causal_assumptions": [],
+          "causal_estimand": "",
+          "causal_design": "",
+          "causal_diagnostics": "",
+          "decision": "QUALIFY",
+          "allowed_encoding": "contested-relation",
+          "allowed_statement": "Construct-matched support and counterevidence contest this relation.",
+          "allowed_export": false,
+          "requested_representation_authorized": true,
+          "fallback_claim": null,
+          "fallback_decision": null,
+          "fallback_allowed_export": null,
+          "fallback_is_policy_preferred": false,
+          "fallback_projection": null,
+          "fallback_projected_object": null,
+          "fallback_projection_provenance": [],
+          "witness": [
+            "Construct-matched conflict: support: A precedes B; counterevidence: B precedes A."
+          ],
+          "remediation": [
+            "Inspect sensitivity and uncertainty before using the claim."
+          ]
+        }
+      },
+      {
+        "case_id": "missing-lineage",
+        "situation": "An identifiable association lacks required provenance.",
+        "expected_decision": "REFUSE",
+        "expected_fallback": null,
+        "decision_correct": true,
+        "fallback_correct": true,
+        "certificate": {
+          "policy_version": "2.7.0",
+          "claim_type": "lexical-association",
+          "claim_family": "observational",
+          "requested_relation": null,
+          "governed_object": null,
+          "required_object_signatures": [
+            [
+              "term",
+              "term"
+            ]
+          ],
+          "object_type_match": true,
+          "adjudication_required": false,
+          "adjudication_approved": false,
+          "required_alternatives": [
+            [
+              "co-occurrence"
+            ]
+          ],
+          "required_predicates": [
+            {
+              "predicate_id": "construct-matched-support",
+              "channels": [
+                "co-occurrence"
+              ],
+              "description": "co-occurrence",
+              "target": "lexical-association",
+              "required_metadata": [],
+              "requires_approved_adjudication": false
+            }
+          ],
+          "observed_channels": [
+            "co-occurrence"
+          ],
+          "observational_identifiability": true,
+          "identifiable": true,
+          "policy_admissible": false,
+          "reason_codes": [
+            "provenance-incomplete"
+          ],
+          "triggered_reasons": [
+            "provenance-incomplete"
+          ],
+          "decision_reason": "provenance-incomplete",
+          "refusal_class": "operational",
+          "provenance_complete": false,
+          "specification_survival": null,
+          "uncertainty_adequate": false,
+          "dependence_adequate": false,
+          "counterevidence": [],
+          "causal_method": "",
+          "causal_assumptions": [],
+          "causal_estimand": "",
+          "causal_design": "",
+          "causal_diagnostics": "",
+          "decision": "REFUSE",
+          "allowed_encoding": "no-relation",
+          "allowed_statement": "No relation claim is exportable from the available evidence.",
+          "allowed_export": false,
+          "requested_representation_authorized": false,
+          "fallback_claim": null,
+          "fallback_decision": null,
+          "fallback_allowed_export": null,
+          "fallback_is_policy_preferred": false,
+          "fallback_projection": null,
+          "fallback_projected_object": null,
+          "fallback_projection_provenance": [],
+          "witness": [
+            "Required provenance fields are incomplete for the intended claim."
+          ],
+          "remediation": [
+            "Complete the claim policy's required lineage fields."
+          ]
+        }
+      }
+    ]
+  },
+  "contract_properties": {
+    "check_count": 7,
+    "passed_count": 7,
+    "all_passed": true,
+    "checks": {
+      "construct_matching": true,
+      "no_validity_laundering": true,
+      "conditional_support_channel_monotonicity": true,
+      "export_soundness": true,
+      "fallback_soundness": true,
+      "fallback_preference_conformance": true,
+      "pair_scope_nontransfer": true
+    },
+    "falsification_matrix": [
+      {
+        "property": "construct matching",
+        "perturbation": "Use semantic-equivalence evidence for temporal precedence",
+        "failure_condition": "Temporal precedence is admitted",
+        "contribution_consequence": "An incompatible construct reaches a semantic mark."
+      },
+      {
+        "property": "no validity laundering",
+        "perturbation": "Set specification persistence and uncertainty adequacy without causal evidence",
+        "failure_condition": "Causal influence is admitted or qualified",
+        "contribution_consequence": "Quality fields launder an unidentified claim."
+      },
+      {
+        "property": "conditional support-channel monotonicity",
+        "perturbation": "Add irrelevant mention-order evidence to supported association",
+        "failure_condition": "Lexical admission is withdrawn",
+        "contribution_consequence": "Irrelevant evidence destabilizes lawful output."
+      },
+      {
+        "property": "export soundness",
+        "perturbation": "Evaluate every refused claim for export",
+        "failure_condition": "Any refused requested claim is exportable",
+        "contribution_consequence": "Export bypasses statement and mark refusal."
+      },
+      {
+        "property": "fallback soundness",
+        "perturbation": "Remove evidence required by each preferred fallback",
+        "failure_condition": "An unidentified fallback is emitted",
+        "contribution_consequence": "Downgrade emits a claim without independent support."
+      },
+      {
+        "property": "fallback preference conformance",
+        "perturbation": "Provide multiple declared fallback candidates",
+        "failure_condition": "The first supported preference is not selected",
+        "contribution_consequence": "Rendered downgrade diverges from authored policy."
+      },
+      {
+        "property": "pair scope nontransfer",
+        "perturbation": "Reverse the requested entity pair without reversing the evidence record",
+        "failure_condition": "Forward directional evidence licenses the reversed claim",
+        "contribution_consequence": "Evidence authorizes the wrong semantic orientation."
+      }
+    ],
+    "scope": "Executable properties of policy version 2.7.0; these checks establish internal conformance, not external epistemic validity."
+  },
+  "policy_contestability": {
+    "case_id": "directional-pair-reversal",
+    "changed_rule": "Policy 2.7.0 requires an ordered-pair match; Policy 2.2.0 matched the prerequisite claim type without enforcing entity-pair orientation.",
+    "certificates": [
+      {
+        "policy_version": "2.2.0",
+        "claim_type": "concept-prerequisite",
+        "claim_family": "semantic-relational",
+        "requested_relation": [
+          "methods",
+          "foundations"
+        ],
+        "governed_object": null,
+        "required_object_signatures": [
+          [
+            "concept",
+            "concept"
+          ]
+        ],
+        "object_type_match": true,
+        "adjudication_required": false,
+        "adjudication_approved": false,
+        "required_alternatives": [
+          [
+            "prerequisite-reference"
+          ],
+          [
+            "annotation-prerequisite"
+          ]
+        ],
+        "required_predicates": [
+          {
+            "predicate_id": "construct-matched-support",
+            "channels": [
+              "prerequisite-reference"
+            ],
+            "description": "prerequisite-reference",
+            "target": "concept-prerequisite",
+            "required_metadata": [],
+            "requires_approved_adjudication": false
+          },
+          {
+            "predicate_id": "construct-matched-support",
+            "channels": [
+              "annotation-prerequisite"
+            ],
+            "description": "annotation-prerequisite",
+            "target": "concept-prerequisite",
+            "required_metadata": [],
+            "requires_approved_adjudication": false
+          }
+        ],
+        "observed_channels": [
+          "prerequisite-reference"
+        ],
+        "observational_identifiability": null,
+        "identifiable": true,
+        "policy_admissible": true,
+        "reason_codes": [],
+        "triggered_reasons": [],
+        "decision_reason": null,
+        "refusal_class": null,
+        "provenance_complete": true,
+        "specification_survival": null,
+        "uncertainty_adequate": false,
+        "dependence_adequate": false,
+        "counterevidence": [],
+        "causal_method": "",
+        "causal_assumptions": [],
+        "causal_estimand": "",
+        "causal_design": "",
+        "causal_diagnostics": "",
+        "decision": "ADMIT",
+        "allowed_encoding": "directed-arrow",
+        "allowed_statement": "The source concept is an explicit prerequisite for the target concept.",
+        "allowed_export": true,
+        "requested_representation_authorized": true,
+        "fallback_claim": null,
+        "fallback_decision": null,
+        "fallback_allowed_export": null,
+        "fallback_is_policy_preferred": false,
+        "fallback_projection": null,
+        "fallback_projected_object": null,
+        "fallback_projection_provenance": [],
+        "witness": [
+          "All required evidence and policy gates passed."
+        ],
+        "remediation": []
+      },
+      {
+        "policy_version": "2.7.0",
+        "claim_type": "concept-prerequisite",
+        "claim_family": "semantic-relational",
+        "requested_relation": [
+          "methods",
+          "foundations"
+        ],
+        "governed_object": null,
+        "required_object_signatures": [
+          [
+            "concept",
+            "concept"
+          ]
+        ],
+        "object_type_match": true,
+        "adjudication_required": false,
+        "adjudication_approved": false,
+        "required_alternatives": [
+          [
+            "prerequisite-reference"
+          ],
+          [
+            "annotation-prerequisite"
+          ]
+        ],
+        "required_predicates": [
+          {
+            "predicate_id": "construct-matched-support",
+            "channels": [
+              "prerequisite-reference"
+            ],
+            "description": "prerequisite-reference",
+            "target": "concept-prerequisite",
+            "required_metadata": [],
+            "requires_approved_adjudication": false
+          },
+          {
+            "predicate_id": "construct-matched-support",
+            "channels": [
+              "annotation-prerequisite"
+            ],
+            "description": "annotation-prerequisite",
+            "target": "concept-prerequisite",
+            "required_metadata": [],
+            "requires_approved_adjudication": false
+          }
+        ],
+        "observed_channels": [
+          "prerequisite-reference"
+        ],
+        "observational_identifiability": null,
+        "identifiable": false,
+        "policy_admissible": false,
+        "reason_codes": [
+          "relation-scope-mismatch"
+        ],
+        "triggered_reasons": [
+          "relation-scope-mismatch"
+        ],
+        "decision_reason": "relation-scope-mismatch",
+        "refusal_class": "epistemic",
+        "provenance_complete": true,
+        "specification_survival": null,
+        "uncertainty_adequate": false,
+        "dependence_adequate": false,
+        "counterevidence": [],
+        "causal_method": "",
+        "causal_assumptions": [],
+        "causal_estimand": "",
+        "causal_design": "",
+        "causal_diagnostics": "",
+        "decision": "REFUSE",
+        "allowed_encoding": "no-relation",
+        "allowed_statement": "No relation claim is exportable from the available evidence.",
+        "allowed_export": false,
+        "requested_representation_authorized": false,
+        "fallback_claim": null,
+        "fallback_decision": null,
+        "fallback_allowed_export": null,
+        "fallback_is_policy_preferred": false,
+        "fallback_projection": null,
+        "fallback_projected_object": null,
+        "fallback_projection_provenance": [],
+        "witness": [
+          "The required channel is present, but its relation or scope does not match."
+        ],
+        "remediation": [
+          "Supply a concept-prerequisite reference or construct-matched annotation."
+        ]
+      }
+    ],
+    "decision_changed": true,
+    "version_traceable": true
+  },
+  "observational_equivalence": {
+    "worlds": [
+      {
+        "world_id": "forward",
+        "latent_truth": "alpha precedes beta"
+      },
+      {
+        "world_id": "reverse",
+        "latent_truth": "beta precedes alpha"
+      }
+    ],
+    "unordered_signatures_equal": true,
+    "unordered_signature": {
+      "marginals": [
+        [
+          "alpha",
+          2
+        ],
+        [
+          "beta",
+          2
+        ]
+      ],
+      "pairs": [
+        [
+          [
+            "alpha",
+            "beta"
+          ],
+          1
+        ]
+      ]
+    },
+    "decisions": [
+      {
+        "policy_version": "2.7.0",
+        "claim_type": "event-temporal-precedence",
+        "claim_family": "semantic-relational",
+        "requested_relation": [
+          "alpha",
+          "beta"
+        ],
+        "governed_object": {
+          "source": "alpha",
+          "source_type": "event",
+          "target": "beta",
+          "target_type": "event"
+        },
+        "required_object_signatures": [
+          [
+            "event",
+            "event"
+          ]
+        ],
+        "object_type_match": true,
+        "adjudication_required": false,
+        "adjudication_approved": false,
+        "required_alternatives": [
+          [
+            "event-order"
+          ],
+          [
+            "annotation-temporal-precedence"
+          ]
+        ],
+        "required_predicates": [
+          {
+            "predicate_id": "construct-matched-support",
+            "channels": [
+              "event-order"
+            ],
+            "description": "event-order",
+            "target": "event-temporal-precedence",
+            "required_metadata": [],
+            "requires_approved_adjudication": false
+          },
+          {
+            "predicate_id": "construct-matched-support",
+            "channels": [
+              "annotation-temporal-precedence"
+            ],
+            "description": "annotation-temporal-precedence",
+            "target": "event-temporal-precedence",
+            "required_metadata": [],
+            "requires_approved_adjudication": false
+          }
+        ],
+        "observed_channels": [
+          "co-occurrence"
+        ],
+        "observational_identifiability": false,
+        "identifiable": false,
+        "policy_admissible": false,
+        "reason_codes": [
+          "evidence-channel-absent"
+        ],
+        "triggered_reasons": [
+          "evidence-channel-absent"
+        ],
+        "decision_reason": "evidence-channel-absent",
+        "refusal_class": "epistemic",
+        "provenance_complete": true,
+        "specification_survival": null,
+        "uncertainty_adequate": false,
+        "dependence_adequate": false,
+        "counterevidence": [],
+        "causal_method": "",
+        "causal_assumptions": [],
+        "causal_estimand": "",
+        "causal_design": "",
+        "causal_diagnostics": "",
+        "decision": "REFUSE",
+        "allowed_encoding": "undirected-link",
+        "allowed_statement": "The terms have a thresholded lexical association under this configuration.",
+        "allowed_export": false,
+        "requested_representation_authorized": false,
+        "fallback_claim": "lexical-association",
+        "fallback_decision": "ADMIT",
+        "fallback_allowed_export": true,
+        "fallback_is_policy_preferred": true,
+        "fallback_projection": "lexicalize-pair-v1",
+        "fallback_projected_object": {
+          "source": "alpha",
+          "source_type": "term",
+          "target": "beta",
+          "target_type": "term"
+        },
+        "fallback_projection_provenance": [
+          "Canonical lexical handles map 'alpha' to 'alpha' and 'beta' to 'beta'.",
+          "Both projected handles occur in the represented corpus vocabulary.",
+          "The projected pair has independently observed co-occurrence evidence.",
+          "Evidence-record and corpus lineage retained from the requested claim bundle."
+        ],
+        "witness": [
+          "Missing required evidence alternative: event-order OR annotation-temporal-precedence."
+        ],
+        "remediation": [
+          "Supply observed event order or a construct-matched temporal annotation."
+        ]
+      },
+      {
+        "policy_version": "2.7.0",
+        "claim_type": "event-temporal-precedence",
+        "claim_family": "semantic-relational",
+        "requested_relation": [
+          "alpha",
+          "beta"
+        ],
+        "governed_object": {
+          "source": "alpha",
+          "source_type": "event",
+          "target": "beta",
+          "target_type": "event"
+        },
+        "required_object_signatures": [
+          [
+            "event",
+            "event"
+          ]
+        ],
+        "object_type_match": true,
+        "adjudication_required": false,
+        "adjudication_approved": false,
+        "required_alternatives": [
+          [
+            "event-order"
+          ],
+          [
+            "annotation-temporal-precedence"
+          ]
+        ],
+        "required_predicates": [
+          {
+            "predicate_id": "construct-matched-support",
+            "channels": [
+              "event-order"
+            ],
+            "description": "event-order",
+            "target": "event-temporal-precedence",
+            "required_metadata": [],
+            "requires_approved_adjudication": false
+          },
+          {
+            "predicate_id": "construct-matched-support",
+            "channels": [
+              "annotation-temporal-precedence"
+            ],
+            "description": "annotation-temporal-precedence",
+            "target": "event-temporal-precedence",
+            "required_metadata": [],
+            "requires_approved_adjudication": false
+          }
+        ],
+        "observed_channels": [
+          "co-occurrence"
+        ],
+        "observational_identifiability": false,
+        "identifiable": false,
+        "policy_admissible": false,
+        "reason_codes": [
+          "evidence-channel-absent"
+        ],
+        "triggered_reasons": [
+          "evidence-channel-absent"
+        ],
+        "decision_reason": "evidence-channel-absent",
+        "refusal_class": "epistemic",
+        "provenance_complete": true,
+        "specification_survival": null,
+        "uncertainty_adequate": false,
+        "dependence_adequate": false,
+        "counterevidence": [],
+        "causal_method": "",
+        "causal_assumptions": [],
+        "causal_estimand": "",
+        "causal_design": "",
+        "causal_diagnostics": "",
+        "decision": "REFUSE",
+        "allowed_encoding": "undirected-link",
+        "allowed_statement": "The terms have a thresholded lexical association under this configuration.",
+        "allowed_export": false,
+        "requested_representation_authorized": false,
+        "fallback_claim": "lexical-association",
+        "fallback_decision": "ADMIT",
+        "fallback_allowed_export": true,
+        "fallback_is_policy_preferred": true,
+        "fallback_projection": "lexicalize-pair-v1",
+        "fallback_projected_object": {
+          "source": "alpha",
+          "source_type": "term",
+          "target": "beta",
+          "target_type": "term"
+        },
+        "fallback_projection_provenance": [
+          "Canonical lexical handles map 'alpha' to 'alpha' and 'beta' to 'beta'.",
+          "Both projected handles occur in the represented corpus vocabulary.",
+          "The projected pair has independently observed co-occurrence evidence.",
+          "Evidence-record and corpus lineage retained from the requested claim bundle."
+        ],
+        "witness": [
+          "Missing required evidence alternative: event-order OR annotation-temporal-precedence."
+        ],
+        "remediation": [
+          "Supply observed event order or a construct-matched temporal annotation."
+        ]
+      }
+    ],
+    "both_refused": true,
+    "interpretation": "Opposing latent directions remain indistinguishable after order is removed; the co-occurrence observation therefore cannot identify temporal precedence."
+  },
+  "directed_reference_transition": {
+    "benchmark_type": "synthetic explicit-reference transition fixture",
+    "reference_edges": [
+      [
+        "foundations",
+        "methods"
+      ],
+      [
+        "methods",
+        "analysis"
+      ],
+      [
+        "analysis",
+        "capstone"
+      ],
+      [
+        "foundations",
+        "analysis"
+      ]
+    ],
+    "initial_decisions": [
+      "REFUSE",
+      "REFUSE",
+      "REFUSE",
+      "REFUSE"
+    ],
+    "augmented_decisions": [
+      "ADMIT",
+      "ADMIT",
+      "ADMIT",
+      "ADMIT"
+    ],
+    "initial_refusal_rate": 1.0,
+    "augmented_admission_rate": 1.0,
+    "edge_precision": 1.0,
+    "edge_recall": 1.0,
+    "limitation": "This controlled fixture tests policy transition and exact reference recovery; it is not evidence of real-world semantic validity or human benefit."
+  },
+  "controlled_duplication_stress": {
+    "benchmark_type": "generated controlled duplication/dependence stress case",
+    "license": "CC0-equivalent generated fixture; no third-party text",
+    "base_source_count": 12,
+    "row_count": 48,
+    "unique_record_count": 12,
+    "duplicate_rows_beyond_first": 36,
+    "duplicate_rate": 0.75,
+    "naive_support_inflation_factor": 4.0,
+    "interpretation": "Exact copies increase row-level support fourfold without increasing the number of independently generated source records."
+  },
+  "representation_enforcement": {
+    "benchmark_type": "certificate-to-representation enforcement matrix",
+    "state_count": 5,
+    "all_conform": true,
+    "states": [
+      {
+        "state": "admit",
+        "decision": "ADMIT",
+        "decision_reason": "none",
+        "statement": "The source precedes the target in the declared temporal observation.",
+        "permitted_statement": "semantic claim",
+        "mark": "directed-arrow",
+        "requested_claim_export": "allowed",
+        "fallback": "none",
+        "projection": "none",
+        "witness": "present",
+        "remediation": "none",
+        "checks": {
+          "statement": true,
+          "mark": true,
+          "export": true,
+          "fallback": true,
+          "witness": true,
+          "remediation": true
+        },
+        "conforms": true
+      },
+      {
+        "state": "prevalence-qualify",
+        "decision": "QUALIFY",
+        "decision_reason": "prevalence-qualification",
+        "statement": "The conditional confidence differs by orientation under this configuration.",
+        "permitted_statement": "qualified statistic",
+        "mark": "conditional-asymmetry-glyph",
+        "requested_claim_export": "allowed",
+        "fallback": "none",
+        "projection": "none",
+        "witness": "present",
+        "remediation": "present",
+        "checks": {
+          "statement": true,
+          "mark": true,
+          "export": true,
+          "fallback": true,
+          "witness": true,
+          "remediation": true
+        },
+        "conforms": true
+      },
+      {
+        "state": "conflict-qualify",
+        "decision": "QUALIFY",
+        "decision_reason": "conflict-present",
+        "statement": "Construct-matched support and counterevidence contest this relation.",
+        "permitted_statement": "contested claim",
+        "mark": "contested-relation",
+        "requested_claim_export": "blocked",
+        "fallback": "none",
+        "projection": "none",
+        "witness": "present",
+        "remediation": "present",
+        "checks": {
+          "statement": true,
+          "mark": true,
+          "export": true,
+          "fallback": true,
+          "witness": true,
+          "remediation": true
+        },
+        "conforms": true
+      },
+      {
+        "state": "refuse-with-fallback",
+        "decision": "REFUSE",
+        "decision_reason": "evidence-channel-absent",
+        "statement": "The terms have a thresholded lexical association under this configuration.",
+        "permitted_statement": "fallback statement",
+        "mark": "undirected-link",
+        "requested_claim_export": "blocked",
+        "fallback": "lexical-association",
+        "projection": "lexicalize-pair-v1",
+        "witness": "present",
+        "remediation": "present",
+        "checks": {
+          "statement": true,
+          "mark": true,
+          "export": true,
+          "fallback": true,
+          "witness": true,
+          "remediation": true
+        },
+        "conforms": true
+      },
+      {
+        "state": "refuse-without-fallback",
+        "decision": "REFUSE",
+        "decision_reason": "evidence-channel-absent",
+        "statement": "No relation claim is exportable from the available evidence.",
+        "permitted_statement": "refusal explanation",
+        "mark": "no-relation",
+        "requested_claim_export": "blocked",
+        "fallback": "none",
+        "projection": "none",
+        "witness": "present",
+        "remediation": "present",
+        "checks": {
+          "statement": true,
+          "mark": true,
+          "export": true,
+          "fallback": true,
+          "witness": true,
+          "remediation": true
+        },
+        "conforms": true
+      }
+    ]
+  },
+  "architecture_enforcement_ablation": {
+    "benchmark_type": "output-control reachability ablation",
+    "architecture_count": 4,
+    "fixture_count": 3,
+    "output_path_count": 8,
+    "architectures": [
+      {
+        "architecture": "graph-pipeline-only",
+        "fixture_count": 3,
+        "unauthorized_statements_emitted": 3,
+        "unauthorized_semantic_marks_emitted": 3,
+        "unauthorized_requested_exports_emitted": 3,
+        "lawful_fallbacks_preserved": 0,
+        "warning_attached": false,
+        "certificate_visible": false,
+        "fixtures": [
+          {
+            "fixture_id": "unsupported-temporal-with-fallback",
+            "certificate_decision": "REFUSE",
+            "warning_attached": false,
+            "certificate_visible": false,
+            "unauthorized_statement_emitted": true,
+            "unauthorized_mark_emitted": true,
+            "unauthorized_requested_export_emitted": true,
+            "lawful_fallback_preserved": false
+          },
+          {
+            "fixture_id": "conflicting-temporal-evidence",
+            "certificate_decision": "QUALIFY",
+            "warning_attached": false,
+            "certificate_visible": false,
+            "unauthorized_statement_emitted": true,
+            "unauthorized_mark_emitted": true,
+            "unauthorized_requested_export_emitted": true,
+            "lawful_fallback_preserved": false
+          },
+          {
+            "fixture_id": "missing-provenance",
+            "certificate_decision": "REFUSE",
+            "warning_attached": false,
+            "certificate_visible": false,
+            "unauthorized_statement_emitted": true,
+            "unauthorized_mark_emitted": true,
+            "unauthorized_requested_export_emitted": true,
+            "lawful_fallback_preserved": false
+          }
+        ]
+      },
+      {
+        "architecture": "warning-layer",
+        "fixture_count": 3,
+        "unauthorized_statements_emitted": 3,
+        "unauthorized_semantic_marks_emitted": 3,
+        "unauthorized_requested_exports_emitted": 3,
+        "lawful_fallbacks_preserved": 0,
+        "warning_attached": true,
+        "certificate_visible": false,
+        "fixtures": [
+          {
+            "fixture_id": "unsupported-temporal-with-fallback",
+            "certificate_decision": "REFUSE",
+            "warning_attached": true,
+            "certificate_visible": false,
+            "unauthorized_statement_emitted": true,
+            "unauthorized_mark_emitted": true,
+            "unauthorized_requested_export_emitted": true,
+            "lawful_fallback_preserved": false
+          },
+          {
+            "fixture_id": "conflicting-temporal-evidence",
+            "certificate_decision": "QUALIFY",
+            "warning_attached": true,
+            "certificate_visible": false,
+            "unauthorized_statement_emitted": true,
+            "unauthorized_mark_emitted": true,
+            "unauthorized_requested_export_emitted": true,
+            "lawful_fallback_preserved": false
+          },
+          {
+            "fixture_id": "missing-provenance",
+            "certificate_decision": "REFUSE",
+            "warning_attached": true,
+            "certificate_visible": false,
+            "unauthorized_statement_emitted": true,
+            "unauthorized_mark_emitted": true,
+            "unauthorized_requested_export_emitted": true,
+            "lawful_fallback_preserved": false
+          }
+        ]
+      },
+      {
+        "architecture": "certificate-visible-non-enforcing",
+        "fixture_count": 3,
+        "unauthorized_statements_emitted": 3,
+        "unauthorized_semantic_marks_emitted": 3,
+        "unauthorized_requested_exports_emitted": 3,
+        "lawful_fallbacks_preserved": 0,
+        "warning_attached": false,
+        "certificate_visible": true,
+        "fixtures": [
+          {
+            "fixture_id": "unsupported-temporal-with-fallback",
+            "certificate_decision": "REFUSE",
+            "warning_attached": false,
+            "certificate_visible": true,
+            "unauthorized_statement_emitted": true,
+            "unauthorized_mark_emitted": true,
+            "unauthorized_requested_export_emitted": true,
+            "lawful_fallback_preserved": false
+          },
+          {
+            "fixture_id": "conflicting-temporal-evidence",
+            "certificate_decision": "QUALIFY",
+            "warning_attached": false,
+            "certificate_visible": true,
+            "unauthorized_statement_emitted": true,
+            "unauthorized_mark_emitted": true,
+            "unauthorized_requested_export_emitted": true,
+            "lawful_fallback_preserved": false
+          },
+          {
+            "fixture_id": "missing-provenance",
+            "certificate_decision": "REFUSE",
+            "warning_attached": false,
+            "certificate_visible": true,
+            "unauthorized_statement_emitted": true,
+            "unauthorized_mark_emitted": true,
+            "unauthorized_requested_export_emitted": true,
+            "lawful_fallback_preserved": false
+          }
+        ]
+      },
+      {
+        "architecture": "themegraph-certificate-enforcement",
+        "fixture_count": 3,
+        "unauthorized_statements_emitted": 0,
+        "unauthorized_semantic_marks_emitted": 0,
+        "unauthorized_requested_exports_emitted": 0,
+        "lawful_fallbacks_preserved": 1,
+        "warning_attached": false,
+        "certificate_visible": true,
+        "fixtures": [
+          {
+            "fixture_id": "unsupported-temporal-with-fallback",
+            "certificate_decision": "REFUSE",
+            "warning_attached": false,
+            "certificate_visible": true,
+            "unauthorized_statement_emitted": false,
+            "unauthorized_mark_emitted": false,
+            "unauthorized_requested_export_emitted": false,
+            "lawful_fallback_preserved": true
+          },
+          {
+            "fixture_id": "conflicting-temporal-evidence",
+            "certificate_decision": "QUALIFY",
+            "warning_attached": false,
+            "certificate_visible": true,
+            "unauthorized_statement_emitted": false,
+            "unauthorized_mark_emitted": false,
+            "unauthorized_requested_export_emitted": false,
+            "lawful_fallback_preserved": false
+          },
+          {
+            "fixture_id": "missing-provenance",
+            "certificate_decision": "REFUSE",
+            "warning_attached": false,
+            "certificate_visible": true,
+            "unauthorized_statement_emitted": false,
+            "unauthorized_mark_emitted": false,
+            "unauthorized_requested_export_emitted": false,
+            "lawful_fallback_preserved": false
+          }
+        ]
+      }
+    ],
+    "enforcement_blocks_all_unauthorized_outputs": true,
+    "enforcement_preserves_lawful_fallback": true,
+    "scope": "Generated mechanism probes compare output reachability in four output-control conditions over three fixtures. Unauthorized means not authorized under Policy 2.7.0 for the supplied claim/evidence fixture. Reachable means emitted, selectable, renderable, or exportable as an output under the condition; a fallback merely listed in certificate metadata is excluded. A separate suite audits eight maintained certificate-guarded output entry points; no fixture-by-path cross-product is claimed. These probes do not characterize all warning or inspection systems or establish human benefit, safety effectiveness, formal noninterference, or universal non-bypassability."
+  },
+  "evidence_integrity_trust_boundary": {
+    "fixture_id": "schema-valid-semantically-mislabeled-evidence",
+    "schema_valid": true,
+    "provenance_complete": true,
+    "source_relation": [
+      "event B",
+      "event A"
+    ],
+    "faulty_adapter_typed_relation": [
+      "event A",
+      "event B"
+    ],
+    "requested_relation": [
+      "event A",
+      "event B"
+    ],
+    "source_text": "Source fixture relation: event B precedes event A.",
+    "source_semantics_contradict_typed_relation": true,
+    "decision": "ADMIT",
+    "policy_conformant_admission": true,
+    "semantic_authenticity_checked": false,
+    "scope": "Policy conformance checks the supplied typed record, not whether its source text is semantically correct or authentic. Authorization therefore remains conditional on upstream evidence integrity."
+  },
+  "complete_mediation": {
+    "invariant": "Every maintained certificate-guarded output entry point consumes a valid selected certificate or complete certificate collection.",
+    "entry_points": [
+      "analysis-result serialization",
+      "CLI structural export",
+      "governed-representation API",
+      "requested-claim export API",
+      "inspector statement rendering",
+      "inspector graph-mark rendering",
+      "inspector requested-claim export",
+      "publication representation enforcement"
+    ],
+    "entry_point_count": 8,
+    "structural_entry_points": [
+      "analysis-result serialization",
+      "CLI structural export"
+    ],
+    "structural_entry_point_count": 2,
+    "semantic_entry_points": [
+      "governed-representation API",
+      "requested-claim export API",
+      "inspector statement rendering",
+      "inspector graph-mark rendering",
+      "inspector requested-claim export",
+      "publication representation enforcement"
+    ],
+    "semantic_entry_point_count": 6,
+    "all_certificate_required": true,
+    "failure_mode": "fail closed"
+  }
+}
