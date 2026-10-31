@@ -415,7 +415,7 @@ The entries below record the prior audit state. Their `RESOLVED` labels are hist
 | MJ-19 | State SCC/confidence/lift are not novel. | Major | Introduction; observation model | Limit novelty to governance coupling. | Explicitly stated. | RESOLVED | None. |
 | MJ-20 | Make claim families, refusal classes, and qualification reasons explicit. | Major | Formal contract; Typed Refusal Semantics | Preserve heterogeneous outcomes. | Six families, three refusal classes, complete reasons, and reason-specific qualification are explicit. | RESOLVED | None. |
 | MJ-21 | Provide a five-state representation-enforcement matrix. | Major | Table 6; benchmark | Audit statement, mark, export, fallback, witness, and remediation. | Five states are generated and test-enforced. | RESOLVED | None. |
-| MJ-22 | Keep current RQs mechanism-only. | Major | RQs; future work | Move human outcomes to Stages 5–6. | RQ1–RQ4 are mechanism questions; RQ-H1–RQ-H4 remain future. | RESOLVED | None. |
+| MJ-22 | Keep current RQs mechanism-only. | Major | RQs; future work | Move human outcomes to Stages 5 to 6. | RQ1 to RQ4 are mechanism questions; RQ-H1 to RQ-H4 remain future. | RESOLVED | None. |
 | MJ-23 | Frame external datasets as construct-specific deterministic probes. | Major | External Methods/Results; Figure 8; Table 8 | Avoid predictive-accuracy or transportability claims. | Framing is consistently deterministic and construct-bounded. | RESOLVED | None. |
 | MJ-24 | Distinguish SNLI neutral from contradiction and prevent reverse-truth inference. | Major | External methods/results | Route insufficiency, counterevidence, and reversal separately. | Separate routes are reported. | RESOLVED | None. |
 | MJ-25 | Preserve AL-CPL provenance limits. | Major | External methods/results; limitations | Do not infer row origin from final processed relations. | Manuscript expressly limits reverse/composition findings. | RESOLVED | None. |
@@ -440,7 +440,7 @@ The entries below record the prior audit state. Their `RESOLVED` labels are hist
 | MN-01 | Remove DAG-as-theme implication. | Minor | Graph/system terminology | Treat condensation DAG as mechanics only. | No current theme implication found. | RESOLVED | None. |
 | MN-02 | Remove arbitrary composite-score claims. | Minor | Evaluation | Use interpretable measures instead. | No such current score found. | RESOLVED | None. |
 | MN-03 | Use dataset-neutral examples. | Minor | Formalism/figures | Avoid domain-specific algorithm assumptions. | Core and examples are generic; workplace example is illustrative only. | RESOLVED | None. |
-| MN-04 | Correct stale table numbering/counts in the audit itself. | Minor | Audit prompt | Treat current Table 7/8/9 and 21 mutations as authoritative. | Manuscript/AUX are internally consistent. | N/A | Prompt references to 18 mutations and old Table 6–8 mapping are historical drift, not manuscript defects. |
+| MN-04 | Correct stale table numbering/counts in the audit itself. | Minor | Audit prompt | Treat current Table 7/8/9 and 21 mutations as authoritative. | Manuscript/AUX are internally consistent. | N/A | Prompt references to 18 mutations and old Table 6 to 8 mapping are historical drift, not manuscript defects. |
 | MN-05 | Remove or use unused ACM AI-policy reference. | Minor | `references.bib` | Keep bibliography clean. | The uncited `acmai2026` entry was removed. | RESOLVED | None. |
 | MC-01 | Replace residual “falsifiable/falsifies” language if it suggests policy truth testing. | Micro | Formalism/results/limitations | Prefer adversarial invariant or controlled counterexample language. | Prose now uses explicit implementation failure tests and controlled counterexamples; the caption retains only a direct denial of epistemological policy falsification. | RESOLVED | None. |
 | MC-02 | State Figure 8/Table 8 selection criteria. | Micro | External results captions | Explain why some exercised routes are omitted. | Results explicitly define Figure 8's seventeen representative routes and identify the additional routes reported in Table 8. | RESOLVED | None. |
@@ -483,12 +483,12 @@ Critical and major closure is **complete**. The repaired V20 `CR-18` semantics, 
 | 20. Specification surface | RESOLVED | Use bounded union-based descriptive persistence. | Surface and heuristic gates are correctly framed. | Reconciled prose, equations, table, figure, and JSON. | None. | None. |
 | 21. Corpora/configuration | RESOLVED | State corpus roles, configuration design, and rights. | Corpus roles and 18+6 design are explicit; PAWS and O*NET terms were verified; MRPC remains explicitly aggregate-only under uncertain terms. | Checked source records and authoritative license pages. | None. | None. |
 | 22. Baselines/measures | RESOLVED | Keep baselines calibrated and describe validation exactly. | Baseline/runtime caveats are sound; validation prose exactly names table equality, fragment compilation, and active-manuscript/BibTeX compilation. | Final validator passed. | None. | None. |
-| 23. Results 6.1 | RESOLVED | Lead with certificate and representation consequences. | Results distinguish conformance from validity. | Cross-checked Tables 5–7 and Figure 6. | None. | None. |
+| 23. Results 6.1 | RESOLVED | Lead with certificate and representation consequences. | Results distinguish conformance from validity. | Cross-checked Tables 5 to 7 and Figure 6. | None. | None. |
 | 24. Results 6.2 | RESOLVED | Report deterministic external construct-boundary routes consistently. | Table 10 includes AL-CPL mention order and non-paraphrase admission; Figure 8 reports source-derived route-family coverage and deterministic paths. | Cross-checked JSON, Table 10, Figure 8, and regression tests. | None. | None. |
 | 25. Results 6.3 | RESOLVED | Synchronize values and preserve heuristic-gate framing. | All audited specification values align. | Reconciled macros, prose, table, figure, and JSON. | None. | None. |
 | 26. Results 6.4 | RESOLVED | Bound graph correctness and dependence checks. | Agreement, baseline tie, and duplication result are calibrated. | Checked tests and result artifacts. | None. | None. |
 | 27. Discussion 7.1 | RESOLVED | Center the arrow-as-claim argument, interaction-architecture importance, and heterogeneous refusal without human-effect overclaim. | The visible/exportable boundary is identified as the HCI control capability; refusal types remain mechanism outputs. | Compared Discussion with evaluator, implications, and limitations. | None. | None. |
-| 28. Discussion 7.2 | RESOLVED | State only what Stages 1–4 establish. | Boundaries are explicit. | Compared claims with evaluation evidence. | None. | None. |
+| 28. Discussion 7.2 | RESOLVED | State only what Stages 1 to 4 establish. | Boundaries are explicit. | Compared claims with evaluation evidence. | None. | None. |
 | 29. CHI implications | RESOLVED | Give enforceable capabilities for visualization, mixed methods, AI-assisted analysis, and data governance without measured-benefit claims. | Four constituencies receive concrete mechanism consequences, and executable policy is framed as an HCI design object at the artifact--user inference boundary. | Searched for imported human-effect conclusions. | None. | None. |
 | 30. Policy contestability | RESOLVED | Acknowledge authorship, approval, appeal, retirement, and authority limits. | All are stated. | Checked replay and governance prose. | None. | None. |
 | 31. Research agenda | RESOLVED | Withhold unsupported constructs and identify next evidence. | Broader claims remain future work. | Compared agenda with current Results. | None. | None. |
@@ -581,7 +581,7 @@ Critical and major closure is **complete**. The repaired V20 `CR-18` semantics, 
 | Term/policy concept | Expected form | Inconsistent locations | Status |
 | --- | --- | --- | --- |
 | Active empirical policy | `Policy 2.7.0` | None | PASS |
-| Earlier replay policies | Full semantic versions `2.0.0`–`2.6.0` | None | PASS |
+| Earlier replay policies | Full semantic versions `2.0.0` to `2.6.0` | None | PASS |
 | Identification | Reserved for observation-model distinguishability | No substantive misuse found | PASS |
 | Policy-conformant representation | Used instead of universal soundness | Consistent | PASS |
 | Invariant testing | Preferred over normative-policy falsification | Implementation failure tests and controlled counterexamples are used | PASS |
@@ -652,11 +652,11 @@ Historical V13 actions (closed before the V14 review):
 - [x] CR-06 Bound SCC outputs as structural candidates.
 - [x] MJ-01 Compile the active manuscript and bibliography.
 - [x] MJ-02 Add source checks for all claimed generated tables.
-- [x] MJ-03–MJ-14 Resolve reason, object, causal, statistical, grammar, and novelty semantics.
+- [x] MJ-03 to MJ-14 Resolve reason, object, causal, statistical, grammar, and novelty semantics.
 - [x] MJ-15 Replace unsupported Table 1 negative cells with `---`.
-- [x] MJ-16–MJ-26 Resolve abstract, invariant, taxonomy, RQ, and external-boundary actions.
+- [x] MJ-16 to MJ-26 Resolve abstract, invariant, taxonomy, RQ, and external-boundary actions.
 - [x] MJ-27 Display and explain the AL-CPL mention-order transition.
-- [x] MJ-28–MJ-33 Resolve specification, graph, principles, contestability, and future-HCI actions.
+- [x] MJ-28 to MJ-33 Resolve specification, graph, principles, contestability, and future-HCI actions.
 - [x] MJ-34 Verify O*NET/PAWS rights and preserve aggregate-only MRPC handling under explicitly uncertain terms.
 - [x] MJ-35 Keep the conclusion mechanism-scoped.
 - [x] MD-05 Synchronize Figure 5 artifact metadata.

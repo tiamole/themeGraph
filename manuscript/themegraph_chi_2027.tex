@@ -214,6 +214,16 @@ Let a corpus contain documents $D$. A deterministic extractor produces text unit
 
 An ordered edge is retained when its source term and pair supports satisfy minimum counts and both statistics satisfy configured thresholds. The graph includes all eligible vocabulary terms, including isolates and terms that appear only as destinations. Each retained edge stores its statistic values and evidence identifiers.
 
+Figure~\ref{fig:edge-distributions} reports the observed distribution of these statistics on the four corpora the paper claims: synthetic, O*NET, ACM text, and Python standard library. The job-ad workbook that also appears in the pipeline's internal evaluation outputs is excluded from this and every corpus-comparison figure that follows, because its source, sampling frame, and redistribution license are unresolved (Ethics, Limitations, and Scope); the figures therefore match the four-corpus scope already stated for the specification surface.
+
+\begin{figure*}[t]
+  \centering
+  \includegraphics[width=0.92\textwidth]{edge_distributions_core.pdf}
+  \caption{Observed conditional confidence, supporting units, and lift for every retained edge in the four corpora this paper claims. Markers are medians and bars are interquartile ranges, read directly from serialized edge records at default configuration; no fitting or smoothing is applied. Supporting units are plotted on a log scale because corpus size varies by four orders of magnitude.}
+  \Description{Three panels report the median and interquartile range of conditional confidence, supporting unit count, and lift for the synthetic, O*NET, ACM text, and Python standard library corpora.}
+  \label{fig:edge-distributions}
+\end{figure*}
+
 The notation in Equation~\ref{eq:confidence} invites a directional reading, but its asymmetry has a simple source:
 
 \begin{equation}
@@ -224,7 +234,21 @@ The notation in Equation~\ref{eq:confidence} invites a directional reading, but 
 
 The joint count cancels. Lift is symmetric. Thus co-occurrence and lift determine whether a pair is eligible, while marginal prevalence determines which conditional confidence is larger. If $n(a,b)=0$, neither confidence ratio nor its logarithm is usable and no supported pair exists. If either marginal is zero, the corresponding confidence and lift are undefined. The implementation avoids these boundary cases by evaluating only observed pairs among supported terms.
 
-Equation~\ref{eq:identity} is elementary probability, not a novel theorem. Its diagnostic consequence is substantial: unordered co-occurrence cannot identify temporal order, syntax, discourse relation, prerequisite, causality, enablement, or semantic hierarchy. Such claims require an additional directional channel. Figure~\ref{fig:claim-map} maps the current observation to claims the system may and may not express.
+Equation~\ref{eq:identity} is elementary probability, not a novel theorem. Its diagnostic consequence is substantial: unordered co-occurrence cannot identify temporal order, syntax, discourse relation, prerequisite, causality, enablement, or semantic hierarchy. Such claims require an additional directional channel.
+
+Figure~\ref{fig:directional-asymmetry} reports the observed magnitude of this identity rather than only its algebra. For every retained edge $a\rightarrow b$, the reverse confidence $\operatorname{conf}(b\rightarrow a)=n(a,b)/n(b)$ is recovered from the same serialized confidence, support, and lift fields via Equations~\ref{eq:confidence} and~\ref{eq:lift}: this is an exact recomputation of already-serialized statistics, not an independent measurement. Median implied reverse confidence is 0.351 for O*NET, 0.468 for ACM text, and 0.206 for Python, each far below the 0.65 admission threshold that the forward orientation met; the planted synthetic corpus, whose core cluster was constructed so its terms co-occur in the same documents, shows little asymmetry (median reverse confidence 1.000, equal to the forward median). The gap in the three real corpora is attributable to the marginal prevalence ratio $n(b)/n(a)$ alone, because support and lift are identical in both orientations; no directional observation distinguishes them.
+
+\begin{figure*}[t]
+  \centering
+  \includegraphics[width=0.92\textwidth]{directional_asymmetry.pdf}
+  \caption{Admitted forward confidence against the implied reverse confidence for retained edges in the four claimed corpora, derived from Equations~\ref{eq:confidence} and~\ref{eq:lift}. O*NET, ACM text, and Python show a wide gap between the two orientations; the synthetic corpus does not, because its planted core terms were constructed to co-occur symmetrically. The dashed line marks the 0.65 admission threshold the forward orientation satisfied by construction.}
+  \Description{A dumbbell chart compares each corpus's admitted forward confidence, which clusters near one, against the implied reverse confidence, which is far lower for O*NET, ACM text, and Python but similar to the forward value for the synthetic corpus.}
+  \label{fig:directional-asymmetry}
+\end{figure*}
+
+\input{../artifacts/tables/directional_asymmetry.tex}
+
+Figure~\ref{fig:claim-map} maps the current observation to claims the system may and may not express.
 
 \begin{figure*}[t]
   \centering
@@ -388,6 +412,18 @@ Consider one world in which alpha precedes beta and another in which beta preced
 
 ThemeGraph separates adapters, stable text units, relation extraction, graph analysis, evaluation, and export. Edges retain statistics, document/unit identifiers, and bounded evidence records. Configuration, seed 2027, aggregate-JSON rebuilding, hashes, and source validation support reproducibility; full pipeline and adapter details are supplementary and available at \url{https://github.com/tiamole/themeGraph}, which also hosts the live interactive inspector at \url{https://tiamole.github.io/themeGraph/prototype/}.
 
+That bound is deliberate but has a measurable cost. Each edge's evidence list is capped at three excerpts regardless of how many distinct documents actually support it. Figure~\ref{fig:evidence-retention} reports, for the four claimed corpora, the share of retained edges whose true supporting-document count exceeds that cap. Every retained edge in the synthetic, O*NET, and ACM-text corpora has more supporting documents than the three excerpts shown; Python standard library is lower (65.2\%) because its edges have weaker median document support. This quantifies how much corroborating evidence is withheld from the inspector and from any export by construction; it does not evaluate whether the three shown excerpts are representative of the withheld majority.
+
+\begin{figure*}[t]
+  \centering
+  \includegraphics[width=0.8\textwidth]{evidence_retention.pdf}
+  \caption{Share of retained edges, across the four claimed corpora, whose evidence list is truncated because the number of distinct supporting documents exceeds the serialized cap of three excerpts, with the median number of supporting documents annotated for each corpus.}
+  \Description{A dot plot reports the share of retained edges whose supporting-document count exceeds the three-excerpt evidence cap for the synthetic, O*NET, ACM text, and Python standard library corpora, annotated with the median number of supporting documents in each corpus.}
+  \label{fig:evidence-retention}
+\end{figure*}
+
+\input{../artifacts/tables/evidence_retention.tex}
+
 The maintained implementation imposes a complete-mediation requirement over the currently inventoried output boundary. Its eight certificate-guarded output entry points fail closed on missing, duplicate, unknown, malformed, or inconsistent certificate state. Two nonsemantic structural serializers (analysis-result serialization and CLI structural export) require complete certificate-set integrity. Six semantic representation/export entry points (the governed-representation and requested-claim APIs, inspector statement/mark/export rendering, and publication enforcement) consume a selected certificate. Witness and remediation are certificate-derived fields rendered through certificate-bound inspector/API state, not additional independently selectable semantic emitters. The validator derives colocated declarations, checks each guard, and rejects an unlisted synthetic emitter; this bounded discovery is not proof over arbitrary future code.
 
 The core contains no corpus-specific vocabulary or graph rule and executes unchanged across the evaluated source types. This is dataset independence as an engineering claim, not construct validity or transportability of meaning.
@@ -466,6 +502,24 @@ The four views are 90 planted documents, descriptions/tasks from the first 500 O
 
 Defaults are a 500-term cap, confidence 0.65, and lift 1.05; the threshold grid crosses confidence 0.50/0.65/0.80 with lift 1.00/1.05/1.25. Values were prespecified, not optimized for a preferred component.
 
+Figure~\ref{fig:corpus-structure} compares the four corpora's default-configuration structure, and Figure~\ref{fig:measured-performance} reports single-environment execution cost. Both are read directly from \texttt{research\_evaluation\_summary.json} and share the four-corpus scope stated above.
+
+\begin{figure*}[t]
+  \centering
+  \includegraphics[width=0.92\textwidth]{cross_corpus_structure_core.pdf}
+  \caption{Default-configuration structural extent across the four claimed corpora. Panel A compares vocabulary size (nodes) and retained edges on a log scale; panel B reports the largest strongly connected component; panel C reports the share of retained edges that are asymmetric, meaning only one orientation passed the confidence and lift thresholds. Corpora differ by more than an order of magnitude in vocabulary size yet show no consistent relationship between corpus size and largest-component size.}
+  \Description{Three panels compare node and edge counts on a log scale, largest strongly connected component size, and the share of asymmetric retained edges across the synthetic, O*NET, ACM text, and Python standard library corpora.}
+  \label{fig:corpus-structure}
+\end{figure*}
+
+\begin{figure*}[t]
+  \centering
+  \includegraphics[width=0.92\textwidth]{measured_performance_core.pdf}
+  \caption{Observed single-environment wall-clock time and peak traced Python allocation against extracted text units, on log-log axes, for the four claimed corpora (recorded environment: Python 3.14.0, Windows-11). These are single-run observations on one machine, not a controlled benchmark across repetitions, hardware, or competing implementations; they bound expected cost on the evaluated corpora, not asymptotic complexity.}
+  \Description{Two log-log scatter plots show core wall time and peak Python allocation increasing with the number of extracted text units across the synthetic, O*NET, ACM text, and Python standard library corpora.}
+  \label{fig:measured-performance}
+\end{figure*}
+
 \subsection{Baselines, Measures, and Validation}
 
 Baselines cover weak/symmetrized/singleton structure, modularity, seeded Louvain, reversal, and three clustering methods on the planted-core features. ARI, pairwise measures, structural sensitivity, and single-environment runtime/allocation observations do not support an SCC-superiority claim.
@@ -501,6 +555,16 @@ Table~\ref{tab:architecture-ablation} tests why enforcement matters for generate
 In the trust-boundary fixture, source truth is B-before-A, while a faulty adapter supplies a schema-valid, provenance-complete A-before-B record and request. Policy 2.7.0 admits A-before-B, demonstrating conformance conditional on upstream semantic integrity; \texttt{semantic\_authenticity\_checked} remains false.
 
 The version-comparison cases make contestability concrete. Reversed prerequisite evidence changes from \textsc{Admit} under target-only Policy 2.2.0 to \textsc{Refuse} under Policy 2.7.0 pair scope. Metadata-complete but unadjudicated causality changes from \textsc{Admit} under Policy 2.5.0 to \textsc{Refuse} with \texttt{adjudication-required} under Policy 2.7.0. Serialized certificates preserve version, governed object, complete and controlling reasons, witness, projection provenance, and remediation. All 21 active-policy lint checks pass, and all 21 targeted invalid policies trigger their intended checks. The supplementary mutation artifact reports all six families and retains every row, intended check, observed trigger vector, and co-trigger. This assurance is not independent policy validation.
+
+Figure~\ref{fig:policy-lint-mutations} reports the full 21-by-21 trigger matrix behind this count. Fifteen of 21 mutations localize to exactly their intended invariant; the remaining six also trip one or two further invariants. Removing the claim declaration additionally trips interpretive adjudication required; the unreachable-predicate and duplicate-predicate mutations each additionally trip interpretive adjudication required and interpretive metadata consistent; the fallback-cycle and unscoped-to-pair-fallback mutations each additionally trip fallback projections complete; and the undeclared-fallback-target mutation additionally trips all claims declared. This reports which checks co-trigger, not why; it does not explain the covariance and is not an exhaustive guarantee against unanticipated policy faults.
+
+\begin{figure*}[t]
+  \centering
+  \includegraphics[width=0.92\textwidth]{policy_lint_mutations.pdf}
+  \caption{Observed trigger matrix for the 21 targeted Policy 2.7.0 lint mutations against the 21 lint invariants. Outlined cells mark each mutation's intended target; filled cells report which invariants it actually triggered. All 21 intended faults are detected, and 15 of 21 mutations trigger no invariant beyond their intended target.}
+  \Description{A 21 by 21 grid marks which lint invariant each targeted mutation triggers; outlined cells show the intended target, and six rows additionally trigger one or two further invariants beyond their intended target.}
+  \label{fig:policy-lint-mutations}
+\end{figure*}
 
 \begin{figure*}[t]
   \centering
@@ -539,6 +603,16 @@ Figure~\ref{fig:external-validation} derives a dataset-by-route-family coverage 
 Across 24 configurations, the ACM-text union contains \TGAcmtUnionEdges{} edges (Table~\ref{tab:specification-surface}; Figure~\ref{fig:specification-survival}). Default-edge mean persistence is \TGAcmtDefaultMeanPersistence{}; the intersection has \TGAcmtIntersectionEdges{} edges; and mean one-to-one component Jaccard is \TGAcmtComponentJaccard{}. At the authored 0.80 persistence gate, \TGAcmtAuthorizedEdges{} union edges meet the gate and \TGAcmtQualifiedEdges{} fall below it. The union denominator exposes selection hidden by default-only persistence.
 
 O*NET has no edge in the 24-way intersection and 9 of 3,520 union edges meet the 0.80 persistence gate; Python has 135 of 1,063. All 27 default synthetic edges persist throughout, but 120 alternatives emerge below the gate. This reflects the planted core, not general robustness. Analytic choices alter both retention and the candidate universe.
+
+Figure~\ref{fig:threshold-sensitivity} isolates the confidence-by-lift grid underlying this sensitivity. At every tested confidence level, moving lift from 1.00 to 1.25 leaves the largest strongly connected component and the retained edge count unchanged in all three corpora shown; confidence alone drives the response. This follows from lift's symmetry (Equation~\ref{eq:lift}): because the admitted edges in these three corpora already satisfy lift well above 1.25 once they satisfy confidence 0.50, the lift gate is non-binding across this grid. The tested range does not establish that lift is uninformative in general, only that it does not bind here.
+
+\begin{figure*}[t]
+  \centering
+  \includegraphics[width=0.85\textwidth]{threshold_sensitivity_core.pdf}
+  \caption{Largest strongly connected component across the full prespecified confidence by lift grid for O*NET, ACM text, and Python standard library; the synthetic corpus is omitted because its planted-core component structure does not change across this grid. Lift produces no change at any fixed confidence level in any of the three corpora.}
+  \Description{Three heatmaps show the largest strongly connected component size at each combination of confidence and lift threshold for O*NET, ACM text, and Python standard library, with lift producing no change at fixed confidence.}
+  \label{fig:threshold-sensitivity}
+\end{figure*}
 
 \input{../artifacts/tables/specification_surface.tex}
 

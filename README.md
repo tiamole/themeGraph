@@ -15,7 +15,7 @@ A live, in-browser inspector is hosted via GitHub Pages:
 
 It lets researchers adjust confidence/lift thresholds, inspect strongly connected components,
 compare against baselines, and trace every displayed relation back to its source evidence
-excerpts. Nothing is uploaded — it runs entirely client-side against the pre-computed JSON
+excerpts. Nothing is uploaded: it runs entirely client-side against the pre-computed JSON
 corpora in [`results/`](results).
 
 ## Repository layout
@@ -37,6 +37,14 @@ corpora in [`results/`](results).
 ```powershell
 pip install -e .[dev]
 pytest
+```
+
+To regenerate the manuscript's core-corpus figures and tables (restricted to the four
+corpora the paper claims; see the module docstring for why the job-ad workbook is
+excluded), run:
+
+```powershell
+python scripts/build_core_corpus_figures.py
 ```
 
 ## Citation
